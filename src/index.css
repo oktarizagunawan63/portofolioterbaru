@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --c-primary:#662222;
+  --c-secondary:#842A3B;
+  --c-accent:#F5DAA7;
+  --c-ink:#0f0f0f;
+  --c-paper:#faf7f2;
+}
+
+/* base style */
+@layer base {
+  body {
+    @apply text-[15px] leading-relaxed;
+  }
+  h1, h2, h3 {
+    @apply font-semibold;
+  }
+}
+
+
+/* reusable class */
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 rounded-2xl px-5 py-2.5
+           bg-primary text-white hover:bg-secondary transition shadow-soft;
+  }
+  .chip {
+    @apply inline-flex items-center rounded-full px-3 py-1 text-sm bg-accent text-ink;
+  }
+  .card {
+    @apply rounded-2xl bg-white shadow-soft border border-accent/40;
+  }
+  .section {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16;
+  }
+}
+
+@layer base {
+  html {
+    font-size: 14px; /* 🔥 ubah semua ukuran dasar jadi lebih kecil */
+  }
+  body {
+    @apply text-[15px] leading-relaxed;
+  }
+}
