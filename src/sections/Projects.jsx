@@ -2,7 +2,7 @@ import ProjectCard from "../components/ProjectCard";
 
 // import gambar
 import wifiImg from "../assets/wifi.jpg";
-import kerenImg from "../assets/iza.jpg";
+import kerenImg from "../assets/ultahndutt.jpg";
 import reactLogo from "../assets/react.svg";
 
 const DATA = [
@@ -16,10 +16,10 @@ const DATA = [
   
    {
    
-    title: "muka ganteng",
-    desc: "mahasiswa kece",
+    title: "web ultah",
+    desc: "hadiah untuk wanita berisi dengan foto beserta instrument ulang tahun, ",
     tags: ["index.html",],
-    link: "#",
+    link: "https://ultahndutt.netlify.app//",
     image: kerenImg, // 🔥 tampil di card kedua
 
   },
