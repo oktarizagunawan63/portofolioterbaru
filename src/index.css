@@ -12,11 +12,29 @@
 
 /* base style */
 @layer base {
-  body {
-    @apply text-[15px] leading-relaxed;
+  html {
+    font-size: 12px; /* Ukuran dasar untuk mobile */
   }
+  
+  body {
+    @apply text-base leading-relaxed;
+  }
+  
   h1, h2, h3 {
     @apply font-semibold;
+  }
+
+  /* Typography responsive */
+  h1 {
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl;
+  }
+  
+  h2 {
+    @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl;
+  }
+  
+  h3 {
+    @apply text-lg sm:text-xl md:text-2xl lg:text-3xl;
   }
 }
 
@@ -27,29 +45,117 @@ body {
   touch-action: manipulation;
 }
 
-
 /* reusable class */
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center gap-2 rounded-2xl px-5 py-2.5
-           bg-primary text-white hover:bg-secondary transition shadow-soft;
+    @apply inline-flex items-center justify-center gap-2 
+           rounded-2xl px-4 py-2.5 sm:px-5
+           bg-primary text-white hover:bg-secondary 
+           transition-all duration-300 shadow-soft
+           text-sm sm:text-base;
   }
+  
   .chip {
-    @apply inline-flex items-center rounded-full px-3 py-1 text-sm bg-accent text-ink;
+    @apply inline-flex items-center rounded-full px-3 py-1 
+           text-xs sm:text-sm bg-accent text-ink;
   }
+  
   .card {
-    @apply rounded-2xl bg-white shadow-soft border border-accent/40;
+    @apply rounded-2xl bg-white shadow-soft border border-accent/40
+           w-full; /* Pastikan card selalu full width container */
   }
+  
   .section {
-    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16;
+    @apply w-full mx-auto px-4 py-12
+           sm:px-6 sm:py-16
+           md:px-8 md:py-20
+           lg:px-10 lg:py-24;
+  }
+  
+  .container-responsive {
+    @apply w-full max-w-full px-4 
+           sm:max-w-[640px] sm:px-6
+           md:max-w-[768px] md:px-8
+           lg:max-w-[1024px] lg:px-10
+           xl:max-w-[1280px] xl:px-12
+           2xl:max-w-[1536px];
+  }
+  
+  .grid-responsive {
+    @apply grid grid-cols-1 gap-4
+           sm:grid-cols-2 sm:gap-6
+           md:grid-cols-3 md:gap-8
+           lg:grid-cols-4;
   }
 }
 
-@layer base {
-  html {
-    font-size: 14px; /* 🔥 ubah semua ukuran dasar jadi lebih kecil */
+/* Media queries untuk responsive design */
+@layer utilities {
+  /* Untuk mobile first approach */
+  @media (min-width: 640px) {
+    html {
+      font-size: 14px;
+    }
   }
-  body {
-    @apply text-[15px] leading-relaxed;
+  
+  @media (min-width: 768px) {
+    html {
+      font-size: 15px;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    html {
+      font-size: 16px;
+    }
+  }
+
+  /* Utility classes untuk spacing responsive */
+  .padding-responsive {
+    @apply p-4 sm:p-6 md:p-8 lg:p-10;
+  }
+  
+  .margin-responsive {
+    @apply m-4 sm:m-6 md:m-8 lg:m-10;
+  }
+  
+  /* Untuk images responsive */
+  .img-responsive {
+    @apply w-full h-auto max-w-full object-cover;
+  }
+  
+  /* Flexbox responsive */
+  .flex-responsive {
+    @apply flex flex-col sm:flex-row;
+  }
+  
+  /* Hidden/show elements berdasarkan breakpoint */
+  .mobile-only {
+    @apply block sm:hidden;
+  }
+  
+  .desktop-only {
+    @apply hidden sm:block;
+  }
+}
+
+/* Pastikan form elements juga responsive */
+@layer base {
+  input, textarea, select {
+    @apply w-full max-w-full;
+  }
+}
+
+/* Improve touch targets untuk mobile */
+@layer components {
+  .touch-target {
+    @apply min-h-[44px] min-w-[44px]; /* Ukuran minimum untuk touch */
+  }
+}
+
+/* Loading states untuk berbagai device */
+@layer utilities {
+  .loading-skeleton {
+    @apply animate-pulse bg-gray-200 rounded;
   }
 }
