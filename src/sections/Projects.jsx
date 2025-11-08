@@ -2,7 +2,7 @@ import ProjectCard from "../components/ProjectCard";
 
 // import gambar
 import wifiImg from "../assets/futsal.jpg";
-import kerenImg from "../assets/ultahndutt.jpg";
+import kerenImg from "../assets/ultah.jpg";
 import reactLogo from "../assets/qr.jpg";
 
 const DATA = [
