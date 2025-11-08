@@ -1,42 +1,50 @@
 export default function ProjectCard({ title, desc, tags = [], link, image }) {
   return (
-    <div className="card p-3 hover:shadow transition border border-accent/30 rounded-lg">
-      {/* Thumbnail */}
-      <div className="aspect-[4/3] rounded-md overflow-hidden mb-2 bg-accent/20 grid place-content-center">
+    <div className="card flex flex-col p-5 rounded-2xl border border-accent/40 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 bg-white">
+      {/* 🖼️ Thumbnail */}
+      <div className="relative w-full h-48 rounded-xl overflow-hidden mb-4 bg-accent/10 flex items-center justify-center">
         {image ? (
           <img
             src={image}
             alt={title}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain bg-white"
           />
         ) : (
-          <span className="text-xs text-secondary">[ Thumbnail ]</span>
+          <span className="text-xs text-secondary absolute inset-0 flex items-center justify-center">
+            [ Thumbnail ]
+          </span>
         )}
       </div>
 
-      <h3 className="text-base font-semibold text-ink leading-snug">{title}</h3>
-      <p className="mt-1.5 text-xs text-ink/70 leading-relaxed">{desc}</p>
+      {/* 🧾 Text */}
+      <div className="flex flex-col flex-grow">
+        <h3 className="text-base font-semibold text-ink leading-snug">{title}</h3>
+        <p className="mt-2 text-xs text-ink/70 leading-relaxed">{desc}</p>
 
-      <div className="mt-2 flex flex-wrap gap-1">
-        {tags.map((t) => (
-          <span
-            key={t}
-            className="chip text-[10px] px-2 py-0.5 bg-accent/70 text-ink/90"
+        {/* 🏷️ Tags */}
+        <div className="mt-3 flex flex-wrap gap-1.5">
+          {tags.map((t) => (
+            <span
+              key={t}
+              className="text-[10px] px-2 py-0.5 bg-accent/70 text-ink/90 rounded-full"
+            >
+              {t}
+            </span>
+          ))}
+        </div>
+
+        {/* 🔗 Button */}
+        {link && (
+          <a
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block mt-4 bg-primary text-white text-xs px-4 py-1.5 rounded-full hover:bg-secondary transition-all duration-300 text-center"
           >
-            {t}
-          </span>
-        ))}
+            Visit
+          </a>
+        )}
       </div>
-
-      {link && (
-        <a
-          href={link}
-          target="_blank"
-          className="btn-primary mt-3 text-xs px-3 py-1.5 rounded-lg"
-        >
-          Visit
-        </a>
-      )}
     </div>
   );
 }

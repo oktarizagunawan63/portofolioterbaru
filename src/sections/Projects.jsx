@@ -1,15 +1,15 @@
 import ProjectCard from "../components/ProjectCard";
 
 // import gambar
-import wifiImg from "../assets/wifi.jpg";
+import wifiImg from "../assets/futsal.jpg";
 import kerenImg from "../assets/ultahndutt.jpg";
-import reactLogo from "../assets/react.svg";
+import reactLogo from "../assets/qr.jpg";
 
 const DATA = [
   {
-    title: "Konekin WiFi ",
-    desc: "Login page WiFi voucher untuk coffee shop",
-    tags: ["React", "Tailwind", "Vite"],
+    title: "Booking Futsal Online ",
+    desc: "Mempermudah Booking Futsal",
+    tags: ["PHP", "SQL"],
     link: "#",
     image: wifiImg, // 🔥 tampil di card pertama
   },
@@ -26,9 +26,9 @@ const DATA = [
 
   
 {
-  title: "WhatsApp Bot",
-    desc: "Bot perintah 'p', auto mention, dan fitur translate.",
-      tags: ["Node.js", "whatsapp-web.js"],
+  title: "QR Menu Resto",
+    desc: "Web Untuk Menampilkan Menu Resto",
+      tags: ["App.jsx", "QR-Menu.js"],
         link: "#",
           image: reactLogo, // 🔥 tampil di card ketiga
   },
