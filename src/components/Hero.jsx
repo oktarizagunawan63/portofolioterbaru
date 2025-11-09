@@ -19,9 +19,9 @@ export default function Hero() {
           <p className="mt-4 text-base text-ink/70 max-w-lg leading-relaxed">
             Gue fokus bikin web yang clean, kenceng, dan modern. Stack favorit:{" "}
             <span className="text-secondary font-semibold">
-              React, Tailwind, Vite
+              React, Tailwind, Vite, Go(lang), PHP, Python
             </span>{" "}
-            dan <span className="font-semibold text-secondary">Python</span>.
+            dan <span className="font-semibold text-secondary">Sql</span>.
           </p>
 
           <div className="mt-6 flex flex-wrap gap-4">

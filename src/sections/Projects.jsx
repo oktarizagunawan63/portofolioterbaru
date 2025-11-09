@@ -4,6 +4,8 @@ import ProjectCard from "../components/ProjectCard";
 import wifiImg from "../assets/futsal.jpg";
 import kerenImg from "../assets/ultah.jpg";
 import reactLogo from "../assets/qr.jpg";
+import portv2 from "../assets/tensi.jpg";
+import bisuImg from "../assets/bisu.jpg";
 
 const DATA = [
   {
@@ -11,27 +13,38 @@ const DATA = [
     desc: "Mempermudah Booking Futsal",
     tags: ["PHP", "SQL"],
     link: "#",
-    image: wifiImg, // 🔥 tampil di card pertama
+    image: wifiImg,
   },
-  
-   {
-   
+  {
     title: "web ultah",
     desc: "hadiah untuk wanita berisi dengan foto beserta instrument ulang tahun, ",
-    tags: ["index.html",],
-    link: "https://ultahndutt.netlify.app//",
-    image: kerenImg, // 🔥 tampil di card kedua
-
+    tags: ["index.html"],
+    link: "https://ultahndutt.netlify.app/",
+    image: kerenImg,
   },
-
-  
-{
-  title: "QR Menu Resto",
+  {
+    title: "QR Menu Resto",
     desc: "Web Untuk Menampilkan Menu Resto",
-      tags: ["App.jsx", "QR-Menu.js"],
-        link: "#",
-          image: reactLogo, // 🔥 tampil di card ketiga
+    tags: ["React", "React Router", "Sql"],
+    link: "#",
+    image: reactLogo,
   },
+  {
+    title: "Riwayat Tensi Darah",
+    desc: "Web Untuk Mencatat Dan Memantau Riwayat Tekanan Darah",
+    tags: ["React", "Go(lang)", "Sql"],
+    link: "https://zhaabeer.netlify.app/",
+    image: portv2, // 🔥 tampil di card ke-4
+  },
+
+  {
+    title: "GestureSense",
+    desc: "Project Machine Learning yang bisa mengenali bahasa isyarat tangan menggunakan Python.",
+    tags: ["Python", "Machine Learning"],
+    link: "#",
+    image: bisuImg,
+  },
+
 ];
 
 export default function Projects() {
