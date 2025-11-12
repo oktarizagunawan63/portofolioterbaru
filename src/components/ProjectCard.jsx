@@ -32,18 +32,6 @@ export default function ProjectCard({ title, desc, tags = [], link, image }) {
             </span>
           ))}
         </div>
-
-        {/* 🔗 Button */}
-        {link && (
-          <a
-            href={link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block mt-4 bg-primary text-white text-xs px-4 py-1.5 rounded-full hover:bg-secondary transition-all duration-300 text-center"
-          >
-            Visit
-          </a>
-        )}
       </div>
     </div>
   );
