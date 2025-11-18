@@ -7,7 +7,7 @@ export default function About() {
         performa ngebut, Tertarik juga sama data & ML buat project mini.
       </p>
       <div className="mt-6 flex flex-wrap gap-3">
-        {["React", "Tailwind", "Vite", "Node.js", "Python", "PHP", "Go(lang), Sql"].map((s) => (
+        {["React", "Tailwind", "Vite", "Node.js", "Python", "PHP", "Go(lang)", "Sql"].map((s) => (
           <span key={s} className="chip">{s}</span>
         ))}
       </div>

@@ -25,7 +25,7 @@ const DATA = [
   {
     title: "QR Menu Resto",
     desc: "Web Untuk Menampilkan Menu Resto",
-    tags: ["React", "React Router", "Sql"],
+    tags: ["React", "React Router", "Sql", "Go(lang)"],
     link: "#",
     image: reactLogo,
   },
