@@ -8,161 +8,161 @@ export const projects = [
   {
     id: "futsal-booking",
     title: "Futsal Booking System",
-    shortDesc: "Online booking platform for futsal courts with real-time availability",
-    fullDesc: `A comprehensive web-based booking system designed to streamline futsal court reservations. 
+    shortDesc: "Platform booking online untuk lapangan futsal dengan ketersediaan real-time",
+    fullDesc: `Sistem booking berbasis web yang dirancang untuk mempermudah reservasi lapangan futsal. 
     
-The platform features real-time availability checking, automated booking confirmations, and an intuitive admin dashboard for court management. Users can easily browse available time slots, make instant reservations, and receive booking confirmations via email.
+Platform ini dilengkapi dengan pengecekan ketersediaan real-time, konfirmasi booking otomatis, dan dashboard admin yang intuitif untuk manajemen lapangan. Pengguna dapat dengan mudah melihat slot waktu yang tersedia, melakukan reservasi instan, dan menerima konfirmasi booking via email.
 
-Key features include:
-- Real-time court availability tracking
-- User authentication and profile management
-- Booking history and management
-- Admin dashboard for court and booking management
-- Payment integration for seamless transactions
-- Responsive design for mobile and desktop`,
+Fitur utama meliputi:
+- Pelacakan ketersediaan lapangan secara real-time
+- Autentikasi pengguna dan manajemen profil
+- Riwayat dan manajemen booking
+- Dashboard admin untuk manajemen lapangan dan booking
+- Integrasi pembayaran untuk transaksi yang lancar
+- Desain responsif untuk mobile dan desktop`,
     tags: ["PHP", "MySQL", "Bootstrap", "JavaScript"],
     category: "fullstack",
     image: futsalImg,
     demoLink: "#",
     githubLink: "#",
     features: [
-      "Real-time booking system",
-      "User authentication",
-      "Admin dashboard",
-      "Payment integration",
-      "Email notifications",
-      "Responsive design"
+      "Sistem booking real-time",
+      "Autentikasi pengguna",
+      "Dashboard admin",
+      "Integrasi pembayaran",
+      "Notifikasi email",
+      "Desain responsif"
     ],
     technologies: {
-      frontend: ["HTML5", "CSS3", "Bootstrap", "JavaScript"],
+      frontend: ["PHP Native", "HTML5", "CSS3", "Bootstrap", "JavaScript"],
       backend: ["PHP", "MySQL"],
-      tools: ["XAMPP", "Git"]
+      tools: ["Laragon", "Git"]
     },
     challenges: [
-      "Implementing real-time availability without conflicts",
-      "Handling concurrent booking requests",
-      "Optimizing database queries for performance"
+      "Implementasi ketersediaan real-time tanpa konflik",
+      "Menangani permintaan booking bersamaan",
+      "Optimasi query database untuk performa"
     ],
     outcomes: [
-      "Reduced booking time by 70%",
-      "Improved court utilization by 40%",
-      "Positive user feedback on ease of use"
+      "Mengurangi waktu booking hingga 70%",
+      "Meningkatkan utilisasi lapangan hingga 40%",
+      "Feedback positif dari pengguna tentang kemudahan penggunaan"
     ]
   },
   {
     id: "birthday-website",
     title: "Interactive Birthday Website",
-    shortDesc: "A personalized birthday gift website with photos and music",
-    fullDesc: `A heartfelt digital birthday gift featuring an interactive photo gallery and custom music player. This project showcases creative web design combined with emotional storytelling through multimedia elements.
+    shortDesc: "Website hadiah ulang tahun yang dipersonalisasi dengan foto dan musik",
+    fullDesc: `Hadiah ulang tahun digital yang menampilkan galeri foto interaktif dan pemutar musik kustom. Proyek ini menampilkan desain web kreatif yang dikombinasikan dengan storytelling emosional melalui elemen multimedia.
 
-The website includes:
-- Animated photo gallery with smooth transitions
-- Custom music player with birthday instrumentals
-- Interactive timeline of memories
-- Responsive design optimized for mobile viewing
-- Personalized messages and animations
+Website ini mencakup:
+- Galeri foto animasi dengan transisi yang halus
+- Pemutar musik kustom dengan instrumental ulang tahun
+- Timeline interaktif dari kenangan
+- Desain responsif yang dioptimalkan untuk tampilan mobile
+- Pesan dan animasi yang dipersonalisasi
 
-Built with pure HTML, CSS, and JavaScript to ensure fast loading and smooth animations. The design focuses on creating an emotional connection through carefully crafted animations and transitions.`,
+Dibangun dengan HTML, CSS, dan JavaScript murni untuk memastikan loading cepat dan animasi yang halus. Desain berfokus pada menciptakan koneksi emosional melalui animasi dan transisi yang dibuat dengan hati-hati.`,
     tags: ["HTML", "CSS", "JavaScript", "Animation"],
     category: "frontend",
     image: ultahImg,
     demoLink: "https://ultahndutt.netlify.app/",
     githubLink: "#",
     features: [
-      "Animated photo gallery",
-      "Custom music player",
-      "Interactive timeline",
-      "Smooth transitions",
-      "Mobile optimized"
+      "Galeri foto animasi",
+      "Pemutar musik kustom",
+      "Timeline interaktif",
+      "Transisi halus",
+      "Dioptimalkan untuk mobile"
     ],
     technologies: {
       frontend: ["HTML5", "CSS3", "JavaScript", "CSS Animations"],
       tools: ["Netlify", "Git"]
     },
     challenges: [
-      "Creating smooth animations without JavaScript libraries",
-      "Optimizing images for fast loading",
-      "Ensuring cross-browser compatibility"
+      "Membuat animasi halus tanpa library JavaScript",
+      "Optimasi gambar untuk loading cepat",
+      "Memastikan kompatibilitas lintas browser"
     ],
     outcomes: [
-      "Successfully delivered emotional impact",
-      "Smooth performance across all devices",
-      "Positive feedback from recipient"
+      "Berhasil memberikan dampak emosional",
+      "Performa halus di semua perangkat",
+      "Feedback positif dari penerima"
     ]
   },
   {
     id: "qr-menu",
     title: "QR Code Restaurant Menu",
-    shortDesc: "Digital menu system with QR code scanning and order management",
-    fullDesc: `A modern digital menu solution for restaurants, featuring QR code integration for contactless menu access. The system allows customers to scan a QR code and instantly view the restaurant's menu on their mobile devices.
+    shortDesc: "Sistem menu digital dengan pemindaian QR code dan manajemen pesanan",
+    fullDesc: `Solusi menu digital modern untuk restoran, dilengkapi dengan integrasi QR code untuk akses menu tanpa sentuhan. Sistem ini memungkinkan pelanggan untuk memindai QR code dan langsung melihat menu restoran di perangkat mobile mereka.
 
-The application includes:
-- Dynamic menu management system
-- QR code generation for each table
-- Real-time menu updates
-- Order tracking system
-- Multi-language support
-- Category-based menu organization
-- Search and filter functionality
+Aplikasi ini mencakup:
+- Sistem manajemen menu dinamis
+- Generasi QR code untuk setiap meja
+- Update menu secara real-time
+- Sistem pelacakan pesanan
+- Dukungan multi-bahasa
+- Organisasi menu berbasis kategori
+- Fungsi pencarian dan filter
 
-Built with React for a smooth single-page application experience, with Go backend for robust API handling and MySQL for data persistence. The system is designed to be scalable and easy to maintain.`,
-    tags: ["React", "Go", "MySQL", "QR Code"],
+Dibangun dengan React untuk pengalaman single-page application yang halus, dengan backend Laravel untuk penanganan API yang robust dan MySQL untuk persistensi data. Sistem dirancang agar scalable dan mudah dipelihara.`,
+    tags: ["React", "Laravel", "MySQL", "QR Code"],
     category: "fullstack",
     image: qrImg,
     demoLink: "#",
     githubLink: "#",
     features: [
-      "QR code scanning",
-      "Dynamic menu updates",
-      "Order management",
-      "Multi-language support",
-      "Search functionality",
-      "Admin dashboard"
+      "Pemindaian QR code",
+      "Update menu dinamis",
+      "Manajemen pesanan",
+      "Dukungan multi-bahasa",
+      "Fungsi pencarian",
+      "Dashboard admin"
     ],
     technologies: {
       frontend: ["React", "React Router", "Tailwind CSS"],
-      backend: ["Go", "MySQL", "REST API"],
-      tools: ["Docker", "Git"]
+      backend: ["Laravel", "MySQL", "REST API"],
+      tools: ["Laragon", "Git"]
     },
     challenges: [
-      "Implementing efficient QR code generation",
-      "Real-time menu synchronization",
-      "Optimizing for low-bandwidth connections"
+      "Implementasi generasi QR code yang efisien",
+      "Sinkronisasi menu secara real-time",
+      "Optimasi untuk koneksi bandwidth rendah"
     ],
     outcomes: [
-      "Reduced menu printing costs by 100%",
-      "Faster menu updates and changes",
-      "Improved customer experience"
+      "Mengurangi biaya cetak menu hingga 100%",
+      "Update dan perubahan menu lebih cepat",
+      "Pengalaman pelanggan yang lebih baik"
     ]
   },
   {
     id: "blood-pressure-tracker",
     title: "Blood Pressure Monitoring System",
-    shortDesc: "Web application for tracking and monitoring blood pressure history",
-    fullDesc: `A comprehensive health monitoring application designed to help users track and analyze their blood pressure readings over time. The system provides visual insights through interactive charts and helps users maintain better health awareness.
+    shortDesc: "Aplikasi web untuk melacak dan memantau riwayat tekanan darah",
+    fullDesc: `Aplikasi pemantauan kesehatan komprehensif yang dirancang untuk membantu pengguna melacak dan menganalisis pembacaan tekanan darah mereka dari waktu ke waktu. Sistem ini menyediakan wawasan visual melalui grafik interaktif dan membantu pengguna menjaga kesadaran kesehatan yang lebih baik.
 
-Key features include:
-- Daily blood pressure logging
-- Interactive charts and graphs for trend analysis
-- Historical data visualization
-- Health insights and recommendations
-- Export data functionality
-- Reminder system for regular measurements
-- Multi-user support for family tracking
+Fitur utama meliputi:
+- Pencatatan tekanan darah harian
+- Grafik dan chart interaktif untuk analisis tren
+- Visualisasi data historis
+- Wawasan dan rekomendasi kesehatan
+- Fungsi ekspor data
+- Sistem pengingat untuk pengukuran rutin
+- Dukungan multi-pengguna untuk pelacakan keluarga
 
-The application uses React for a responsive frontend experience, Go for a fast and efficient backend, and MySQL for reliable data storage. Chart.js is integrated for beautiful data visualizations that make health trends easy to understand.`,
+Aplikasi ini menggunakan React untuk pengalaman frontend yang responsif, Go untuk backend yang cepat dan efisien, dan MySQL untuk penyimpanan data yang andal. Chart.js diintegrasikan untuk visualisasi data yang indah yang membuat tren kesehatan mudah dipahami.`,
     tags: ["React", "Go", "MySQL", "Chart.js"],
     category: "fullstack",
     image: tensiImg,
-    demoLink: "https://zhaabeer.netlify.app/",
+    demoLink: "#",
     githubLink: "#",
     features: [
-      "Blood pressure logging",
-      "Interactive charts",
-      "Trend analysis",
-      "Data export",
-      "Reminder system",
-      "Multi-user support"
+      "Pencatatan tekanan darah",
+      "Grafik interaktif",
+      "Analisis tren",
+      "Ekspor data",
+      "Sistem pengingat",
+      "Dukungan multi-pengguna"
     ],
     technologies: {
       frontend: ["React", "Chart.js", "Tailwind CSS"],
@@ -170,49 +170,49 @@ The application uses React for a responsive frontend experience, Go for a fast a
       tools: ["Netlify", "Git"]
     },
     challenges: [
-      "Creating intuitive data visualization",
-      "Implementing secure health data storage",
-      "Designing user-friendly input forms"
+      "Membuat visualisasi data yang intuitif",
+      "Implementasi penyimpanan data kesehatan yang aman",
+      "Mendesain form input yang user-friendly"
     ],
     outcomes: [
-      "Helped users track health consistently",
-      "Positive feedback on visualization clarity",
-      "Improved health awareness among users"
+      "Membantu pengguna melacak kesehatan secara konsisten",
+      "Feedback positif tentang kejelasan visualisasi",
+      "Meningkatkan kesadaran kesehatan di kalangan pengguna"
     ]
   },
   {
     id: "gesture-sense",
     title: "GestureSense - Sign Language Recognition",
-    shortDesc: "Machine learning system for recognizing hand sign language gestures",
-    fullDesc: `An innovative machine learning project that uses computer vision to recognize and interpret hand sign language gestures in real-time. This project aims to bridge communication gaps and make technology more accessible.
+    shortDesc: "Sistem machine learning untuk mengenali gerakan bahasa isyarat tangan",
+    fullDesc: `Proyek machine learning inovatif yang menggunakan computer vision untuk mengenali dan menginterpretasikan gerakan bahasa isyarat tangan secara real-time. Proyek ini bertujuan untuk menjembatani kesenjangan komunikasi dan membuat teknologi lebih mudah diakses.
 
-The system utilizes:
-- Deep learning models trained on sign language datasets
-- Real-time hand gesture detection using webcam
-- TensorFlow for model training and inference
-- OpenCV for image processing
-- High accuracy gesture recognition
-- Support for multiple sign language alphabets
+Sistem ini memanfaatkan:
+- Model deep learning yang dilatih pada dataset bahasa isyarat
+- Deteksi gerakan tangan real-time menggunakan webcam
+- TensorFlow untuk pelatihan dan inferensi model
+- OpenCV untuk pemrosesan gambar
+- Pengenalan gerakan dengan akurasi tinggi
+- Dukungan untuk berbagai alfabet bahasa isyarat
 
-The project demonstrates the practical application of machine learning in solving real-world accessibility challenges. The model is trained on thousands of hand gesture images and achieves high accuracy in recognizing various sign language gestures.
+Proyek ini mendemonstrasikan aplikasi praktis machine learning dalam menyelesaikan tantangan aksesibilitas dunia nyata. Model dilatih pada ribuan gambar gerakan tangan dan mencapai akurasi tinggi dalam mengenali berbagai gerakan bahasa isyarat.
 
-This project showcases skills in:
-- Machine learning model development
-- Computer vision techniques
-- Data preprocessing and augmentation
-- Model optimization for real-time performance`,
+Proyek ini menampilkan keterampilan dalam:
+- Pengembangan model machine learning
+- Teknik computer vision
+- Preprocessing dan augmentasi data
+- Optimasi model untuk performa real-time`,
     tags: ["Python", "TensorFlow", "OpenCV", "Machine Learning"],
     category: "ml",
     image: bisuImg,
     demoLink: "#",
     githubLink: "#",
     features: [
-      "Real-time gesture recognition",
-      "High accuracy detection",
-      "Multiple sign language support",
-      "Webcam integration",
-      "Model training pipeline",
-      "Performance optimization"
+      "Pengenalan gerakan real-time",
+      "Deteksi akurasi tinggi",
+      "Dukungan berbagai bahasa isyarat",
+      "Integrasi webcam",
+      "Pipeline pelatihan model",
+      "Optimasi performa"
     ],
     technologies: {
       ml: ["TensorFlow", "Keras", "OpenCV"],
@@ -220,14 +220,14 @@ This project showcases skills in:
       tools: ["Jupyter Notebook", "NumPy", "Pandas"]
     },
     challenges: [
-      "Achieving high accuracy with limited dataset",
-      "Optimizing model for real-time performance",
-      "Handling varying lighting conditions"
+      "Mencapai akurasi tinggi dengan dataset terbatas",
+      "Optimasi model untuk performa real-time",
+      "Menangani kondisi pencahayaan yang bervariasi"
     ],
     outcomes: [
-      "Achieved 95% accuracy on test dataset",
-      "Real-time recognition at 30 FPS",
-      "Positive impact on accessibility"
+      "Mencapai akurasi 95% pada dataset uji",
+      "Pengenalan real-time pada 30 FPS",
+      "Dampak positif pada aksesibilitas"
     ]
   }
 ];

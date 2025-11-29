@@ -37,10 +37,10 @@ export default function Contact() {
           viewport={{ once: true }}
           className="text-center mb-8"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Get In Touch</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">Hubungi Saya</h2>
           <p className="text-ink/70 text-lg max-w-2xl mx-auto">
-            Have a project or collaboration in mind? Or just want to chat about tech?
-            Drop me a message and I'll get back to you as soon as possible!
+            Punya proyek atau kolaborasi dalam pikiran? Atau hanya ingin ngobrol tentang teknologi?
+            Kirim saya pesan dan saya akan segera membalas!
           </p>
         </motion.div>
 
@@ -63,31 +63,31 @@ export default function Contact() {
                 </div>
               </div>
               <p className="text-ink/70 text-sm">
-                I typically respond within 24 hours. For urgent matters, please mention it in the subject line!
+                Saya merespons dalam 24 jam. Untuk hal mendesak, mohon sebutkan di baris subjek!
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-gradient-to-br from-secondary/10 to-secondary/5 border border-secondary/20">
-              <h3 className="font-semibold text-lg mb-3">Open For</h3>
+              <h3 className="font-semibold text-lg mb-3">Terbuka Untuk</h3>
               <p className="text-ink/70 text-sm mb-4">
-                I'm available for:
+                Saya tersedia untuk:
               </p>
               <ul className="space-y-2 text-sm text-ink/70">
                 <li className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-secondary"></span>
-                  Freelance projects
+                  Proyek freelance
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-secondary"></span>
-                  Collaboration opportunities
+                  Peluang kolaborasi
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-secondary"></span>
-                  Tech discussions
+                  Diskusi teknologi
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-secondary"></span>
-                  Coffee chats ☕
+                  Ngobrol santai ☕
                 </li>
               </ul>
             </div>
@@ -101,11 +101,11 @@ export default function Contact() {
           >
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label className="block text-sm font-medium mb-2">Name</label>
+                <label className="block text-sm font-medium mb-2">Nama</label>
                 <input
                   name="name"
                   required
-                  placeholder="Your Name"
+                  placeholder="Nama Anda"
                   className="w-full px-4 py-3 rounded-xl bg-accent/10 border border-accent/20 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
                 />
               </div>
@@ -116,28 +116,28 @@ export default function Contact() {
                   name="email"
                   type="email"
                   required
-                  placeholder="oktarizagunawan63@gmail.com"
+                  placeholder="email@example.com"
                   className="w-full px-4 py-3 rounded-xl bg-accent/10 border border-accent/20 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium mb-2">Subject</label>
+                <label className="block text-sm font-medium mb-2">Subjek</label>
                 <input
                   name="subject"
                   required
-                  placeholder="What's this about?"
+                  placeholder="Tentang apa ini?"
                   className="w-full px-4 py-3 rounded-xl bg-accent/10 border border-accent/20 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium mb-2">Message</label>
+                <label className="block text-sm font-medium mb-2">Pesan</label>
                 <textarea
                   name="message"
                   required
                   rows="5"
-                  placeholder="Tell me about your project..."
+                  placeholder="Ceritakan tentang proyek Anda..."
                   className="w-full px-4 py-3 rounded-xl bg-accent/10 border border-accent/20 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all resize-none"
                 />
               </div>
@@ -151,11 +151,11 @@ export default function Contact() {
                   {status === "loading" ? (
                     <>
                       <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                      Sending...
+                      Mengirim...
                     </>
                   ) : (
                     <>
-                      Send Message
+                      Kirim Pesan
                       <Send size={18} />
                     </>
                   )}
@@ -172,7 +172,7 @@ export default function Contact() {
                 >
                   <CheckCircle size={20} />
                   <p className="text-sm font-medium">
-                    Message sent successfully! I'll get back to you soon.
+                    Pesan berhasil dikirim! Saya akan segera membalas.
                   </p>
                 </motion.div>
               )}
@@ -185,7 +185,7 @@ export default function Contact() {
                 >
                   <AlertCircle size={20} />
                   <p className="text-sm font-medium">
-                    Failed to send message. Please try again or email me directly!
+                    Gagal mengirim pesan. Silakan coba lagi atau email saya langsung!
                   </p>
                 </motion.div>
               )}

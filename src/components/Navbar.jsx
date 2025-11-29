@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 const links = [
-  { href: "#about", label: "About" },
-  { href: "#projects", label: "Projects" },
-  { href: "#contact", label: "Contact" },
+  { href: "#about", label: "Tentang" },
+  { href: "#projects", label: "Proyek" },
+  { href: "#contact", label: "Kontak" },
 ];
 
 export default function Navbar() {
@@ -33,10 +33,10 @@ export default function Navbar() {
         <a href="#" className="no-underline group">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
-              <span className="text-white font-bold text-lg">Z</span>
+              <span className="text-white font-bold text-sm">OG</span>
             </div>
             <span className="text-lg font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Zhaabeer
+              Oktariza Gunawan
             </span>
           </div>
         </a>
@@ -61,7 +61,7 @@ export default function Navbar() {
           href="#contact"
           className="hidden md:inline-flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-6 py-2.5 text-sm font-medium rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
         >
-          Hire Me
+          Hubungi Saya
         </a>
 
         {/* Mobile Menu Button */}
@@ -97,7 +97,7 @@ export default function Navbar() {
               onClick={() => setMobileMenuOpen(false)}
               className="block w-full text-center bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 font-medium rounded-full shadow-lg"
             >
-              Hire Me
+              Hubungi Saya
             </a>
           </div>
         </motion.div>

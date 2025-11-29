@@ -19,7 +19,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="section pt-20 pb-16 min-h-screen flex items-center">
+    <section className="section pt-20 pb-8 md:pb-16 md:min-h-screen flex items-center">
       <motion.div
         variants={containerVariants}
         initial="hidden"
@@ -36,16 +36,16 @@ export default function Hero() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
             </span>
-            Available for freelance
+            Tersedia untuk freelance
           </motion.span>
 
           <motion.h1
             variants={itemVariants}
             className="text-4xl md:text-6xl font-bold leading-tight"
           >
-            Hi, I'm{" "}
+            Halo, Saya{" "}
             <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Zhaabeer
+              Oktariza Gunawan
             </span>
           </motion.h1>
 
@@ -53,19 +53,19 @@ export default function Hero() {
             variants={itemVariants}
             className="text-xl md:text-2xl text-ink/80 mt-2 font-medium"
           >
-            Full Stack Developer & Tech Enthusiast
+            Pengembang Full Stack & Penggemar Teknologi
           </motion.p>
 
           <motion.p
             variants={itemVariants}
             className="mt-4 text-base text-ink/70 max-w-lg leading-relaxed"
           >
-            I focus on building clean, fast, and modern web applications. Passionate about creating
-            seamless user experiences with{" "}
+            Saya fokus membangun aplikasi web yang bersih, cepat, dan modern. Passionate dalam menciptakan
+            pengalaman pengguna yang seamless dengan{" "}
             <span className="text-secondary font-semibold">
               React, Tailwind, Go, Python
             </span>{" "}
-            and other modern technologies.
+            dan teknologi modern lainnya.
           </motion.p>
 
           <motion.div variants={itemVariants} className="mt-6 flex flex-wrap gap-4">
@@ -73,7 +73,7 @@ export default function Hero() {
               href="#projects"
               className="group relative inline-flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-8 py-3 text-sm font-medium rounded-full shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
             >
-              <span className="relative z-10">View Projects</span>
+              <span className="relative z-10">Lihat Proyek</span>
               <span className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
             </a>
             <a
@@ -81,7 +81,7 @@ export default function Hero() {
               className="inline-flex items-center gap-2 border-2 border-primary text-primary px-8 py-3 text-sm font-medium rounded-full hover:bg-primary hover:text-white transition-all duration-300"
             >
               <Mail size={18} />
-              Contact Me
+              Hubungi Saya
             </a>
           </motion.div>
 
@@ -103,29 +103,23 @@ export default function Hero() {
             >
               <Linkedin size={20} />
             </a>
-            <a
-              href="mailto:oktarizagunawan63@gmail.com"
-              className="p-3 rounded-full bg-accent/20 hover:bg-primary hover:text-white transition-all duration-300"
-            >
-              <Mail size={20} />
-            </a>
           </motion.div>
         </div>
 
         {/* Right: Photo */}
         <motion.div
           variants={itemVariants}
-          className="flex justify-center md:justify-end"
+          className="flex justify-center md:justify-end mt-8 md:mt-0"
         >
           <div className="relative">
             {/* Gradient Background */}
             <div className="absolute -inset-4 bg-gradient-to-r from-primary to-secondary rounded-3xl blur-2xl opacity-30 animate-pulse"></div>
             
             {/* Image Container */}
-            <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-3xl overflow-hidden shadow-2xl border-4 border-white/10">
+            <div className="relative w-56 h-56 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-3xl overflow-hidden shadow-2xl border-4 border-white/10">
               <img
                 src={profilePic}
-                alt="Zhaabeer Profile"
+                alt="Oktariza Gunawan Profile"
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent"></div>

@@ -14,34 +14,34 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-3 mb-4">
               <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-lg">Z</span>
+                <span className="text-white font-bold text-sm">OG</span>
               </div>
               <span className="text-lg font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                Zhaabeer
+                Oktariza Gunawan
               </span>
             </div>
             <p className="text-ink/70 text-sm">
-              Frontend Developer passionate about creating beautiful and functional web experiences.
+              Pengembang Full Stack yang passionate dalam menciptakan pengalaman web yang indah dan fungsional.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-semibold mb-4">Quick Links</h3>
+            <h3 className="font-semibold mb-4">Link Cepat</h3>
             <ul className="space-y-2">
               <li>
                 <a href="#about" className="text-ink/70 hover:text-primary text-sm transition-colors">
-                  About
+                  Tentang
                 </a>
               </li>
               <li>
                 <a href="#projects" className="text-ink/70 hover:text-primary text-sm transition-colors">
-                  Projects
+                  Proyek
                 </a>
               </li>
               <li>
                 <a href="#contact" className="text-ink/70 hover:text-primary text-sm transition-colors">
-                  Contact
+                  Kontak
                 </a>
               </li>
             </ul>
@@ -49,7 +49,7 @@ export default function Footer() {
 
           {/* Social */}
           <div>
-            <h3 className="font-semibold mb-4">Connect</h3>
+            <h3 className="font-semibold mb-4">Terhubung</h3>
             <div className="flex gap-3">
               <a
                 href="https://github.com/oktarizagunawan63"
@@ -67,12 +67,6 @@ export default function Footer() {
               >
                 <Linkedin size={20} />
               </a>
-              <a
-                href="mailto:oktarizagunawan63@gmail.com"
-                className="p-3 rounded-lg bg-accent/20 hover:bg-primary hover:text-white transition-all duration-300"
-              >
-                <Mail size={20} />
-              </a>
             </div>
           </div>
         </div>
@@ -80,15 +74,15 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-accent/20 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-ink/70 text-sm flex items-center gap-1">
-            © {new Date().getFullYear()} Zhaabeer. Built with{" "}
-            <Heart size={14} className="text-red-500 fill-red-500" /> and React
+            © {new Date().getFullYear()} Oktariza Gunawan. Dibuat dengan{" "}
+            <Heart size={14} className="text-red-500 fill-red-500" /> dan React
           </p>
           
           <button
             onClick={scrollToTop}
             className="group flex items-center gap-2 text-sm font-medium text-primary hover:text-secondary transition-colors"
           >
-            Back to top
+            Kembali ke atas
             <motion.div
               whileHover={{ y: -3 }}
               className="p-2 rounded-lg bg-primary/10 group-hover:bg-primary group-hover:text-white transition-all"
