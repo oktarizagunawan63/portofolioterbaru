@@ -68,7 +68,7 @@ export default function Footer() {
                 <Linkedin size={20} />
               </a>
               <a
-                href="mailto:your@email.com"
+                href="mailto:oktarizagunawan63@gmail.com"
                 className="p-3 rounded-lg bg-accent/20 hover:bg-primary hover:text-white transition-all duration-300"
               >
                 <Mail size={20} />

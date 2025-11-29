@@ -59,7 +59,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-lg">Email</h3>
-                  <p className="text-ink/70 text-sm">your@email.com</p>
+                  <p className="text-ink/70 text-sm">oktarizagunawan63@gmail.com</p>
                 </div>
               </div>
               <p className="text-ink/70 text-sm">
@@ -116,7 +116,7 @@ export default function Contact() {
                   name="email"
                   type="email"
                   required
-                  placeholder="your@email.com"
+                  placeholder="oktarizagunawan63@gmail.com"
                   className="w-full px-4 py-3 rounded-xl bg-accent/10 border border-accent/20 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
                 />
               </div>
