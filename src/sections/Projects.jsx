@@ -1,61 +1,70 @@
-import ProjectCard from "../components/ProjectCard";
-
-// import gambar
-import wifiImg from "../assets/futsal.jpg";
-import kerenImg from "../assets/ultah.jpg";
-import reactLogo from "../assets/qr.jpg";
-import portv2 from "../assets/tensi.jpg";
-import bisuImg from "../assets/bisu.jpg";
-
-const DATA = [
-  {
-    title: "Booking Futsal Online ",
-    desc: "Mempermudah Booking Futsal",
-    tags: ["PHP", "SQL"],
-    link: "#",
-    image: wifiImg,
-  },
-  {
-    title: "web ultah",
-    desc: "hadiah untuk wanita berisi dengan foto beserta instrument ulang tahun, ",
-    tags: ["index.html"],
-    link: "https://ultahndutt.netlify.app/",
-    image: kerenImg,
-  },
-  {
-    title: "QR Menu Resto",
-    desc: "Web Untuk Menampilkan Menu Resto",
-    tags: ["React", "React Router", "Sql", "Go(lang)"],
-    link: "#",
-    image: reactLogo,
-  },
-  {
-    title: "Riwayat Tensi Darah",
-    desc: "Web Untuk Mencatat Dan Memantau Riwayat Tekanan Darah",
-    tags: ["React", "Go(lang)", "Sql"],
-    link: "https://zhaabeer.netlify.app/",
-    image: portv2, // 🔥 tampil di card ke-4
-  },
-
-  {
-    title: "GestureSense",
-    desc: "Project Machine Learning yang bisa mengenali bahasa isyarat tangan menggunakan Python.",
-    tags: ["Python", "Machine Learning"],
-    link: "#",
-    image: bisuImg,
-  },
-
-];
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
+import AnimatedTabs from "../components/AnimatedTabs";
+import GradientCard from "../components/GradientCard";
+import { projects, getProjectsByCategory } from "../data/projects";
 
 export default function Projects() {
+  const [activeCategory, setActiveCategory] = useState(0);
+  const navigate = useNavigate();
+
+  const categories = ["All Projects", "Full Stack", "Frontend", "Machine Learning"];
+  const categoryFilters = ["all", "fullstack", "frontend", "ml"];
+
+  const filteredProjects = getProjectsByCategory(categoryFilters[activeCategory]);
+
+  const handleProjectClick = (projectId) => {
+    navigate(`/project/${projectId}`);
+  };
+
   return (
-    <section id="projects" className="section py-8">
-      <h2 className="text-2xl font-semibold mb-6">My Projects</h2>
-      <div className="grid md:grid-cols-3 gap-4">
-        {DATA.map((p, i) => (
-          <ProjectCard key={i} {...p} />
+    <section id="projects" className="section py-16">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="mb-8"
+      >
+        <h2 className="text-4xl md:text-5xl font-bold mb-4">My Projects</h2>
+        <p className="text-ink/70 max-w-3xl text-lg">
+          A collection of projects showcasing my skills in web development and machine learning.
+          Each project demonstrates problem-solving abilities and technical expertise.
+        </p>
+      </motion.div>
+
+      {/* Animated Tabs */}
+      <AnimatedTabs tabs={categories} onTabChange={setActiveCategory} />
+
+      {/* Projects Grid */}
+      <motion.div
+        key={activeCategory}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+      >
+        {filteredProjects.map((project) => (
+          <GradientCard
+            key={project.id}
+            {...project}
+            desc={project.shortDesc}
+            link={project.demoLink}
+            onDetailClick={() => handleProjectClick(project.id)}
+          />
         ))}
-      </div>
+      </motion.div>
+
+      {/* Empty State */}
+      {filteredProjects.length === 0 && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="text-center py-12 text-ink/50"
+        >
+          <p className="text-lg">No projects in this category yet.</p>
+        </motion.div>
+      )}
     </section>
   );
 }

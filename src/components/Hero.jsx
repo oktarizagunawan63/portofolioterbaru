@@ -1,56 +1,138 @@
+import { motion } from "framer-motion";
+import { Github, Linkedin, Mail, Download } from "lucide-react";
 import profilePic from "../assets/zhaabeer.jpg";
 
 export default function Hero() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   return (
-    <section className="section pt-12 pb-10">
-      <div className="grid md:grid-cols-2 gap-10 items-center">
-        {/* 👋 Kiri: Teks Utama */}
+    <section className="section pt-20 pb-16 min-h-screen flex items-center">
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center w-full"
+      >
+        {/* Left: Text */}
         <div>
-          <span className="inline-block bg-accent text-ink/90 text-sm font-medium px-4 py-1.5 rounded-full mb-3 shadow-sm">
+          <motion.span
+            variants={itemVariants}
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white text-sm font-medium px-5 py-2 rounded-full mb-4 shadow-lg"
+          >
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
+            </span>
             Available for freelance
-          </span>
+          </motion.span>
 
-          <h1 className="text-3xl md:text-5xl font-semibold leading-tight">
-            Hi, I’m <span className="text-secondary font-bold">Zhaabeer</span> —{" "}
-            <br className="hidden md:block" />
-            Frontend Developer
-          </h1>
+          <motion.h1
+            variants={itemVariants}
+            className="text-4xl md:text-6xl font-bold leading-tight"
+          >
+            Hi, I'm{" "}
+            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              Zhaabeer
+            </span>
+          </motion.h1>
 
-          <p className="mt-4 text-base text-ink/70 max-w-lg leading-relaxed">
-            Gue fokus bikin web yang clean, kenceng, dan modern. Stack favorit:{" "}
+          <motion.p
+            variants={itemVariants}
+            className="text-xl md:text-2xl text-ink/80 mt-2 font-medium"
+          >
+            Full Stack Developer & Tech Enthusiast
+          </motion.p>
+
+          <motion.p
+            variants={itemVariants}
+            className="mt-4 text-base text-ink/70 max-w-lg leading-relaxed"
+          >
+            I focus on building clean, fast, and modern web applications. Passionate about creating
+            seamless user experiences with{" "}
             <span className="text-secondary font-semibold">
-              React, Tailwind, Vite, Go(lang), PHP, Python
+              React, Tailwind, Go, Python
             </span>{" "}
-            dan <span className="font-semibold text-secondary">Sql</span>.
-          </p>
+            and other modern technologies.
+          </motion.p>
 
-          <div className="mt-6 flex flex-wrap gap-4">
+          <motion.div variants={itemVariants} className="mt-6 flex flex-wrap gap-4">
             <a
               href="#projects"
-              className="bg-primary hover:bg-secondary text-white px-6 py-2.5 text-sm font-medium rounded-full shadow transition-all duration-300"
+              className="group relative inline-flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-8 py-3 text-sm font-medium rounded-full shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
             >
-              Lihat Project
+              <span className="relative z-10">View Projects</span>
+              <span className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
             </a>
             <a
               href="#contact"
-              className="border-2 border-primary text-primary px-6 py-2.5 text-sm font-medium rounded-full hover:bg-accent/60 transition-all duration-300"
+              className="inline-flex items-center gap-2 border-2 border-primary text-primary px-8 py-3 text-sm font-medium rounded-full hover:bg-primary hover:text-white transition-all duration-300"
             >
-              Kontak
+              <Mail size={18} />
+              Contact Me
             </a>
-          </div>
+          </motion.div>
+
+          {/* Social Links */}
+          <motion.div variants={itemVariants} className="mt-6 flex gap-4">
+            <a
+              href="https://github.com/oktarizagunawan63"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 rounded-full bg-accent/20 hover:bg-primary hover:text-white transition-all duration-300"
+            >
+              <Github size={20} />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/oktarizagunawan/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 rounded-full bg-accent/20 hover:bg-primary hover:text-white transition-all duration-300"
+            >
+              <Linkedin size={20} />
+            </a>
+            <a
+              href="mailto:your@email.com"
+              className="p-3 rounded-full bg-accent/20 hover:bg-primary hover:text-white transition-all duration-300"
+            >
+              <Mail size={20} />
+            </a>
+          </motion.div>
         </div>
 
-        {/* 📸 Kanan: Foto */}
-        <div className="flex justify-center md:justify-end">
-          <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-3xl overflow-hidden shadow-2xl border-4 border-accent/70 bg-accent/20">
-            <img
-              src={profilePic}
-              alt="Zhaabeer Profile"
-              className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-            />
+        {/* Right: Photo */}
+        <motion.div
+          variants={itemVariants}
+          className="flex justify-center md:justify-end"
+        >
+          <div className="relative">
+            {/* Gradient Background */}
+            <div className="absolute -inset-4 bg-gradient-to-r from-primary to-secondary rounded-3xl blur-2xl opacity-30 animate-pulse"></div>
+            
+            {/* Image Container */}
+            <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-3xl overflow-hidden shadow-2xl border-4 border-white/10">
+              <img
+                src={profilePic}
+                alt="Zhaabeer Profile"
+                className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent"></div>
+            </div>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }

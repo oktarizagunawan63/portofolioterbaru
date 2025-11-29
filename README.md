@@ -1,16 +1,144 @@
-# React + Vite
+# 🚀 Zhaabeer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Modern, professional portfolio website built with React, Tailwind CSS, and Framer Motion.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Project Detail Pages** - Dedicated pages for each project with full descriptions
+- **Modern Design** - Clean, professional UI with smooth animations
+- **Responsive** - Fully responsive across all devices
+- **Animated Components** - Smooth transitions using Framer Motion
+- **Project Filtering** - Filter by category (All, Full Stack, Frontend, ML)
+- **Contact Form** - Integrated with Formspree
+- **React Router** - Smooth navigation between pages
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React 19
+- React Router DOM
+- Tailwind CSS
+- Framer Motion
+- Lucide React Icons
+- Vite
 
-## Expanding the ESLint configuration
+## 📦 Installation
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+```
+
+## 🎯 Quick Customization
+
+### 1. Update Personal Info
+- Hero: `src/components/Hero.jsx`
+- About: `src/sections/About.jsx`
+- Contact: `src/sections/Contact.jsx`
+
+### 2. Add/Edit Projects
+Edit `src/data/projects.js`:
+```javascript
+{
+  id: "project-slug",
+  title: "Project Title",
+  shortDesc: "Brief description",
+  fullDesc: "Full detailed description",
+  tags: ["React", "Node.js"],
+  category: "fullstack", // or "frontend", "ml"
+  image: projectImage,
+  demoLink: "https://demo.com",
+  githubLink: "https://github.com/...",
+  features: ["Feature 1", "Feature 2"],
+  technologies: {
+    frontend: ["React", "Tailwind"],
+    backend: ["Node.js", "MongoDB"]
+  },
+  challenges: ["Challenge 1", "Challenge 2"],
+  outcomes: ["Outcome 1", "Outcome 2"]
+}
+```
+
+### 3. Update Colors
+Edit `src/index.css`:
+```css
+:root {
+  --c-primary: #662222;
+  --c-secondary: #842A3B;
+  --c-accent: #F5DAA7;
+}
+```
+
+### 4. Setup Contact Form
+1. Go to [formspree.io](https://formspree.io/)
+2. Create form
+3. Update endpoint in `src/sections/Contact.jsx`
+
+## � Piroject Structure
+
+```
+src/
+├── components/         # Reusable components
+├── sections/          # Page sections
+├── pages/             # Route pages
+│   ├── Home.jsx       # Main landing page
+│   └── ProjectDetail.jsx  # Project detail page
+├── data/              # Project data
+│   └── projects.js    # All project information
+├── assets/            # Images and static files
+└── App.jsx            # Main app with routing
+```
+
+## 🚀 Deployment
+
+### Netlify (Recommended)
+```bash
+npm run build
+# Drag 'dist' folder to netlify.com
+```
+
+### Vercel
+```bash
+npm i -g vercel
+vercel
+```
+
+## 🎨 Key Features
+
+### Project Detail Pages
+Each project has a dedicated page with:
+- Full project description
+- Key features list
+- Technologies used
+- Challenges faced
+- Project outcomes
+- Live demo and source code links
+
+### Smooth Navigation
+- React Router for seamless page transitions
+- Smooth scroll behavior
+- Back navigation support
+
+### Professional Content
+- All content in professional English
+- Detailed project descriptions
+- Technical depth and clarity
+
+## 📝 License
+
+MIT License - feel free to use for your portfolio!
+
+## 👨‍💻 Author
+
+**Zhaabeer**
+- GitHub: [@oktarizagunawan63](https://github.com/oktarizagunawan63)
+- LinkedIn: [oktarizagunawan](https://www.linkedin.com/in/oktarizagunawan/)
+
+---
+
+⭐ Star this repo if you find it helpful!

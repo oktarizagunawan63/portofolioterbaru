@@ -66,10 +66,10 @@ body {
   }
   
   .section {
-    @apply w-full mx-auto px-4 py-12
+    @apply w-full max-w-7xl mx-auto px-4 py-12
            sm:px-6 sm:py-16
            md:px-8 md:py-20
-           lg:px-10 lg:py-24;
+           lg:px-12 lg:py-24;
   }
   
   .container-responsive {
@@ -158,4 +158,88 @@ body {
   .loading-skeleton {
     @apply animate-pulse bg-gray-200 rounded;
   }
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 3s ease infinite;
+}
+
+/* Glassmorphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--c-paper);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, var(--c-primary), var(--c-secondary));
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--c-secondary);
+}
+
+/* Selection color */
+::selection {
+  background: var(--c-primary);
+  color: white;
+}
+
+::-moz-selection {
+  background: var(--c-primary);
+  color: white;
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--c-primary);
+  outline-offset: 2px;
+}
+
+/* Smooth transitions for all interactive elements */
+a, button, input, textarea {
+  transition: all 0.3s ease;
 }
