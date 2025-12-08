@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <footer className="mt-16 border-t border-accent/20 bg-gradient-to-b from-transparent to-accent/5">
       <div className="section py-8">
-        <div className="grid md:grid-cols-3 gap-6 mb-6">
+        <div className="grid md:grid-cols-2 gap-8 mb-6">
           {/* Brand */}
           <div>
             <div className="flex items-center gap-3 mb-4">
@@ -23,28 +23,6 @@ export default function Footer() {
             <p className="text-ink/70 text-sm">
               Pengembang Full Stack yang passionate dalam menciptakan pengalaman web yang indah dan fungsional.
             </p>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h3 className="font-semibold mb-4">Link Cepat</h3>
-            <ul className="space-y-2">
-              <li>
-                <a href="#about" className="text-ink/70 hover:text-primary text-sm transition-colors">
-                  Tentang
-                </a>
-              </li>
-              <li>
-                <a href="#projects" className="text-ink/70 hover:text-primary text-sm transition-colors">
-                  Proyek
-                </a>
-              </li>
-              <li>
-                <a href="#contact" className="text-ink/70 hover:text-primary text-sm transition-colors">
-                  Kontak
-                </a>
-              </li>
-            </ul>
           </div>
 
           {/* Social */}
