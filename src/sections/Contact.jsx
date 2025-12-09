@@ -63,7 +63,7 @@ export default function Contact() {
                 </div>
               </div>
               <p className="text-ink/70 text-xs md:text-sm">
-                Saya merespons dalam 24 jam. Untuk hal mendesak, mohon sebutkan di baris subjek!
+                Saya akan merespons pesan dalam waktu maksimal 24 jam. Untuk hal mendesak, silakan cantumkan informasi pada subjek.
               </p>
             </div>
 

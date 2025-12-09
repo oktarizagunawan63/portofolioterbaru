@@ -40,9 +40,7 @@ export default function About() {
       >
         <h2 className="text-4xl md:text-5xl font-bold mb-4">Tentang Saya</h2>
         <p className="text-ink/70 max-w-3xl text-lg">
-          Mahasiswa semester lima  yang passionate dengan minat besar dalam pengembangan web dan motor. 
-          Saya suka mengeksplorasi desain UI yang bersih dan membangun aplikasi dengan performa tinggi. 
-          Juga tertarik pada data science dan machine learning untuk proyek-proyek inovatif.
+          Saya mahasiswa semester lima dengan minat besar pada pengembangan web dan otomotif. Suka mengeksplorasi desain UI yang bersih serta membangun aplikasi dengan performa tinggi. Tertarik pada machine learning untuk mengembangkan proyek-proyek inovatif.
         </p>
       </motion.div>
 
@@ -77,9 +75,7 @@ export default function About() {
               </h3>
             </div>
             <p className="text-ink/70 leading-relaxed text-sm md:text-base mb-4 md:mb-6 flex-1">
-              Saya spesialisasi dalam membangun aplikasi web yang tidak hanya menarik secara visual tetapi juga 
-              cepat dan smooth. Dari frontend interaktif hingga backend yang robust, saya menangani full stack. 
-              Fokus saya adalah memberikan kode yang bersih dan pengalaman pengguna yang berkesan yang membuat perbedaan.
+              Saya berfokus pada pengembangan aplikasi web end-to-end, mencakup frontend dan backend. Mengutamakan desain yang bersih, performa optimal, serta kualitas kode yang terstruktur untuk menghasilkan solusi digital yang scalable dan maintainable.
             </p>
             <div className="flex flex-wrap gap-2">
               {badges.map((badge) => (

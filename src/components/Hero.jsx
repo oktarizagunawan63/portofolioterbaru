@@ -60,12 +60,11 @@ export default function Hero() {
             variants={itemVariants}
             className="mt-4 text-base text-ink/70 max-w-lg leading-relaxed"
           >
-            Saya fokus membangun aplikasi web yang bersih, cepat, dan modern. Passionate dalam menciptakan
-            pengalaman pengguna yang seamless dengan{" "}
+            Saya berfokus mengembangkan aplikasi web yang cepat, bersih, dan fungsional Senang mengeksplorasi teknologi modern serta merancang pengalaman pengguna yang nyaman dan efisien. Terbiasa bekerja dengan{" "}
             <span className="text-secondary font-semibold">
-              React, Tailwind, Go, Python
+              React, Tailwind CSS, Golang, Python,
             </span>{" "}
-            dan teknologi modern lainnya.
+            serta berbagai tools pendukung pengembangan web..
           </motion.p>
 
           <motion.div variants={itemVariants} className="mt-6 flex flex-wrap gap-4">

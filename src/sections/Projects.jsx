@@ -28,8 +28,7 @@ export default function Projects() {
       >
         <h2 className="text-4xl md:text-5xl font-bold mb-4">Proyek Saya</h2>
         <p className="text-ink/70 max-w-3xl text-lg">
-          Koleksi proyek yang menampilkan kemampuan saya dalam pengembangan web dan machine learning.
-          Setiap proyek mendemonstrasikan kemampuan problem-solving dan keahlian teknis.
+          Koleksi proyek yang merepresentasikan kompetensi saya pada bidang pengembangan web dan machine learning, baik dari sisi perancangan sistem, implementasi teknis, maupun penyelesaian permasalahan.
         </p>
       </motion.div>
 

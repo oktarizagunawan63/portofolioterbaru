@@ -21,7 +21,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-ink/70 text-sm">
-              Pengembang Full Stack yang passionate dalam menciptakan pengalaman web yang indah dan fungsional.
+              Pengembang Full Stack yang memiliki fokus pada pengembangan aplikasi web berperforma tinggi dengan desain yang terstruktur dan user-friendly.
             </p>
           </div>
 
@@ -52,8 +52,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-accent/20 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-ink/70 text-sm flex items-center gap-1">
-            © {new Date().getFullYear()} Oktariza Gunawan. Dibuat dengan{" "}
-            <Heart size={14} className="text-red-500 fill-red-500" /> dan React
+            © {new Date().getFullYear()} Oktariza Gunawan{" "}
           </p>
           
           <button
