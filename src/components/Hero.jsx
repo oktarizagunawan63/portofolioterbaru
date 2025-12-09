@@ -53,14 +53,14 @@ export default function Hero() {
             variants={itemVariants}
             className="text-xl md:text-2xl text-ink/80 mt-2 font-medium"
           >
-            Pengembang Full Stack & Penggemar Teknologi
+           Full-Stack Developer | Web Apps & Machine Learning
           </motion.p>
 
           <motion.p
             variants={itemVariants}
             className="mt-4 text-base text-ink/70 max-w-lg leading-relaxed"
           >
-            Saya berfokus mengembangkan aplikasi web yang cepat, bersih, dan fungsional Senang mengeksplorasi teknologi modern serta merancang pengalaman pengguna yang nyaman dan efisien. Terbiasa bekerja dengan{" "}
+            Saya berfokus mengembangkan aplikasi web yang cepat, bersih, dan fungsional Senang mengeksplorasi teknologi modern serta merancang pengalaman pengguna yang nyaman dan efisien. Terbiasa menggunakan{" "}
             <span className="text-secondary font-semibold">
               React, Tailwind CSS, Golang, Python,
             </span>{" "}
