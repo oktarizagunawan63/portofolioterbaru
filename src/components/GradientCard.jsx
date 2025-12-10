@@ -1,7 +1,11 @@
 import { motion } from "framer-motion";
 import { ExternalLink, Eye } from "lucide-react";
+import { useLanguage } from "../contexts/LanguageContext";
+import { translations } from "../data/translations";
 
 export default function GradientCard({ title, desc, tags, link, image, onDetailClick }) {
+  const { language } = useLanguage();
+  const t = translations[language];
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.9 }}
@@ -29,7 +33,7 @@ export default function GradientCard({ title, desc, tags, link, image, onDetailC
         
         {/* Hover Overlay */}
         <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-          <span className="text-white font-medium">View Details</span>
+          <span className="text-white font-medium">{t.viewProject}</span>
         </div>
       </div>
 

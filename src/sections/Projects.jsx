@@ -1,18 +1,24 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import { useLanguage } from "../contexts/LanguageContext";
+import { translations } from "../data/translations";
 import AnimatedTabs from "../components/AnimatedTabs";
 import GradientCard from "../components/GradientCard";
-import { projects, getProjectsByCategory } from "../data/projects";
+import { getLocalizedProjectsByCategory } from "../data/projects";
 
 export default function Projects() {
+  const { language } = useLanguage();
+  const t = translations[language];
   const [activeCategory, setActiveCategory] = useState(0);
   const navigate = useNavigate();
 
-  const categories = ["Semua Proyek", "Full Stack", "Frontend", "Machine Learning"];
+  const categories = language === 'id' 
+    ? ["Semua Proyek", "Full Stack", "Frontend", "Machine Learning"]
+    : ["All Projects", "Full Stack", "Frontend", "Machine Learning"];
   const categoryFilters = ["all", "fullstack", "frontend", "ml"];
 
-  const filteredProjects = getProjectsByCategory(categoryFilters[activeCategory]);
+  const filteredProjects = getLocalizedProjectsByCategory(categoryFilters[activeCategory], language);
 
   const handleProjectClick = (projectId) => {
     navigate(`/project/${projectId}`);
@@ -26,9 +32,9 @@ export default function Projects() {
         viewport={{ once: true }}
         className="mb-8"
       >
-        <h2 className="text-4xl md:text-5xl font-bold mb-4">Proyek Saya</h2>
+        <h2 className="text-4xl md:text-5xl font-bold mb-4">{t.projectsTitle}</h2>
         <p className="text-ink/70 max-w-3xl text-lg">
-          Koleksi proyek yang merepresentasikan kompetensi saya pada bidang pengembangan web dan machine learning, baik dari sisi perancangan sistem, implementasi teknis, maupun penyelesaian permasalahan.
+          {t.projectsDescription}
         </p>
       </motion.div>
 

@@ -1,8 +1,12 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Send, CheckCircle, AlertCircle } from "lucide-react";
+import { useLanguage } from "../contexts/LanguageContext";
+import { translations } from "../data/translations";
 
 export default function Contact() {
+  const { language } = useLanguage();
+  const t = translations[language];
   const [status, setStatus] = useState("");
 
   async function handleSubmit(e) {
@@ -37,10 +41,9 @@ export default function Contact() {
           viewport={{ once: true }}
           className="text-center mb-6 md:mb-8"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4">Hubungi Saya</h2>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4">{t.contactTitle}</h2>
           <p className="text-ink/70 text-sm md:text-base lg:text-lg max-w-2xl mx-auto px-4">
-            Punya proyek atau kolaborasi dalam pikiran? Atau hanya ingin ngobrol tentang teknologi?
-            Kirim saya pesan dan saya akan segera membalas!
+            {t.contactDescription}
           </p>
         </motion.div>
 
@@ -58,36 +61,36 @@ export default function Contact() {
                   <Mail className="text-primary" size={20} />
                 </div>
                 <div className="min-w-0">
-                  <h3 className="font-semibold text-base md:text-lg">Email</h3>
+                  <h3 className="font-semibold text-base md:text-lg">{t.email}</h3>
                   <p className="text-ink/70 text-xs md:text-sm truncate">oktarizagunawan63@gmail.com</p>
                 </div>
               </div>
               <p className="text-ink/70 text-xs md:text-sm">
-                Saya akan merespons pesan dalam waktu maksimal 24 jam. Untuk hal mendesak, silakan cantumkan informasi pada subjek.
+                {t.emailResponse}
               </p>
             </div>
 
             <div className="p-4 md:p-6 rounded-2xl bg-gradient-to-br from-secondary/10 to-secondary/5 border border-secondary/20">
-              <h3 className="font-semibold text-base md:text-lg mb-2 md:mb-3">Terbuka Untuk</h3>
+              <h3 className="font-semibold text-base md:text-lg mb-2 md:mb-3">{t.openFor}</h3>
               <p className="text-ink/70 text-xs md:text-sm mb-3 md:mb-4">
-                Saya tersedia untuk:
+                {t.availableFor}
               </p>
               <ul className="space-y-2 text-xs md:text-sm text-ink/70">
                 <li className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-secondary flex-shrink-0"></span>
-                  Proyek freelance
+                  {t.freelanceProjects}
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-secondary flex-shrink-0"></span>
-                  Peluang kolaborasi
+                  {t.collaborationOpportunities}
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-secondary flex-shrink-0"></span>
-                  Diskusi teknologi
+                  {t.techDiscussions}
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-secondary flex-shrink-0"></span>
-                  Ngobrol santai ☕
+                  {t.casualChat}
                 </li>
               </ul>
             </div>
@@ -101,43 +104,43 @@ export default function Contact() {
           >
             <form onSubmit={handleSubmit} className="space-y-3 md:space-y-4">
               <div>
-                <label className="block text-xs md:text-sm font-medium mb-1.5 md:mb-2">Nama</label>
+                <label className="block text-xs md:text-sm font-medium mb-1.5 md:mb-2">{t.name}</label>
                 <input
                   name="name"
                   required
-                  placeholder="Nama Anda"
+                  placeholder={t.namePlaceholder}
                   className="w-full px-3 md:px-4 py-2.5 md:py-3 text-sm md:text-base rounded-xl bg-accent/10 border border-accent/20 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
                 />
               </div>
 
               <div>
-                <label className="block text-xs md:text-sm font-medium mb-1.5 md:mb-2">Email</label>
+                <label className="block text-xs md:text-sm font-medium mb-1.5 md:mb-2">{t.email}</label>
                 <input
                   name="email"
                   type="email"
                   required
-                  placeholder="email@example.com"
+                  placeholder={t.emailPlaceholder}
                   className="w-full px-3 md:px-4 py-2.5 md:py-3 text-sm md:text-base rounded-xl bg-accent/10 border border-accent/20 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
                 />
               </div>
 
               <div>
-                <label className="block text-xs md:text-sm font-medium mb-1.5 md:mb-2">Subjek</label>
+                <label className="block text-xs md:text-sm font-medium mb-1.5 md:mb-2">{t.subject}</label>
                 <input
                   name="subject"
                   required
-                  placeholder="Tentang apa ini?"
+                  placeholder={t.subjectPlaceholder}
                   className="w-full px-3 md:px-4 py-2.5 md:py-3 text-sm md:text-base rounded-xl bg-accent/10 border border-accent/20 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
                 />
               </div>
 
               <div>
-                <label className="block text-xs md:text-sm font-medium mb-1.5 md:mb-2">Pesan</label>
+                <label className="block text-xs md:text-sm font-medium mb-1.5 md:mb-2">{t.message}</label>
                 <textarea
                   name="message"
                   required
                   rows="4"
-                  placeholder="Ceritakan tentang proyek Anda..."
+                  placeholder={t.messagePlaceholder}
                   className="w-full px-3 md:px-4 py-2.5 md:py-3 text-sm md:text-base rounded-xl bg-accent/10 border border-accent/20 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all resize-none"
                 />
               </div>
@@ -151,11 +154,11 @@ export default function Contact() {
                   {status === "loading" ? (
                     <>
                       <div className="w-4 h-4 md:w-5 md:h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                      Mengirim...
+                      {t.sending}
                     </>
                   ) : (
                     <>
-                      Kirim Pesan
+                      {t.sendMessage}
                       <Send size={16} className="md:w-[18px] md:h-[18px]" />
                     </>
                   )}
@@ -172,7 +175,7 @@ export default function Contact() {
                 >
                   <CheckCircle size={18} className="flex-shrink-0 mt-0.5" />
                   <p className="text-xs md:text-sm font-medium">
-                    Pesan berhasil dikirim! Saya akan segera membalas.
+                    {t.successMessage}
                   </p>
                 </motion.div>
               )}
@@ -185,7 +188,7 @@ export default function Contact() {
                 >
                   <AlertCircle size={18} className="flex-shrink-0 mt-0.5" />
                   <p className="text-xs md:text-sm font-medium">
-                    Gagal mengirim pesan. Silakan coba lagi atau email saya langsung!
+                    {t.errorMessage}
                   </p>
                 </motion.div>
               )}

@@ -1,8 +1,12 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, Download } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
+import { useLanguage } from "../contexts/LanguageContext";
+import { translations } from "../data/translations";
 import profilePic from "../assets/zhaabeer.jpg";
 
 export default function Hero() {
+  const { language } = useLanguage();
+  const t = translations[language];
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -36,14 +40,14 @@ export default function Hero() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
             </span>
-            Tersedia untuk freelance
+            {t.availableForFreelance}
           </motion.span>
 
           <motion.h1
             variants={itemVariants}
             className="text-4xl md:text-6xl font-bold leading-tight"
           >
-            Halo, Saya{" "}
+            {t.heroTitle.split('Oktariza Gunawan')[0]}
             <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               Oktariza Gunawan
             </span>
@@ -53,18 +57,14 @@ export default function Hero() {
             variants={itemVariants}
             className="text-xl md:text-2xl text-ink/80 mt-2 font-medium"
           >
-           Full-Stack Developer | Web Apps & Machine Learning
+            {t.heroSubtitle}
           </motion.p>
 
           <motion.p
             variants={itemVariants}
             className="mt-4 text-base text-ink/70 max-w-lg leading-relaxed"
           >
-            Saya berfokus mengembangkan aplikasi web yang cepat, bersih, dan fungsional Senang mengeksplorasi teknologi modern serta merancang pengalaman pengguna yang nyaman dan efisien. Terbiasa menggunakan{" "}
-            <span className="text-secondary font-semibold">
-              React, Tailwind CSS, Golang, Python,
-            </span>{" "}
-            serta berbagai tools pendukung pengembangan web..
+            {t.heroDescription}
           </motion.p>
 
           <motion.div variants={itemVariants} className="mt-6 flex flex-wrap gap-4">
@@ -72,7 +72,7 @@ export default function Hero() {
               href="#projects"
               className="group relative inline-flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-8 py-3 text-sm font-medium rounded-full shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
             >
-              <span className="relative z-10">Lihat Proyek</span>
+              <span className="relative z-10">{t.viewProjects}</span>
               <span className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
             </a>
             <a
@@ -80,7 +80,7 @@ export default function Hero() {
               className="inline-flex items-center gap-2 border-2 border-primary text-primary px-8 py-3 text-sm font-medium rounded-full hover:bg-primary hover:text-white transition-all duration-300"
             >
               <Mail size={18} />
-              Hubungi Saya
+              {t.contactMe}
             </a>
           </motion.div>
 

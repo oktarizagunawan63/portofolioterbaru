@@ -7,8 +7,14 @@ import bisuImg from "../assets/bisu.jpg";
 export const projects = [
   {
     id: "futsal-booking",
-    title: "Futsal Booking System",
-    shortDesc: "Platform booking online untuk lapangan futsal dengan ketersediaan real-time",
+    title: {
+      id: "Futsal Booking System",
+      en: "Futsal Booking System"
+    },
+    shortDesc: {
+      id: "Platform booking online untuk lapangan futsal dengan ketersediaan real-time",
+      en: "Online booking platform for futsal courts with real-time availability"
+    },
     fullDesc: `Sistem booking berbasis web yang dirancang untuk mempermudah reservasi lapangan futsal. 
     
 Platform ini dilengkapi dengan pengecekan ketersediaan real-time, konfirmasi booking otomatis, dan dashboard admin yang intuitif untuk manajemen lapangan. Pengguna dapat dengan mudah melihat slot waktu yang tersedia, melakukan reservasi instan, dan menerima konfirmasi booking via email.
@@ -239,4 +245,25 @@ export const getProjectById = (id) => {
 export const getProjectsByCategory = (category) => {
   if (category === "all") return projects;
   return projects.filter(project => project.category === category);
+};
+
+// Helper function to get localized project data
+export const getLocalizedProject = (project, language = 'id') => {
+  if (!project) return null;
+  
+  return {
+    ...project,
+    title: typeof project.title === 'object' ? project.title[language] || project.title.id : project.title,
+    shortDesc: typeof project.shortDesc === 'object' ? project.shortDesc[language] || project.shortDesc.id : project.shortDesc,
+    fullDesc: typeof project.fullDesc === 'object' ? project.fullDesc[language] || project.fullDesc.id : project.fullDesc,
+  };
+};
+
+export const getLocalizedProjects = (language = 'id') => {
+  return projects.map(project => getLocalizedProject(project, language));
+};
+
+export const getLocalizedProjectsByCategory = (category, language = 'id') => {
+  const filteredProjects = getProjectsByCategory(category);
+  return filteredProjects.map(project => getLocalizedProject(project, language));
 };

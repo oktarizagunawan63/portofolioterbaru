@@ -1,7 +1,11 @@
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, Heart, ArrowUp } from "lucide-react";
+import { useLanguage } from "../contexts/LanguageContext";
+import { translations } from "../data/translations";
 
 export default function Footer() {
+  const { language } = useLanguage();
+  const t = translations[language];
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -21,13 +25,13 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-ink/70 text-sm">
-              Pengembang Full Stack yang memiliki fokus pada pengembangan aplikasi web berperforma tinggi dengan desain yang terstruktur dan user-friendly.
+              {t.footerDescription}
             </p>
           </div>
 
           {/* Social */}
           <div>
-            <h3 className="font-semibold mb-4">Terhubung</h3>
+            <h3 className="font-semibold mb-4">{t.connect}</h3>
             <div className="flex gap-3">
               <a
                 href="https://github.com/oktarizagunawan63"
@@ -59,7 +63,7 @@ export default function Footer() {
             onClick={scrollToTop}
             className="group flex items-center gap-2 text-sm font-medium text-primary hover:text-secondary transition-colors"
           >
-            Kembali ke atas
+{t.backToTop}
             <motion.div
               whileHover={{ y: -3 }}
               className="p-2 rounded-lg bg-primary/10 group-hover:bg-primary group-hover:text-white transition-all"

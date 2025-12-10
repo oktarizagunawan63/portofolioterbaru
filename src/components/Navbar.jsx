@@ -1,16 +1,21 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
-
-const links = [
-  { href: "#about", label: "Tentang" },
-  { href: "#projects", label: "Proyek" },
-  { href: "#contact", label: "Kontak" },
-];
+import { useLanguage } from "../contexts/LanguageContext";
+import { translations } from "../data/translations";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { language } = useLanguage();
+  const t = translations[language];
+
+  const links = [
+    { href: "#about", label: t.about },
+    { href: "#projects", label: t.projects },
+    { href: "#contact", label: t.contact },
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -42,35 +47,41 @@ export default function Navbar() {
         </a>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex items-center gap-8">
-          {links.map((link) => (
-            <li key={link.href}>
-              <a
-                href={link.href}
-                className="relative text-ink/70 hover:text-primary font-medium transition-colors group"
-              >
-                {link.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary group-hover:w-full transition-all duration-300"></span>
-              </a>
-            </li>
-          ))}
-        </ul>
+        <div className="hidden md:flex items-center gap-6">
+          <ul className="flex items-center gap-8">
+            {links.map((link) => (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  className="relative text-ink/70 hover:text-primary font-medium transition-colors group"
+                >
+                  {link.label}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary group-hover:w-full transition-all duration-300"></span>
+                </a>
+              </li>
+            ))}
+          </ul>
+          
+          <LanguageSwitcher />
+          
+          <a
+            href="#contact"
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-6 py-2.5 text-sm font-medium rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+          >
+            {t.contactMe}
+          </a>
+        </div>
 
-        {/* CTA Button */}
-        <a
-          href="#contact"
-          className="hidden md:inline-flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-6 py-2.5 text-sm font-medium rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
-        >
-          Hubungi Saya
-        </a>
-
-        {/* Mobile Menu Button */}
-        <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden p-2 rounded-lg hover:bg-accent/20 transition-colors"
-        >
-          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        {/* Mobile Menu & Language Switcher */}
+        <div className="md:hidden flex items-center gap-3">
+          <LanguageSwitcher />
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="p-2 rounded-lg hover:bg-accent/20 transition-colors"
+          >
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </nav>
 
       {/* Mobile Menu */}
@@ -97,7 +108,7 @@ export default function Navbar() {
               onClick={() => setMobileMenuOpen(false)}
               className="block w-full text-center bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 font-medium rounded-full shadow-lg"
             >
-              Hubungi Saya
+              {t.contactMe}
             </a>
           </div>
         </motion.div>

@@ -1,14 +1,18 @@
 import { motion } from "framer-motion";
 import { BentoGrid, BentoCard } from "../components/BentoGrid";
 import { Code2, Rocket, Brain, Zap } from "lucide-react";
+import { useLanguage } from "../contexts/LanguageContext";
+import { translations } from "../data/translations";
 import AnimatedCounter from "../components/AnimatedCounter";
 
 export default function About() {
+  const { language } = useLanguage();
+  const t = translations[language];
   const stats = [
-    { value: 5, label: "Proyek", color: "primary" },
-    { value: 8, label: "Teknologi", color: "secondary" },
-    { value: 2, label: "Tahun Coding", color: "primary" },
-    { value: 100, label: "Dedikasi", color: "secondary" },
+    { value: 5, label: t.projects, color: "primary" },
+    { value: 8, label: t.technologies, color: "secondary" },
+    { value: 2, label: t.yearsCoding, color: "primary" },
+    { value: 100, label: t.dedication, color: "secondary" },
   ];
 
   const techStack = [
@@ -25,9 +29,9 @@ export default function About() {
   ];
 
   const badges = [
-    { label: "Pengembangan Web", color: "primary" },
-    { label: "Desain UI/UX", color: "secondary" },
-    { label: "Pengembangan API", color: "primary" },
+    { label: t.webDevelopment, color: "primary" },
+    { label: t.uiuxDesign, color: "secondary" },
+    { label: t.apiDevelopment, color: "primary" },
   ];
 
   return (
@@ -38,9 +42,9 @@ export default function About() {
         viewport={{ once: true }}
         className="mb-8"
       >
-        <h2 className="text-4xl md:text-5xl font-bold mb-4">Tentang Saya</h2>
+        <h2 className="text-4xl md:text-5xl font-bold mb-4">{t.aboutTitle}</h2>
         <p className="text-ink/70 max-w-3xl text-lg">
-          Saya mahasiswa semester lima dengan minat besar pada pengembangan web dan otomotif. Suka mengeksplorasi desain UI yang bersih serta membangun aplikasi dengan performa tinggi. Tertarik pada machine learning untuk mengembangkan proyek-proyek inovatif.
+          {t.aboutDescription}
         </p>
       </motion.div>
 
@@ -71,11 +75,11 @@ export default function About() {
                 <Code2 className="text-primary" size={20} />
               </div>
               <h3 className="text-lg md:text-2xl font-semibold leading-tight">
-                Apa yang Saya Lakukan
+                {t.whatIDo}
               </h3>
             </div>
             <p className="text-ink/70 leading-relaxed text-sm md:text-base mb-4 md:mb-6 flex-1">
-              Saya berfokus pada pengembangan aplikasi web end-to-end, mencakup frontend dan backend. Mengutamakan desain yang bersih, performa optimal, serta kualitas kode yang terstruktur untuk menghasilkan solusi digital yang scalable dan maintainable.
+              {t.whatIDoDescription}
             </p>
             <div className="flex flex-wrap gap-2">
               {badges.map((badge) => (
@@ -97,9 +101,9 @@ export default function About() {
               <Zap className="text-secondary" size={24} />
             </div>
             <h3 className="text-base md:text-lg font-semibold mb-1 md:mb-2">
-              Cepat & Optimal
+              {t.fastOptimal}
             </h3>
-            <p className="text-xs md:text-sm text-ink/70">Performa adalah kunci</p>
+            <p className="text-xs md:text-sm text-ink/70">{t.performanceKey}</p>
           </div>
         </BentoCard>
 
@@ -110,9 +114,9 @@ export default function About() {
               <Rocket className="text-primary" size={24} />
             </div>
             <h3 className="text-base md:text-lg font-semibold mb-1 md:mb-2">
-              Stack Modern
+              {t.modernStack}
             </h3>
-            <p className="text-xs md:text-sm text-ink/70">Teknologi terkini</p>
+            <p className="text-xs md:text-sm text-ink/70">{t.latestTech}</p>
           </div>
         </BentoCard>
 
@@ -123,7 +127,7 @@ export default function About() {
               <div className="p-2 md:p-3 rounded-xl bg-secondary/10 flex-shrink-0">
                 <Brain className="text-secondary" size={18} />
               </div>
-              <h3 className="text-base md:text-xl font-semibold">Tech Stack</h3>
+              <h3 className="text-base md:text-xl font-semibold">{t.techStack}</h3>
             </div>
             <div className="grid grid-cols-4 md:grid-cols-6 gap-2 md:gap-4 flex-1">
               {techStack.map((tech) => (
