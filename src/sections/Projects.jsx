@@ -1,24 +1,29 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { useLanguage } from "../contexts/LanguageContext";
 import { translations } from "../data/translations";
 import AnimatedTabs from "../components/AnimatedTabs";
 import GradientCard from "../components/GradientCard";
-import { getLocalizedProjectsByCategory } from "../data/projects";
+import { getProjectsByCategory } from "../data/projects";
 
 export default function Projects() {
   const { language } = useLanguage();
-  const t = translations[language];
+  const t = translations[language] || translations.id; // ✅ fallback biar aman
   const [activeCategory, setActiveCategory] = useState(0);
   const navigate = useNavigate();
 
-  const categories = language === 'id' 
-    ? ["Semua Proyek", "Full Stack", "Frontend", "Machine Learning"]
-    : ["All Projects", "Full Stack", "Frontend", "Machine Learning"];
+  const categories =
+    language === "id"
+      ? ["Semua Proyek", "Full Stack", "Frontend", "Machine Learning"]
+      : ["All Projects", "Full Stack", "Frontend", "Machine Learning"];
+
   const categoryFilters = ["all", "fullstack", "frontend", "ml"];
 
-  const filteredProjects = getLocalizedProjectsByCategory(categoryFilters[activeCategory], language);
+  const filteredProjects = useMemo(() => {
+    const category = categoryFilters[activeCategory] || "all";
+    return getProjectsByCategory(category);
+  }, [activeCategory]);
 
   const handleProjectClick = (projectId) => {
     navigate(`/project/${projectId}`);
@@ -32,10 +37,10 @@ export default function Projects() {
         viewport={{ once: true }}
         className="mb-8"
       >
-        <h2 className="text-4xl md:text-5xl font-bold mb-4">{t.projectsTitle}</h2>
-        <p className="text-ink/70 max-w-3xl text-lg">
-          {t.projectsDescription}
-        </p>
+        <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          {t.projectsTitle}
+        </h2>
+        <p className="text-ink/70 max-w-3xl text-lg">{t.projectsDescription}</p>
       </motion.div>
 
       {/* Animated Tabs */}
@@ -67,7 +72,11 @@ export default function Projects() {
           animate={{ opacity: 1 }}
           className="text-center py-12 text-ink/50"
         >
-          <p className="text-lg">Belum ada proyek dalam kategori ini.</p>
+          <p className="text-lg">
+            {language === "id"
+              ? "Belum ada proyek dalam kategori ini."
+              : "No projects in this category yet."}
+          </p>
         </motion.div>
       )}
     </section>

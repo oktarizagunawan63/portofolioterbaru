@@ -35,7 +35,7 @@ export const translations = {
     
     // Projects Section
     projectsTitle: "Proyek Terbaru",
-    projectsDescription: "Berikut adalah beberapa proyek yang telah saya kerjakan. Setiap proyek mencerminkan dedikasi saya terhadap kualitas kode dan pengalaman pengguna yang luar biasa.",
+    projectsDescription: "Berikut adalah beberapa proyek yang telah saya kerjakan setiap proyek mencerminkan dedikasi saya terhadap kualitas kode dan pengalaman pengguna yang luar biasa.",
     viewProject: "Lihat Proyek",
     viewCode: "Lihat Kode",
     
