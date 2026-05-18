@@ -9,7 +9,7 @@ export default function About() {
   const { language } = useLanguage();
   const t = translations[language];
   const stats = [
-    { value: 5, label: t.projects, color: "primary" },
+    { value: 6, label: t.projects, color: "primary" },
     { value: 8, label: t.technologies, color: "secondary" },
     { value: 2, label: t.yearsCoding, color: "primary" },
     { value: 100, label: t.dedication, color: "secondary" },

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Download, Menu, X } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
 import { translations } from "../data/translations";
 import LanguageSwitcher from "./LanguageSwitcher";
@@ -70,6 +70,14 @@ export default function Navbar() {
           >
             {t.contactMe}
           </a>
+          <a
+            href="/Oktariza_Gunawan_CV.pdf"
+            download
+            className="inline-flex items-center gap-2 border-2 border-primary text-primary px-5 py-2.5 text-sm font-medium rounded-full hover:bg-primary hover:text-white transition-all duration-300"
+          >
+            <Download size={16} />
+            {t.downloadCv}
+          </a>
         </div>
 
         {/* Mobile Menu & Language Switcher */}
@@ -109,6 +117,15 @@ export default function Navbar() {
               className="block w-full text-center bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 font-medium rounded-full shadow-lg"
             >
               {t.contactMe}
+            </a>
+            <a
+              href="/Oktariza_Gunawan_CV.pdf"
+              download
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex w-full items-center justify-center gap-2 border-2 border-primary text-primary px-6 py-3 font-medium rounded-full hover:bg-primary hover:text-white transition-all"
+            >
+              <Download size={18} />
+              {t.downloadCv}
             </a>
           </div>
         </motion.div>

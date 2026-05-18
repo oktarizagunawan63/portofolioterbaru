@@ -12,10 +12,11 @@ export const translations = {
     heroDescription: "Saya berfokus mengembangkan aplikasi web yang cepat, bersih, dan fungsional Senang mengeksplorasi teknologi modern serta merancang pengalaman pengguna yang nyaman dan efisien. Terbiasa menggunakan React, Tailwind CSS, Golang, Python, serta berbagai tools pendukung pengembangan web..",
     viewProjects: "Lihat Proyek",
     contactMe: "Hubungi Saya",
+    downloadCv: "Download CV",
     
     // About Section
     aboutTitle: "Tentang Saya",
-    aboutDescription: "Mahasiswa semester lima yang passionate dengan minat besar dalam pengembangan web dan motor. Saya suka mengeksplorasi desain UI yang bersih dan membangun aplikasi dengan performa tinggi. Juga tertarik pada data science dan machine learning untuk proyek-proyek inovatif.",
+    aboutDescription: "Mahasiswa semester 6 Universitas Pamulang yang berfokus pada pengembangan web full-stack. Saya senang membangun aplikasi yang rapi, responsif, dan mudah digunakan, mulai dari antarmuka React hingga backend API dan database. Selain web development, saya juga tertarik mengeksplorasi data science dan machine learning untuk solusi yang lebih inovatif.",
     whatIDo: "Apa yang Saya Lakukan",
     whatIDoDescription: "Saya spesialisasi dalam membangun aplikasi web yang tidak hanya menarik secara visual tetapi juga cepat dan smooth. Dari frontend interaktif hingga backend yang robust, saya menangani full stack. Fokus saya adalah memberikan kode yang bersih dan pengalaman pengguna yang berkesan yang membuat perbedaan.",
     webDevelopment: "Pengembangan Web",
@@ -84,10 +85,11 @@ export const translations = {
     heroDescription: "I focus on developing fast, clean, and functional web applications. I enjoy exploring modern technologies and designing comfortable and efficient user experiences. Experienced with React, Tailwind CSS, Golang, Python, and various web development support tools.",
     viewProjects: "View Projects",
     contactMe: "Contact Me",
+    downloadCv: "Download CV",
     
     // About Section
     aboutTitle: "About Me",
-    aboutDescription: "A passionate fifth-semester student with a great interest in web development and motorcycles. I love exploring clean UI designs and building high-performance applications. Also interested in data science and machine learning for innovative projects.",
+    aboutDescription: "A sixth-semester student at Universitas Pamulang focused on full-stack web development. I enjoy building clean, responsive, and practical applications, from React interfaces to backend APIs and databases. Beyond web development, I am also interested in exploring data science and machine learning for more innovative solutions.",
     whatIDo: "What I Do",
     whatIDoDescription: "I specialize in building web applications that are not only visually appealing but also fast and smooth. From interactive frontends to robust backends, I handle full stack. My focus is delivering clean code and memorable user experiences that make a difference.",
     webDevelopment: "Web Development",

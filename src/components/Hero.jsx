@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Download, Github, Linkedin, Mail } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
 import { translations } from "../data/translations";
 import profilePic from "../assets/zhaabeer.jpg";
@@ -81,6 +81,14 @@ export default function Hero() {
             >
               <Mail size={18} />
               {t.contactMe}
+            </a>
+            <a
+              href="/Oktariza_Gunawan_CV.pdf"
+              download
+              className="inline-flex items-center gap-2 border-2 border-secondary text-secondary px-8 py-3 text-sm font-medium rounded-full hover:bg-secondary hover:text-white transition-all duration-300"
+            >
+              <Download size={18} />
+              {t.downloadCv}
             </a>
           </motion.div>
 

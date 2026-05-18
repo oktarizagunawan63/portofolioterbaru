@@ -3,8 +3,58 @@ import ultahImg from "../assets/ultah.jpg";
 import qrImg from "../assets/qr.jpg";
 import tensiImg from "../assets/tensi.jpg";
 import bisuImg from "../assets/bisu.jpg";
+import amsarDashboardImg from "../assets/asmr.jpg";
 
 export const projects = [
+  {
+    id: "amsar-project-monitoring",
+    title: "PT Amsar Prima Mandiri Project Monitoring Dashboard",
+    shortDesc: "Dashboard internal berbasis React dan Laravel untuk memantau progres proyek, status pekerjaan, dan data operasional secara terpusat",
+    fullDesc: `Dashboard monitoring proyek berbasis web yang dirancang untuk membantu PT Amsar Prima Mandiri mengelola progres pekerjaan secara lebih rapi, transparan, dan mudah dipantau.
+
+Sistem ini berfokus pada kebutuhan operasional perusahaan, mulai dari autentikasi pengguna, pemantauan status proyek, hingga penyajian informasi penting dalam tampilan dashboard yang bersih dan profesional. Frontend dibangun menggunakan React agar pengalaman pengguna terasa responsif, sementara Laravel digunakan sebagai backend untuk mengelola alur data, autentikasi, dan integrasi database MySQL.
+
+Dengan antarmuka yang sederhana, pengguna dapat mengakses data proyek secara lebih cepat tanpa harus bergantung pada pencatatan manual yang tersebar. Struktur aplikasi juga dibuat modular agar mudah dikembangkan untuk kebutuhan admin, laporan proyek, dan fitur manajemen lanjutan.
+
+Fitur utama meliputi:
+- Login pengguna dengan tampilan yang clean dan profesional
+- Dashboard monitoring proyek untuk melihat progres pekerjaan
+- Pengelolaan data proyek secara terpusat
+- Tampilan status dan informasi proyek yang mudah dipahami
+- Integrasi frontend dan backend untuk alur data yang lebih terstruktur
+- Struktur aplikasi yang siap dikembangkan untuk kebutuhan admin dan manajemen
+- Desain responsif agar nyaman digunakan di berbagai perangkat`,
+    tags: ["React", "Laravel", "MySQL", "Laragon"],
+    category: "fullstack",
+    image: amsarDashboardImg,
+    demoLink: "#",
+    githubLink: "#",
+    features: [
+      "Autentikasi pengguna",
+      "Monitoring progres proyek",
+      "Manajemen data proyek",
+      "Dashboard admin",
+      "Integrasi React dan Laravel",
+      "Tampilan responsif"
+    ],
+    technologies: {
+      frontend: ["React", "JavaScript", "CSS3"],
+      backend: ["Laravel", "MySQL", "REST API"],
+      tools: ["Laragon", "Git"]
+    },
+    challenges: [
+      "Menyusun alur monitoring proyek agar mudah dipahami pengguna internal",
+      "Menghubungkan frontend React dengan backend Laravel secara rapi",
+      "Mendesain tampilan login dan dashboard yang profesional sesuai identitas perusahaan",
+      "Menyiapkan struktur database proyek yang rapi dan mudah dikembangkan"
+    ],
+    outcomes: [
+      "Membantu pemantauan proyek menjadi lebih terpusat",
+      "Meningkatkan efisiensi akses informasi proyek",
+      "Mengurangi ketergantungan pada pencatatan manual",
+      "Memberikan fondasi sistem internal yang siap dikembangkan lebih lanjut"
+    ]
+  },
   {
     id: "futsal-booking",
     title: "Futsal Booking System",
@@ -110,7 +160,7 @@ Dibangun dengan React untuk pengalaman single-page application yang halus, denga
     features: [
       "Pemindaian QR code",
       "Update menu dinamis",
-      "Manajemen pesanan",,
+      "Manajemen pesanan",
       "Fungsi pencarian",
       "Dashboard admin"
     ],
