@@ -9,16 +9,16 @@ export const translations = {
     availableForFreelance: "Tersedia untuk freelance",
     heroTitle: "Halo, Saya Oktariza Gunawan",
     heroSubtitle: "Full-Stack Developer | Web Apps & Machine Learning",
-    heroDescription: "Fokus utamanya membangun aplikasi web yang cepat, rapi, dan benar-benar berguna. React, Tailwind CSS, Golang, dan Python jadi andalan sehari-hari — dan selalu ada hal baru yang dipelajari di perjalanannya.",
+    heroDescription: "Full-stack developer dengan pengalaman hands-on membangun aplikasi web yang cepat, terstruktur, dan production-ready. Skilled dalam mengembangkan interface responsif dengan React, mengintegrasikan frontend dengan backend Laravel atau Go, dan mengelola data workflow menggunakan MySQL.",
     viewProjects: "Lihat Proyek",
     contactMe: "Hubungi Saya",
     downloadCv: "Download CV",
     
     // About Section
     aboutTitle: "Tentang Saya",
-    aboutDescription: "Mahasiswa semester 6 Universitas Pamulang, dengan web development full-stack sebagai fokus utama. Targetnya selalu aplikasi yang rapi, responsif, dan nyaman dipakai — mulai dari sisi React sampai ke API dan database. Data science dan machine learning juga mulai ditekuni di sela-sela itu.",
+    aboutDescription: "Mahasiswa semester 6 Universitas Pamulang jurusan Teknik Informatika (Expected 2027). Fokus pada web development, backend APIs, database management, data science, dan machine learning. Konsisten membangun proyek independen untuk mengasah kemampuan problem-solving dan menghasilkan solusi end-to-end dalam praktik.",
     whatIDo: "Apa yang Saya Lakukan",
-    whatIDoDescription: "Kerja full stack dari ujung ke ujung — UI yang terasa smooth di depan, backend yang solid di belakang. Kode yang bersih dan hasil yang benar-benar berfungsi baik buat penggunanya, itu yang jadi standar.",
+    whatIDoDescription: "Full-stack developer yang skilled dalam membangun aplikasi web yang tidak hanya menarik secara visual tetapi juga cepat dan terstruktur dengan baik. Dari responsive interface dengan React hingga backend yang robust dengan Laravel atau Go, saya menangani full stack. Passionate tentang clean UI design, performa aplikasi, dan menerapkan machine learning untuk menyelesaikan masalah dunia nyata.",
     webDevelopment: "Pengembangan Web",
     uiuxDesign: "Desain UI/UX",
     apiDevelopment: "Pengembangan API",
@@ -29,7 +29,7 @@ export const translations = {
     techStack: "Tech Stack",
     
     // Stats
-    projects: "Proyek",
+    projectsCount: "Proyek",
     technologies: "Teknologi",
     yearsCoding: "Tahun Coding",
     dedication: "Dedikasi",
@@ -103,7 +103,7 @@ export const translations = {
     techStack: "Tech Stack",
 
     // Stats
-    projects: "Projects",
+    projectsCount: "Projects",
     technologies: "Technologies",
     yearsCoding: "Years Coding",
     dedication: "Dedication",
