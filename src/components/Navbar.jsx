@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 import { Download, Menu, X } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
 import { translations } from "../data/translations";
@@ -24,7 +24,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <motion.header
+    <Motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -94,7 +94,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <motion.div
+        <Motion.div
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: "auto" }}
           exit={{ opacity: 0, height: 0 }}
@@ -128,8 +128,8 @@ export default function Navbar() {
               {t.downloadCv}
             </a>
           </div>
-        </motion.div>
+        </Motion.div>
       )}
-    </motion.header>
+    </Motion.header>
   );
 }

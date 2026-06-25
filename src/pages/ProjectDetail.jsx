@@ -107,6 +107,13 @@ export default function ProjectDetail() {
                 View Source Code
               </a>
             )}
+            {(!project.demoLink || project.demoLink === "#") &&
+              (!project.githubLink || project.githubLink === "#") && (
+                <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-accent/20 border border-accent/40 text-ink/60 text-sm font-medium">
+                  <Github size={18} />
+                  Source code available on request
+                </div>
+              )}
           </motion.div>
 
           {/* Overview */}

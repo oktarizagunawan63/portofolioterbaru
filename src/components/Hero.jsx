@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 import { Download, Github, Linkedin, Mail } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
 import { translations } from "../data/translations";
@@ -23,16 +23,16 @@ export default function Hero() {
   };
 
   return (
-    <section className="section pt-20 pb-8 md:pb-16 md:min-h-screen flex items-center">
-      <motion.div
+    <section className="section pt-24 pb-12 md:pb-16 md:min-h-screen flex items-center">
+      <Motion.div
         variants={containerVariants}
         initial="hidden"
         animate="visible"
         className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center w-full"
       >
         {/* Left: Text */}
-        <div>
-          <motion.span
+        <div className="order-2 md:order-1">
+          <Motion.span
             variants={itemVariants}
             className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white text-sm font-medium px-5 py-2 rounded-full mb-4 shadow-lg"
           >
@@ -41,9 +41,9 @@ export default function Hero() {
               <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
             </span>
             {t.availableForFreelance}
-          </motion.span>
+          </Motion.span>
 
-          <motion.h1
+          <Motion.h1
             variants={itemVariants}
             className="text-4xl md:text-6xl font-bold leading-tight"
           >
@@ -51,23 +51,23 @@ export default function Hero() {
             <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               Oktariza Gunawan
             </span>
-          </motion.h1>
+          </Motion.h1>
 
-          <motion.p
+          <Motion.p
             variants={itemVariants}
-            className="text-xl md:text-2xl text-ink/80 mt-2 font-medium"
+            className="text-lg md:text-xl text-ink/80 mt-2 font-medium"
           >
             {t.heroSubtitle}
-          </motion.p>
+          </Motion.p>
 
-          <motion.p
+          <Motion.p
             variants={itemVariants}
             className="mt-4 text-base text-ink/70 max-w-lg leading-relaxed"
           >
             {t.heroDescription}
-          </motion.p>
+          </Motion.p>
 
-          <motion.div variants={itemVariants} className="mt-6 flex flex-wrap gap-4">
+          <Motion.div variants={itemVariants} className="mt-6 flex flex-wrap gap-4">
             <a
               href="#projects"
               className="group relative inline-flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-8 py-3 text-sm font-medium rounded-full shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
@@ -90,10 +90,10 @@ export default function Hero() {
               <Download size={18} />
               {t.downloadCv}
             </a>
-          </motion.div>
+          </Motion.div>
 
           {/* Social Links */}
-          <motion.div variants={itemVariants} className="mt-6 flex gap-4">
+          <Motion.div variants={itemVariants} className="mt-6 flex gap-4">
             <a
               href="https://github.com/oktarizagunawan63"
               target="_blank"
@@ -110,20 +110,20 @@ export default function Hero() {
             >
               <Linkedin size={20} />
             </a>
-          </motion.div>
+          </Motion.div>
         </div>
 
         {/* Right: Photo */}
-        <motion.div
+        <Motion.div
           variants={itemVariants}
-          className="flex justify-center md:justify-end mt-8 md:mt-0"
+          className="order-1 md:order-2 flex justify-center md:justify-end mt-0 md:mt-0"
         >
           <div className="relative">
             {/* Gradient Background */}
             <div className="absolute -inset-4 bg-gradient-to-r from-primary to-secondary rounded-3xl blur-2xl opacity-30 animate-pulse"></div>
             
             {/* Image Container */}
-            <div className="relative w-56 h-56 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-3xl overflow-hidden shadow-2xl border-4 border-white/10">
+            <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-3xl overflow-hidden shadow-2xl border-4 border-white/10">
               <img
                 src={profilePic}
                 alt="Oktariza Gunawan Profile"
@@ -132,8 +132,8 @@ export default function Hero() {
               <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent"></div>
             </div>
           </div>
-        </motion.div>
-      </motion.div>
+        </Motion.div>
+      </Motion.div>
     </section>
   );
 }

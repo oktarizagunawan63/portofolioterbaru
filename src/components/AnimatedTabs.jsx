@@ -10,12 +10,12 @@ export default function AnimatedTabs({ tabs, onTabChange }) {
   };
 
   return (
-    <div className="flex flex-wrap gap-2 mb-8">
+    <div className="flex gap-2 mb-8 overflow-x-auto pb-1" style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}>
       {tabs.map((tab, index) => (
         <button
           key={index}
           onClick={() => handleTabClick(index)}
-          className={`relative px-6 py-2.5 rounded-full text-sm font-medium transition-colors ${
+          className={`relative flex-shrink-0 px-6 py-2.5 rounded-full text-sm font-medium transition-colors ${
             activeTab === index
               ? "text-white"
               : "text-ink/70 hover:text-ink"

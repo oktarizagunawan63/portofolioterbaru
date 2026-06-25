@@ -10,20 +10,18 @@ export const projects = [
     id: "amsar-project-monitoring",
     title: "PT Amsar Prima Mandiri Project Monitoring Dashboard",
     shortDesc: "Dashboard internal berbasis React dan Laravel untuk memantau progres proyek, status pekerjaan, dan data operasional secara terpusat",
-    fullDesc: `Dashboard monitoring proyek berbasis web yang dirancang untuk membantu PT Amsar Prima Mandiri mengelola progres pekerjaan secara lebih rapi, transparan, dan mudah dipantau.
+    shortDescEn: "Internal web dashboard built with React and Laravel to monitor project progress, work status, and operational data in one place",
+    fullDesc: `Dashboard berbasis web untuk membantu PT Amsar Prima Mandiri memantau progres proyek secara lebih terstruktur. Sebelumnya pencatatan masih manual dan tersebar, jadi tujuan utamanya memusatkan semua informasi proyek di satu tempat yang mudah diakses tim.
 
-Sistem ini berfokus pada kebutuhan operasional perusahaan, mulai dari autentikasi pengguna, pemantauan status proyek, hingga penyajian informasi penting dalam tampilan dashboard yang bersih dan profesional. Frontend dibangun menggunakan React agar pengalaman pengguna terasa responsif, sementara Laravel digunakan sebagai backend untuk mengelola alur data, autentikasi, dan integrasi database MySQL.
+Frontend dibangun dengan React supaya tampilan responsif dan nyaman dipakai, backend-nya Laravel dengan MySQL untuk manajemen data dan autentikasinya.
 
-Dengan antarmuka yang sederhana, pengguna dapat mengakses data proyek secara lebih cepat tanpa harus bergantung pada pencatatan manual yang tersebar. Struktur aplikasi juga dibuat modular agar mudah dikembangkan untuk kebutuhan admin, laporan proyek, dan fitur manajemen lanjutan.
-
-Fitur utama meliputi:
-- Login pengguna dengan tampilan yang clean dan profesional
-- Dashboard monitoring proyek untuk melihat progres pekerjaan
-- Pengelolaan data proyek secara terpusat
-- Tampilan status dan informasi proyek yang mudah dipahami
-- Integrasi frontend dan backend untuk alur data yang lebih terstruktur
-- Struktur aplikasi yang siap dikembangkan untuk kebutuhan admin dan manajemen
-- Desain responsif agar nyaman digunakan di berbagai perangkat`,
+Fitur yang tersedia:
+- Login dengan tampilan clean dan profesional
+- Dashboard untuk melihat progres setiap proyek
+- Pengelolaan data proyek terpusat
+- Status proyek yang mudah dibaca sekilas
+- Integrasi frontend-backend yang rapi
+- Desain responsif untuk berbagai perangkat`,
     tags: ["React", "Laravel", "MySQL", "Laragon"],
     category: "fullstack",
     image: amsarDashboardImg,
@@ -59,17 +57,18 @@ Fitur utama meliputi:
     id: "futsal-booking",
     title: "Futsal Booking System",
     shortDesc: "Platform booking online untuk lapangan futsal dengan ketersediaan real-time",
-    fullDesc: `Sistem booking berbasis web yang dirancang untuk mempermudah reservasi lapangan futsal. 
-    
-Platform ini dilengkapi dengan pengecekan ketersediaan real-time, konfirmasi booking otomatis, dan dashboard admin yang intuitif untuk manajemen lapangan. Pengguna dapat dengan mudah melihat slot waktu yang tersedia, melakukan reservasi instan, dan menerima konfirmasi booking via email.
+    shortDescEn: "Online booking platform for futsal courts with real-time slot availability and an admin management dashboard",
+    fullDesc: `Sistem booking online untuk lapangan futsal yang menggantikan proses reservasi manual lewat WhatsApp atau telepon. Pengguna bisa langsung cek ketersediaan slot, booking, dan dapat konfirmasi otomatis — tanpa perlu nunggu dibalas admin.
 
-Fitur utama meliputi:
-- Pelacakan ketersediaan lapangan secara real-time
-- Autentikasi pengguna dan manajemen profil
-- Riwayat dan manajemen booking
-- Dashboard admin untuk manajemen lapangan dan booking
-- Integrasi pembayaran untuk transaksi yang lancar
-- Desain responsif untuk mobile dan desktop`,
+Dibangun pakai PHP native dan MySQL karena lebih ringan dan lebih mudah di-maintain untuk skala proyek ini.
+
+Fitur yang tersedia:
+- Cek ketersediaan lapangan secara real-time
+- Login dan manajemen akun pengguna
+- Riwayat booking yang bisa diakses kapan saja
+- Dashboard admin untuk kelola lapangan dan booking
+- Notifikasi konfirmasi otomatis
+- Tampilan nyaman di HP maupun desktop`,
     tags: ["PHP", "MySQL", "JavaScript"],
     category: "fullstack",
     image: futsalImg,
@@ -102,16 +101,17 @@ Fitur utama meliputi:
     id: "birthday-website",
     title: "Interactive Birthday Website",
     shortDesc: "Website hadiah ulang tahun yang dipersonalisasi dengan foto dan musik",
-    fullDesc: `Hadiah ulang tahun digital yang menampilkan galeri foto interaktif dan pemutar musik, proyek ini menampilkan desain web kreatif yang dikombinasikan dengan storytelling emosional melalui elemen multimedia.
+    shortDescEn: "Personalized birthday gift website with an animated photo gallery and a custom music player",
+    fullDesc: `Website hadiah ulang tahun yang dibuat khusus — ada galeri foto dan pemutar musik yang bisa dikustomisasi sesuai orangnya.
 
-Website ini mencakup:
-- Galeri foto 
-- Pemutar musik dengan instrumental ulang tahun
-- Timeline interaktif dari kenangan
-- Desain responsif yang dioptimalkan untuk tampilan mobile
-- Pesan dan animasi yang dipersonalisasi
+Sengaja dibangun murni pakai HTML dan CSS tanpa library JavaScript tambahan, supaya loadingnya ringan dan animasinya tetap smooth. Semua transisi dan efeknya dikerjakan manual lewat CSS animations.
 
-Dibangun dengan HTML, CSS murni untuk memastikan loading cepat dan animasi yang halus. Desain berfokus pada menciptakan koneksi emosional melalui animasi dan transisi yang dibuat dengan hati-hati.`,
+Yang ada di dalamnya:
+- Galeri foto dengan animasi
+- Pemutar musik kustom
+- Timeline kenangan
+- Animasi transisi yang halus
+- Sudah dioptimalkan untuk HP`,
     tags: ["HTML", "CSS", "Animation"],
     category: "frontend",
     image: ultahImg,
@@ -142,16 +142,19 @@ Dibangun dengan HTML, CSS murni untuk memastikan loading cepat dan animasi yang 
     id: "qr-menu",
     title: "QR Code Menu Restaurant",
     shortDesc: "Sistem menu digital dengan pemindaian QR code dan manajemen pesanan",
-    fullDesc: `Solusi menu digital modern untuk restoran, dilengkapi dengan integrasi QR code untuk akses menu tanpa sentuhan. Sistem ini memungkinkan pelanggan untuk memindai QR code dan langsung melihat menu restoran di perangkat mobile mereka.
+    shortDescEn: "Digital restaurant menu system with QR code access and real-time menu management for admins",
+    fullDesc: `Sistem menu digital untuk restoran yang bisa diakses pengunjung lewat scan QR code di meja masing-masing. Tidak perlu aplikasi tambahan — cukup scan, langsung tampil menunya di browser.
 
-Aplikasi ini mencakup:
-- Sistem manajemen menu dinamis
-- Generasi QR code untuk setiap meja
-- Update menu secara real-time
-- Organisasi menu berbasis kategori
-- Fungsi pencarian dan filter
+Admin bisa update menu kapan saja lewat dashboard, perubahannya langsung tampil ke semua QR code tanpa perlu cetak ulang.
 
-Dibangun dengan React untuk pengalaman single-page application yang halus, dengan backend Laravel untuk penanganan API yang robust dan MySQL untuk persistensi data. Sistem dirancang agar scalable dan mudah dipelihara.`,
+Dibangun dengan React untuk sisi pengunjung, Laravel dan MySQL untuk backend dan manajemen menunya.
+
+Yang tersedia:
+- Scan QR code langsung tampil menu
+- Update menu real-time dari dashboard admin
+- Organisasi menu per kategori
+- Pencarian dan filter menu
+- QR code otomatis per meja`,
     tags: ["React", "Laravel", "MySQL", "QR Code"],
     category: "fullstack",
     image: qrImg,
@@ -184,15 +187,16 @@ Dibangun dengan React untuk pengalaman single-page application yang halus, denga
     id: "blood-pressure-tracker",
     title: "Blood Pressure Monitoring System",
     shortDesc: "Aplikasi web untuk melacak dan memantau riwayat tekanan darah",
-    fullDesc: `Aplikasi pemantauan kesehatan komprehensif yang dirancang untuk membantu pengguna melacak dan menganalisis pembacaan tekanan darah mereka dari waktu ke waktu. Sistem ini menyediakan wawasan visual melalui grafik interaktif dan membantu pengguna menjaga kesadaran kesehatan yang lebih baik.
+    shortDescEn: "Web app for logging and tracking blood pressure history over time, with interactive charts and trend analysis",
+    fullDesc: `Aplikasi web untuk mencatat dan memantau riwayat tekanan darah. Dibuat karena pencatatan manual di buku susah untuk dilihat trennya — di sini semua data langsung bisa divisualisasikan dalam grafik.
 
-Fitur utama meliputi:
-- Pencatatan tekanan darah harian
-- Grafik dan chart interaktif untuk analisis tren
-- Visualisasi data historis
-- Dukungan multi-pengguna untuk pelacakan keluarga
+Stack-nya React di frontend, Go di backend untuk prosesnya yang cepat, MySQL untuk simpan data, dan Chart.js untuk grafiknya.
 
-Aplikasi ini menggunakan React untuk pengalaman frontend yang responsif, Go untuk backend yang cepat dan efisien, dan MySQL untuk penyimpanan data yang andal. Chart.js diintegrasikan untuk visualisasi data yang indah yang membuat tren kesehatan mudah dipahami.`,
+Fitur yang tersedia:
+- Catat tekanan darah harian
+- Grafik tren yang interaktif
+- Histori lengkap pembacaan sebelumnya
+- Bisa dipakai lebih dari satu pengguna dalam satu keluarga`,
     tags: ["React", "Go", "MySQL", "Chart.js"],
     category: "fullstack",
     image: tensiImg,
@@ -224,23 +228,17 @@ Aplikasi ini menggunakan React untuk pengalaman frontend yang responsif, Go untu
     id: "gesture-sense",
     title: "GestureSense - Sign Language Recognition",
     shortDesc: "Sistem machine learning untuk mengenali gerakan bahasa isyarat tangan",
-    fullDesc: `Proyek machine learning inovatif yang menggunakan computer vision untuk mengenali dan menginterpretasikan gerakan bahasa isyarat tangan secara real-time. Proyek ini bertujuan untuk menjembatani kesenjangan komunikasi dan membuat teknologi lebih mudah diakses.
+    shortDescEn: "Machine learning system for real-time hand sign language gesture recognition using computer vision",
+    fullDesc: `Sistem pengenalan bahasa isyarat tangan berbasis machine learning. Model dilatih untuk mendeteksi dan menginterpretasikan gerakan tangan lewat webcam secara real-time.
 
-Sistem ini memanfaatkan:
-- Model deep learning yang dilatih pada dataset bahasa isyarat
-- Deteksi gerakan tangan real-time menggunakan webcam
-- TensorFlow untuk pelatihan dan inferensi model
-- OpenCV untuk pemrosesan gambar
-- Pengenalan gerakan dengan akurasi tinggi
-- Dukungan untuk berbagai alfabet bahasa isyarat
+Teknologi yang dipakai: TensorFlow dan Keras untuk pelatihan model, OpenCV untuk pemrosesan gambar dari kamera, Python sebagai bahasa utama, dan Jupyter Notebook untuk eksperimen dan analisis data.
 
-Proyek ini mendemonstrasikan aplikasi praktis machine learning dalam menyelesaikan tantangan aksesibilitas dunia nyata. Model dilatih pada ribuan gambar gerakan tangan dan mencapai akurasi tinggi dalam mengenali berbagai gerakan bahasa isyarat.
-
-Proyek ini menampilkan keterampilan dalam:
-- Pengembangan model machine learning
-- Teknik computer vision
-- Preprocessing dan augmentasi data
-- Optimasi model untuk performa real-time`,
+Yang dikerjakan dalam proyek ini:
+- Pelatihan model deep learning dari dataset bahasa isyarat
+- Pipeline preprocessing dan augmentasi data
+- Integrasi dengan kamera via OpenCV
+- Optimasi model supaya bisa jalan real-time di 30 FPS
+- Hasil akhir: akurasi 95% di dataset uji`,
     tags: ["Python", "TensorFlow", "OpenCV", "Machine Learning"],
     category: "ml",
     image: bisuImg,

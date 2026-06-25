@@ -9,10 +9,10 @@ export default function About() {
   const { language } = useLanguage();
   const t = translations[language];
   const stats = [
-    { value: 6, label: t.projects, color: "primary" },
-    { value: 8, label: t.technologies, color: "secondary" },
-    { value: 2, label: t.yearsCoding, color: "primary" },
-    { value: 100, label: t.dedication, color: "secondary" },
+    { value: 6, label: t.projects, color: "primary", suffix: "+" },
+    { value: 8, label: t.technologies, color: "secondary", suffix: "+" },
+    { value: 2, label: t.yearsCoding, color: "primary", suffix: "+" },
+    { value: 100, label: t.dedication, color: "secondary", suffix: "%" },
   ];
 
   const techStack = [
@@ -59,7 +59,7 @@ export default function About() {
             transition={{ delay: index * 0.1 }}
             className={`text-center p-4 rounded-2xl bg-gradient-to-br from-${stat.color}/10 to-${stat.color}/5 border border-${stat.color}/20`}
           >
-            <AnimatedCounter end={stat.value} suffix={stat.label === "Dedikasi" ? "%" : "+"} />
+            <AnimatedCounter end={stat.value} suffix={stat.suffix} />
             <p className="text-ink/70 mt-2 text-sm">{stat.label}</p>
           </motion.div>
         ))}

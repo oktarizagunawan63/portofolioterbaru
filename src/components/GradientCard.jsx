@@ -63,7 +63,7 @@ export default function GradientCard({ title, desc, tags, link, image, onDetailC
             className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-primary to-secondary text-white text-sm font-medium hover:shadow-lg transition-all"
           >
             <Eye size={16} />
-            View Details
+            {t.viewDetails}
           </button>
           
           {link && link !== "#" && (

@@ -58,7 +58,7 @@ export default function Projects() {
           <GradientCard
             key={project.id}
             {...project}
-            desc={project.shortDesc}
+            desc={language === "en" && project.shortDescEn ? project.shortDescEn : project.shortDesc}
             link={project.demoLink}
             onDetailClick={() => handleProjectClick(project.id)}
           />
