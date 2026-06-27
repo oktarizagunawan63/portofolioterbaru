@@ -22,6 +22,17 @@ Fitur yang tersedia:
 - Status proyek yang mudah dibaca sekilas
 - Integrasi frontend-backend yang rapi
 - Desain responsif untuk berbagai perangkat`,
+    fullDescEn: `A web-based dashboard built to help PT Amsar Prima Mandiri monitor project progress in a more structured way. Previously, all records were manual and scattered — the main goal was to centralize all project information in one place the team can easily access.
+
+The frontend is built with React for a responsive and comfortable interface, while the backend uses Laravel with MySQL for data management and authentication.
+
+Available features:
+- Clean and professional login screen
+- Dashboard to view each project's progress
+- Centralized project data management
+- Project status that's easy to read at a glance
+- Clean frontend-backend integration
+- Responsive design for various devices`,
     tags: ["React", "Laravel", "MySQL", "Laragon"],
     category: "fullstack",
     image: amsarDashboardImg,
@@ -35,6 +46,14 @@ Fitur yang tersedia:
       "Integrasi React dan Laravel",
       "Tampilan responsif"
     ],
+    featuresEn: [
+      "User authentication",
+      "Project progress monitoring",
+      "Centralized project data management",
+      "Admin dashboard",
+      "React and Laravel integration",
+      "Responsive design"
+    ],
     technologies: {
       frontend: ["React", "JavaScript", "CSS3"],
       backend: ["Laravel", "MySQL", "REST API"],
@@ -46,11 +65,23 @@ Fitur yang tersedia:
       "Mendesain tampilan login dan dashboard yang profesional sesuai identitas perusahaan",
       "Menyiapkan struktur database proyek yang rapi dan mudah dikembangkan"
     ],
+    challengesEn: [
+      "Designing a project monitoring flow that internal users can easily understand",
+      "Cleanly connecting the React frontend with the Laravel backend",
+      "Designing a professional login and dashboard UI that matches the company's identity",
+      "Setting up a clean and extensible database structure for project data"
+    ],
     outcomes: [
       "Membantu pemantauan proyek menjadi lebih terpusat",
       "Meningkatkan efisiensi akses informasi proyek",
       "Mengurangi ketergantungan pada pencatatan manual",
       "Memberikan fondasi sistem internal yang siap dikembangkan lebih lanjut"
+    ],
+    outcomesEn: [
+      "Centralized project monitoring for the internal team",
+      "Improved efficiency in accessing project information",
+      "Reduced reliance on manual record-keeping",
+      "Provided a solid foundation for further internal system development"
     ]
   },
   {
@@ -69,6 +100,17 @@ Fitur yang tersedia:
 - Dashboard admin untuk kelola lapangan dan booking
 - Notifikasi konfirmasi otomatis
 - Tampilan nyaman di HP maupun desktop`,
+    fullDescEn: `An online booking system for futsal courts, replacing the manual reservation process done via WhatsApp or phone calls. Users can check slot availability, make a booking, and receive automatic confirmation — without waiting for an admin to reply.
+
+Built with native PHP and MySQL for a lightweight, easy-to-maintain solution at this project's scale.
+
+Available features:
+- Real-time court availability check
+- User login and account management
+- Booking history accessible anytime
+- Admin dashboard for managing courts and bookings
+- Automatic confirmation notifications
+- Comfortable on both mobile and desktop`,
     tags: ["PHP", "MySQL", "JavaScript"],
     category: "fullstack",
     image: futsalImg,
@@ -81,6 +123,13 @@ Fitur yang tersedia:
       "Notifikasi email",
       "Desain responsif"
     ],
+    featuresEn: [
+      "Real-time booking system",
+      "Admin dashboard",
+      "Payment integration",
+      "Email notifications",
+      "Responsive design"
+    ],
     technologies: {
       frontend: ["PHP Native", "HTML5", "CSS3", "JavaScript"],
       backend: ["PHP", "MySQL"],
@@ -91,10 +140,20 @@ Fitur yang tersedia:
       "Menangani permintaan booking bersamaan",
       "Optimasi query database untuk performa"
     ],
+    challengesEn: [
+      "Implementing real-time availability without conflicts",
+      "Handling concurrent booking requests",
+      "Optimizing database queries for performance"
+    ],
     outcomes: [
       "Mengurangi waktu booking hingga 70%",
       "Meningkatkan utilisasi lapangan hingga 40%",
       "Feedback positif dari pengguna tentang kemudahan penggunaan"
+    ],
+    outcomesEn: [
+      "Reduced booking time by up to 70%",
+      "Increased court utilization by up to 40%",
+      "Positive user feedback on ease of use"
     ]
   },
   {
@@ -112,6 +171,16 @@ Yang ada di dalamnya:
 - Timeline kenangan
 - Animasi transisi yang halus
 - Sudah dioptimalkan untuk HP`,
+    fullDescEn: `A personalized birthday gift website — complete with a photo gallery and music player that can be customized for the recipient.
+
+Built purely with HTML and CSS without any additional JavaScript libraries, to keep loading fast and animations smooth. All transitions and effects were crafted manually using CSS animations.
+
+What's inside:
+- Animated photo gallery
+- Custom music player
+- Memory timeline
+- Smooth transition animations
+- Optimized for mobile`,
     tags: ["HTML", "CSS", "Animation"],
     category: "frontend",
     image: ultahImg,
@@ -123,6 +192,13 @@ Yang ada di dalamnya:
       "Transisi halus",
       "Dioptimalkan untuk mobile"
     ],
+    featuresEn: [
+      "Animated photo gallery",
+      "Custom music player",
+      "Interactive timeline",
+      "Smooth transitions",
+      "Mobile optimized"
+    ],
     technologies: {
       frontend: ["HTML5", "CSS3", "CSS Animations"],
       tools: ["Netlify", "Git"]
@@ -132,10 +208,20 @@ Yang ada di dalamnya:
       "Optimasi gambar untuk loading cepat",
       "Memastikan kompatibilitas lintas browser"
     ],
+    challengesEn: [
+      "Creating smooth animations without a JavaScript library",
+      "Optimizing images for fast loading",
+      "Ensuring cross-browser compatibility"
+    ],
     outcomes: [
       "Berhasil memberikan dampak emosional",
       "Performa halus di semua perangkat",
       "Feedback positif dari penerima"
+    ],
+    outcomesEn: [
+      "Successfully delivered an emotional impact",
+      "Smooth performance across all devices",
+      "Positive feedback from the recipient"
     ]
   },
   {
@@ -155,6 +241,18 @@ Yang tersedia:
 - Organisasi menu per kategori
 - Pencarian dan filter menu
 - QR code otomatis per meja`,
+    fullDescEn: `A digital menu system for restaurants, accessible to visitors by scanning a QR code at their table. No extra app needed — just scan and the menu loads directly in the browser.
+
+Admins can update the menu anytime via the dashboard, and changes reflect on all QR codes instantly — no reprinting needed.
+
+Built with React for the customer-facing side, and Laravel + MySQL for the backend and menu management.
+
+What's available:
+- Scan QR code to view menu instantly
+- Real-time menu updates from admin dashboard
+- Menu organized by category
+- Menu search and filter
+- Auto-generated QR code per table`,
     tags: ["React", "Laravel", "MySQL", "QR Code"],
     category: "fullstack",
     image: qrImg,
@@ -167,6 +265,13 @@ Yang tersedia:
       "Fungsi pencarian",
       "Dashboard admin"
     ],
+    featuresEn: [
+      "QR code scanning",
+      "Dynamic menu updates",
+      "Order management",
+      "Search functionality",
+      "Admin dashboard"
+    ],
     technologies: {
       frontend: ["React", "React Router", "Tailwind CSS"],
       backend: ["Laravel", "MySQL", "REST API"],
@@ -177,10 +282,20 @@ Yang tersedia:
       "Sinkronisasi menu secara real-time",
       "Optimasi untuk koneksi bandwidth rendah"
     ],
+    challengesEn: [
+      "Implementing efficient QR code generation",
+      "Real-time menu synchronization",
+      "Optimization for low-bandwidth connections"
+    ],
     outcomes: [
       "Mengurangi biaya cetak menu hingga 100%",
       "Update dan perubahan menu lebih cepat",
       "Pengalaman pelanggan yang lebih baik"
+    ],
+    outcomesEn: [
+      "Eliminated 100% of menu printing costs",
+      "Faster menu updates and changes",
+      "Improved customer experience"
     ]
   },
   {
@@ -197,6 +312,15 @@ Fitur yang tersedia:
 - Grafik tren yang interaktif
 - Histori lengkap pembacaan sebelumnya
 - Bisa dipakai lebih dari satu pengguna dalam satu keluarga`,
+    fullDescEn: `A web app for logging and tracking blood pressure history. Built because manual recording in a notebook makes it hard to see trends — here, all data can be visualized in charts directly.
+
+Stack: React on the frontend, Go on the backend for fast processing, MySQL for data storage, and Chart.js for the charts.
+
+Available features:
+- Daily blood pressure logging
+- Interactive trend charts
+- Full history of previous readings
+- Multi-user support within one household`,
     tags: ["React", "Go", "MySQL", "Chart.js"],
     category: "fullstack",
     image: tensiImg,
@@ -208,6 +332,12 @@ Fitur yang tersedia:
       "Analisis tren",
       "Dukungan multi-pengguna"
     ],
+    featuresEn: [
+      "Blood pressure logging",
+      "Interactive charts",
+      "Trend analysis",
+      "Multi-user support"
+    ],
     technologies: {
       frontend: ["React", "Chart.js", "Tailwind CSS"],
       backend: ["Go", "MySQL", "REST API"],
@@ -218,10 +348,20 @@ Fitur yang tersedia:
       "Implementasi penyimpanan data kesehatan yang aman",
       "Mendesain form input yang user-friendly"
     ],
+    challengesEn: [
+      "Creating intuitive data visualizations",
+      "Implementing secure health data storage",
+      "Designing user-friendly input forms"
+    ],
     outcomes: [
       "Membantu pengguna melacak kesehatan secara konsisten",
       "Feedback positif tentang kejelasan visualisasi",
       "Meningkatkan kesadaran kesehatan di kalangan pengguna"
+    ],
+    outcomesEn: [
+      "Helped users track their health consistently",
+      "Positive feedback on the clarity of visualizations",
+      "Increased health awareness among users"
     ]
   },
   {
@@ -239,6 +379,16 @@ Yang dikerjakan dalam proyek ini:
 - Integrasi dengan kamera via OpenCV
 - Optimasi model supaya bisa jalan real-time di 30 FPS
 - Hasil akhir: akurasi 95% di dataset uji`,
+    fullDescEn: `A machine learning-based hand sign language recognition system. The model was trained to detect and interpret hand gestures via webcam in real-time.
+
+Technologies used: TensorFlow and Keras for model training, OpenCV for camera image processing, Python as the main language, and Jupyter Notebook for experiments and data analysis.
+
+Work done in this project:
+- Training a deep learning model from a sign language dataset
+- Data preprocessing and augmentation pipeline
+- Camera integration via OpenCV
+- Model optimization for real-time performance at 30 FPS
+- Final result: 95% accuracy on the test dataset`,
     tags: ["Python", "TensorFlow", "OpenCV", "Machine Learning"],
     category: "ml",
     image: bisuImg,
@@ -252,6 +402,14 @@ Yang dikerjakan dalam proyek ini:
       "Pipeline pelatihan model",
       "Optimasi performa"
     ],
+    featuresEn: [
+      "Real-time gesture recognition",
+      "High accuracy detection",
+      "Support for multiple sign languages",
+      "Webcam integration",
+      "Model training pipeline",
+      "Performance optimization"
+    ],
     technologies: {
       ml: ["TensorFlow", "Keras", "OpenCV"],
       languages: ["Python"],
@@ -262,10 +420,20 @@ Yang dikerjakan dalam proyek ini:
       "Optimasi model untuk performa real-time",
       "Menangani kondisi pencahayaan yang bervariasi"
     ],
+    challengesEn: [
+      "Achieving high accuracy with a limited dataset",
+      "Optimizing the model for real-time performance",
+      "Handling varying lighting conditions"
+    ],
     outcomes: [
       "Mencapai akurasi 95% pada dataset uji",
       "Pengenalan real-time pada 30 FPS",
       "Dampak positif pada aksesibilitas"
+    ],
+    outcomesEn: [
+      "Achieved 95% accuracy on the test dataset",
+      "Real-time recognition at 30 FPS",
+      "Positive impact on accessibility"
     ]
   }
 ];

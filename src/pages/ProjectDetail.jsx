@@ -2,11 +2,13 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowLeft, ExternalLink, Github, CheckCircle, Zap, Target } from "lucide-react";
 import { getProjectById } from "../data/projects";
+import { useLanguage } from "../contexts/LanguageContext";
 import { useEffect } from "react";
 
 export default function ProjectDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const { isEnglish } = useLanguage();
   const project = getProjectById(id);
 
   useEffect(() => {
@@ -25,6 +27,12 @@ export default function ProjectDetail() {
       </div>
     );
   }
+
+  const shortDesc = isEnglish ? (project.shortDescEn || project.shortDesc) : project.shortDesc;
+  const fullDesc = isEnglish ? (project.fullDescEn || project.fullDesc) : project.fullDesc;
+  const features = isEnglish ? (project.featuresEn || project.features) : project.features;
+  const challenges = isEnglish ? (project.challengesEn || project.challenges) : project.challenges;
+  const outcomes = isEnglish ? (project.outcomesEn || project.outcomes) : project.outcomes;
 
   return (
     <div className="min-h-screen bg-paper">
@@ -47,7 +55,7 @@ export default function ProjectDetail() {
             className="absolute top-8 left-4 md:left-12 flex items-center gap-2 text-white hover:text-accent transition-colors"
           >
             <ArrowLeft size={20} />
-            <span>Back to Home</span>
+            <span>{isEnglish ? "Back to Home" : "Kembali"}</span>
           </motion.button>
 
           <motion.div
@@ -69,7 +77,7 @@ export default function ProjectDetail() {
               {project.title}
             </h1>
             <p className="text-xl text-white/90 max-w-3xl">
-              {project.shortDesc}
+              {shortDesc}
             </p>
           </motion.div>
         </div>
@@ -93,7 +101,7 @@ export default function ProjectDetail() {
                 className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-full font-medium hover:shadow-lg transition-all"
               >
                 <ExternalLink size={18} />
-                View Live Demo
+                {isEnglish ? "View Live Demo" : "Lihat Demo"}
               </a>
             )}
             {project.githubLink && project.githubLink !== "#" && (
@@ -104,14 +112,14 @@ export default function ProjectDetail() {
                 className="inline-flex items-center gap-2 border-2 border-primary text-primary px-6 py-3 rounded-full font-medium hover:bg-primary hover:text-white transition-all"
               >
                 <Github size={18} />
-                View Source Code
+                {isEnglish ? "View Source Code" : "Lihat Source Code"}
               </a>
             )}
             {(!project.demoLink || project.demoLink === "#") &&
               (!project.githubLink || project.githubLink === "#") && (
                 <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-accent/20 border border-accent/40 text-ink/60 text-sm font-medium">
                   <Github size={18} />
-                  Source code available on request
+                  {isEnglish ? "Source code available on request" : "Source code tersedia atas permintaan"}
                 </div>
               )}
           </motion.div>
@@ -123,9 +131,9 @@ export default function ProjectDetail() {
             transition={{ delay: 0.4 }}
             className="mb-12"
           >
-            <h2 className="text-3xl font-bold mb-4">Overview</h2>
+            <h2 className="text-3xl font-bold mb-4">{isEnglish ? "Overview" : "Gambaran Umum"}</h2>
             <div className="prose prose-lg max-w-none text-ink/80 whitespace-pre-line">
-              {project.fullDesc}
+              {fullDesc}
             </div>
           </motion.div>
 
@@ -140,10 +148,10 @@ export default function ProjectDetail() {
               <div className="p-3 rounded-xl bg-primary/10">
                 <CheckCircle className="text-primary" size={24} />
               </div>
-              <h2 className="text-3xl font-bold">Key Features</h2>
+              <h2 className="text-3xl font-bold">{isEnglish ? "Key Features" : "Fitur Utama"}</h2>
             </div>
             <div className="grid md:grid-cols-2 gap-4">
-              {project.features.map((feature, index) => (
+              {features.map((feature, index) => (
                 <div
                   key={index}
                   className="flex items-start gap-3 p-4 rounded-xl bg-accent/10 border border-accent/20"
@@ -166,7 +174,7 @@ export default function ProjectDetail() {
               <div className="p-3 rounded-xl bg-secondary/10">
                 <Zap className="text-secondary" size={24} />
               </div>
-              <h2 className="text-3xl font-bold">Technologies Used</h2>
+              <h2 className="text-3xl font-bold">{isEnglish ? "Technologies Used" : "Teknologi yang Digunakan"}</h2>
             </div>
             <div className="space-y-4">
               {Object.entries(project.technologies).map(([category, techs]) => (
@@ -201,10 +209,10 @@ export default function ProjectDetail() {
                 <div className="p-3 rounded-xl bg-primary/10">
                   <Target className="text-primary" size={24} />
                 </div>
-                <h2 className="text-2xl font-bold">Challenges</h2>
+                <h2 className="text-2xl font-bold">{isEnglish ? "Challenges" : "Tantangan"}</h2>
               </div>
               <ul className="space-y-3">
-                {project.challenges.map((challenge, index) => (
+                {challenges.map((challenge, index) => (
                   <li
                     key={index}
                     className="flex items-start gap-3 text-ink/80"
@@ -226,10 +234,10 @@ export default function ProjectDetail() {
                 <div className="p-3 rounded-xl bg-secondary/10">
                   <CheckCircle className="text-secondary" size={24} />
                 </div>
-                <h2 className="text-2xl font-bold">Outcomes</h2>
+                <h2 className="text-2xl font-bold">{isEnglish ? "Outcomes" : "Hasil"}</h2>
               </div>
               <ul className="space-y-3">
-                {project.outcomes.map((outcome, index) => (
+                {outcomes.map((outcome, index) => (
                   <li
                     key={index}
                     className="flex items-start gap-3 text-ink/80"
@@ -254,7 +262,7 @@ export default function ProjectDetail() {
               className="inline-flex items-center gap-2 text-primary hover:text-secondary font-medium transition-colors"
             >
               <ArrowLeft size={20} />
-              Back to All Projects
+              {isEnglish ? "Back to All Projects" : "Kembali ke Semua Proyek"}
             </button>
           </motion.div>
         </div>
