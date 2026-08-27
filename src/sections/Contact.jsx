@@ -1,16 +1,77 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Mail, Send, CheckCircle, AlertCircle } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
 import { translations } from "../data/translations";
 
+// --- Rate Limit Config ---
+const MAX_SUBMISSIONS = 3;
+const WINDOW_MS = 20 * 60 * 1000; // 20 menit
+const COOLDOWN_MS = 20 * 1000;    // 20 detik antar submit
+
+function getBrowserFingerprint() {
+  const raw = [
+    navigator.userAgent,
+    Intl.DateTimeFormat().resolvedOptions().timeZone,
+    navigator.language,
+    screen.width + "x" + screen.height,
+  ].join("|");
+  let h = 5381;
+  for (let i = 0; i < raw.length; i++) {
+    h = ((h << 5) + h) ^ raw.charCodeAt(i);
+  }
+  return (h >>> 0).toString(36);
+}
+
+const STORAGE_KEY = `cf_rl_${getBrowserFingerprint()}`;
+
+function getRateData() {
+  try {
+    return JSON.parse(localStorage.getItem(STORAGE_KEY)) || { timestamps: [] };
+  } catch {
+    return { timestamps: [] };
+  }
+}
+
+function saveRateData(data) {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+  } catch { /* quota exceeded — ignore */ }
+}
+
+function pruneOld(timestamps) {
+  const cutoff = Date.now() - WINDOW_MS;
+  return timestamps.filter((ts) => ts > cutoff);
+}
+
+function isBlocked() {
+  const { timestamps } = getRateData();
+  const valid = pruneOld(timestamps);
+  const now = Date.now();
+  const lastTs = valid.length > 0 ? valid[valid.length - 1] : 0;
+  return valid.length >= MAX_SUBMISSIONS || now - lastTs < COOLDOWN_MS;
+}
+
 export default function Contact() {
   const { language } = useLanguage();
   const t = translations[language];
   const [status, setStatus] = useState("");
+  const [blocked, setBlocked] = useState(false);
+
+  useEffect(() => {
+    setBlocked(isBlocked());
+  }, []);
 
   async function handleSubmit(e) {
     e.preventDefault();
+    if (isBlocked()) return;
+
+    const now = Date.now();
+    const { timestamps } = getRateData();
+    const valid = pruneOld(timestamps);
+    saveRateData({ timestamps: [...valid, now] });
+    setBlocked(true);
+
     setStatus("loading");
 
     const form = e.target;
@@ -147,7 +208,7 @@ export default function Contact() {
 
               <button
                 type="submit"
-                disabled={status === "loading"}
+                disabled={status === "loading" || blocked}
                 className="w-full group relative inline-flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-6 md:px-8 py-2.5 md:py-3 text-sm md:text-base font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <span className="relative z-10 flex items-center gap-2">
