@@ -6,19 +6,19 @@ export const translations = {
     contact: "Kontak",
     
     // Hero Section
-    availableForFreelance: "Tersedia untuk freelance",
+    availableForFreelance: "Terbuka untuk magang & freelance",
     heroTitle: "Halo, Saya Oktariza Gunawan",
     heroSubtitle: "Full-Stack Developer | Web Apps & Machine Learning",
-    heroDescription: "Full-stack developer dengan pengalaman hands-on membangun aplikasi web yang cepat, terstruktur, dan production-ready. Skilled dalam mengembangkan interface responsif dengan React, mengintegrasikan frontend dengan backend Laravel atau Go, dan mengelola data workflow menggunakan MySQL.",
+    heroDescription: "Mahasiswa Teknik Informatika yang membangun aplikasi web dari tampilan sampai database — React di depan, Laravel atau Go di belakang. Terakhir magang di PT Amsar Prima Mandiri, membangun sistem sales dan monitoring proyek untuk 5 role pengguna.",
     viewProjects: "Lihat Proyek",
     contactMe: "Hubungi Saya",
     downloadCv: "Download CV",
     
     // About Section
     aboutTitle: "Tentang Saya",
-    aboutDescription: "Mahasiswa semester 6 Universitas Pamulang jurusan Teknik Informatika (Expected 2027). Fokus pada web development, backend APIs, database management, data science, dan machine learning. Konsisten membangun proyek independen untuk mengasah kemampuan problem-solving dan menghasilkan solusi end-to-end dalam praktik.",
+    aboutDescription: "Mahasiswa semester 7 Teknik Informatika di Universitas Pamulang, lulus 2027. Sebagian besar waktu saya di web development: React, Laravel, dan sedikit Go. Di luar itu saya belajar machine learning lewat proyek computer vision kecil.",
     whatIDo: "Apa yang Saya Lakukan",
-    whatIDoDescription: "Full-stack developer yang skilled dalam membangun aplikasi web yang tidak hanya menarik secara visual tetapi juga cepat dan terstruktur dengan baik. Dari responsive interface dengan React hingga backend yang robust dengan Laravel atau Go, saya menangani full stack. Passionate tentang clean UI design, performa aplikasi, dan menerapkan machine learning untuk menyelesaikan masalah dunia nyata.",
+    whatIDoDescription: "Saya biasa memegang satu fitur dari awal sampai akhir: merancang tabel, membuat endpoint API, lalu halaman React yang memakainya. Proyek terbesar saya sejauh ini adalah sistem internal saat magang — 25 controller Laravel, ±30 halaman React, dan dashboard terpisah untuk tiap role.",
     webDevelopment: "Pengembangan Web",
     uiuxDesign: "Desain UI/UX",
     apiDevelopment: "Pengembangan API",
@@ -32,7 +32,7 @@ export const translations = {
     projectsCount: "Proyek",
     technologies: "Teknologi",
     yearsCoding: "Tahun Coding",
-    dedication: "Dedikasi",
+    dedication: "Magang",
     
     // Projects Section
     projectsTitle: "Proyek Terbaru",
@@ -80,19 +80,19 @@ export const translations = {
     contact: "Contact",
 
     // Hero Section
-    availableForFreelance: "Available for freelance",
+    availableForFreelance: "Open to internships & freelance",
     heroTitle: "Hello, I'm Oktariza Gunawan",
     heroSubtitle: "Full-Stack Developer | Web Apps & Machine Learning",
-    heroDescription: "Building clean, fast, and genuinely useful web apps is the main focus. React, Tailwind CSS, Golang, and Python are the core tools — with something new always getting added along the way.",
+    heroDescription: "Informatics student who builds web apps from the UI down to the database — React on the front, Laravel or Go on the back. Most recently interned at PT Amsar Prima Mandiri, building a sales and project-monitoring system used by 5 user roles.",
     viewProjects: "View Projects",
     contactMe: "Contact Me",
     downloadCv: "Download CV",
 
     // About Section
     aboutTitle: "About Me",
-    aboutDescription: "6th semester student at Universitas Pamulang, with full-stack web development as the main focus. The goal is always apps that are clean, responsive, and easy for people to use — from the React layer down to the API and database. Data science and machine learning are on the side, but growing.",
+    aboutDescription: "7th-semester Informatics student at Universitas Pamulang, graduating in 2027. Most of my time goes into web development: React, Laravel, and some Go. On the side I'm learning machine learning through small computer vision projects.",
     whatIDo: "What I Do",
-    whatIDoDescription: "Full stack, end to end — smooth UIs on the front, solid backends underneath. Clean code and things that hold up well in real use, that's the standard.",
+    whatIDoDescription: "I usually own a feature end to end: design the tables, write the API endpoints, then build the React pages that use them. My biggest project so far is the internal system from my internship — 25 Laravel controllers, ~30 React pages, and a separate dashboard for each role.",
     webDevelopment: "Web Development",
     uiuxDesign: "UI/UX Design",
     apiDevelopment: "API Development",
@@ -106,7 +106,7 @@ export const translations = {
     projectsCount: "Projects",
     technologies: "Technologies",
     yearsCoding: "Years Coding",
-    dedication: "Dedication",
+    dedication: "Internship",
 
     // Projects Section
     projectsTitle: "Latest Projects",

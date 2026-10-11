@@ -1,0 +1,80 @@
+<!doctype html>
+<!-- Source for public/Oktariza_Gunawan_CV.pdf. Re-render: msedge --headless --no-pdf-header-footer --print-to-pdf=public/Oktariza_Gunawan_CV.pdf cv/cv.html -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Oktariza Gunawan - CV</title>
+<style>
+  @page { size: A4; margin: 14mm 16mm; }
+  * { box-sizing: border-box; }
+  body { font-family: Calibri, "Segoe UI", Arial, sans-serif; font-size: 10.5pt; line-height: 1.35; color: #1a1a1a; margin: 0; }
+  a { color: inherit; text-decoration: none; }
+  h1 { font-size: 21pt; margin: 0; letter-spacing: .3px; }
+  .role { font-size: 11.5pt; color: #444; margin: 2px 0 4px; }
+  .contact { font-size: 9.5pt; color: #333; }
+  h2 { font-size: 10.5pt; text-transform: uppercase; letter-spacing: 1px; color: #1f3a5f; border-bottom: 1px solid #1f3a5f; padding-bottom: 2px; margin: 13px 0 6px; }
+  .row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+  .row b { font-size: 10.5pt; }
+  .meta { color: #555; font-size: 9.5pt; white-space: nowrap; }
+  .sub { color: #444; font-style: italic; font-size: 9.5pt; }
+  ul { margin: 3px 0 8px; padding-left: 16px; }
+  li { margin: 1.5px 0; }
+  p { margin: 0 0 4px; }
+  .skills div { margin: 1.5px 0; }
+  .skills b { display: inline-block; width: 82px; }
+</style>
+</head>
+<body>
+
+<h1>Oktariza Gunawan</h1>
+<div class="role">Full-Stack Web Developer &middot; React &amp; Laravel</div>
+<div class="contact">
+  <a href="mailto:oktarizagunawan63@gmail.com">oktarizagunawan63@gmail.com</a> &nbsp;|&nbsp; <a href="https://oktariza.vercel.app">oktariza.vercel.app</a> &nbsp;|&nbsp; <a href="https://github.com/oktarizagunawan63">github.com/oktarizagunawan63</a> &nbsp;|&nbsp; <a href="https://www.linkedin.com/in/oktarizagunawan/">linkedin.com/in/oktarizagunawan</a>
+</div>
+
+<h2>Summary</h2>
+<p>Informatics student graduating in 2027. I build web apps end to end with React and Laravel, from the database schema to the UI. During my internship I built an internal sales and project-monitoring system with separate dashboards for five user roles.</p>
+
+<h2>Experience</h2>
+<div class="row"><b>PT Amsar Prima Mandiri &mdash; Web Developer Intern</b><span class="meta">Mar 2026 &ndash; Jun 2026</span></div>
+<div class="sub">React, Laravel 11, Laravel Sanctum, MySQL, Zustand, Recharts</div>
+<ul>
+  <li>Built an internal web app that moved sales, site-visit and project records out of manual recaps into one system, with separate dashboards for admin, sales, sales manager, site manager and engineer.</li>
+  <li>Designed the MySQL schema (32 migrations) and REST API (25 controllers) for the sales funnel from lead to won/lost, visit planning with check-in/check-out, and engineer progress reports.</li>
+  <li>Added a manager approval flow for unplanned visits, sales KPI charts with Recharts, and PDF report export with jsPDF, so managers no longer had to compile reports by hand.</li>
+  <li>Set up token auth with Laravel Sanctum, rate limiting on login and password-reset endpoints, and password reset by email.</li>
+</ul>
+
+<h2>Projects</h2>
+<div class="row"><b>QR Code Digital Menu</b><span class="meta">React, Laravel, MySQL</span></div>
+<ul>
+  <li>Built a QR-based menu that a restaurant now uses instead of printed menus. Customers scan the code on their table and browse the menu in the browser, with no app to install.</li>
+  <li>Built an admin dashboard for items, categories and prices. Changes appear right away, with nothing to reprint.</li>
+</ul>
+
+<div class="row"><b>Blood Pressure Tracker</b><span class="meta">React, Go, MySQL, Chart.js</span></div>
+<ul>
+  <li>Wrote a Go REST API and React frontend for logging daily readings, with several family members under one account.</li>
+  <li>Added Chart.js trend charts so non-technical users can see changes over weeks instead of reading through a paper log.</li>
+</ul>
+
+<div class="row"><b>GestureSense &mdash; Sign Language Recognition</b><span class="meta">Python, TensorFlow/Keras, OpenCV</span></div>
+<ul>
+  <li>Trained a hand-gesture classifier in Keras on a sign-language image dataset, with an OpenCV/NumPy pipeline for preprocessing and augmentation.</li>
+  <li>Built a prototype that classifies gestures live from a webcam, as a first step toward a communication aid for deaf users.</li>
+</ul>
+
+<h2>Education</h2>
+<div class="row"><b>Universitas Pamulang &mdash; Bachelor of Informatics Engineering</b><span class="meta">Expected 2027</span></div>
+
+<h2>Skills</h2>
+<div class="skills">
+  <div><b>Languages</b>JavaScript, PHP, Go, Python, SQL, Java</div>
+  <div><b>Frontend</b>React, React Router, Zustand, Tailwind CSS, Recharts, Chart.js</div>
+  <div><b>Backend</b>Laravel 11, Laravel Sanctum, REST APIs, MySQL</div>
+  <div><b>ML</b>TensorFlow/Keras, OpenCV, NumPy, Pandas</div>
+  <div><b>Tools</b>Git, GitHub, Vercel, Laragon, Jupyter</div>
+</div>
+
+</body>
+</html>

@@ -77,20 +77,22 @@ export default function Contact() {
     const form = e.target;
     const data = new FormData(form);
 
-    const res = await fetch("https://formspree.io/f/mnngwkyv", {
-      method: "POST",
-      body: data,
-      headers: { Accept: "application/json" },
-    });
-
-    if (res.ok) {
-      setStatus("success");
-      form.reset();
-      setTimeout(() => setStatus(""), 5000);
-    } else {
-      setStatus("error");
-      setTimeout(() => setStatus(""), 5000);
+    let ok = false;
+    try {
+      const res = await fetch("https://formspree.io/f/mnngwkyv", {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" },
+      });
+      ok = res.ok;
+    } catch {
+      // network error / offline — falls through to the error message
     }
+
+    setStatus(ok ? "success" : "error");
+    if (ok) form.reset();
+    setTimeout(() => setStatus(""), 5000);
+    setTimeout(() => setBlocked(isBlocked()), COOLDOWN_MS);
   }
 
   return (
@@ -164,11 +166,15 @@ export default function Contact() {
             viewport={{ once: true }}
           >
             <form onSubmit={handleSubmit} className="space-y-3 md:space-y-4">
+              {/* Honeypot: Formspree drops any submission that fills this */}
+              <input type="text" name="_gotcha" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
+
               <div>
                 <label className="block text-xs md:text-sm font-medium mb-1.5 md:mb-2">{t.name}</label>
                 <input
                   name="name"
                   required
+                  maxLength={100}
                   placeholder={t.namePlaceholder}
                   className="w-full px-3 md:px-4 py-2.5 md:py-3 text-sm md:text-base rounded-xl bg-accent/10 border border-accent/20 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
                 />
@@ -180,6 +186,7 @@ export default function Contact() {
                   name="email"
                   type="email"
                   required
+                  maxLength={254}
                   placeholder={t.emailPlaceholder}
                   className="w-full px-3 md:px-4 py-2.5 md:py-3 text-sm md:text-base rounded-xl bg-accent/10 border border-accent/20 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
                 />
@@ -190,6 +197,7 @@ export default function Contact() {
                 <input
                   name="subject"
                   required
+                  maxLength={150}
                   placeholder={t.subjectPlaceholder}
                   className="w-full px-3 md:px-4 py-2.5 md:py-3 text-sm md:text-base rounded-xl bg-accent/10 border border-accent/20 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
                 />
@@ -200,6 +208,7 @@ export default function Contact() {
                 <textarea
                   name="message"
                   required
+                  maxLength={5000}
                   rows="4"
                   placeholder={t.messagePlaceholder}
                   className="w-full px-3 md:px-4 py-2.5 md:py-3 text-sm md:text-base rounded-xl bg-accent/10 border border-accent/20 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all resize-none"

@@ -12,7 +12,7 @@ export default function About() {
     { value: 6, label: t.projectsCount, color: "primary", suffix: "+" },
     { value: 8, label: t.technologies, color: "secondary", suffix: "+" },
     { value: 2, label: t.yearsCoding, color: "primary", suffix: "+" },
-    { value: 100, label: t.dedication, color: "secondary", suffix: "%" },
+    { value: 1, label: t.dedication, color: "secondary", suffix: "" },
   ];
 
   const techStack = [
