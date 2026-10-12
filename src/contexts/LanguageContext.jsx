@@ -11,10 +11,18 @@ export const useLanguage = () => {
 };
 
 export const LanguageProvider = ({ children }) => {
-  const [language, setLanguage] = useState('id'); // 'id' for Indonesian, 'en' for English
+  // 'id' for Indonesian, 'en' for English; remembered so refreshes and direct /project links keep the choice
+  const [language, setLanguageState] = useState(() => {
+    try { return localStorage.getItem('lang') === 'en' ? 'en' : 'id'; } catch { return 'id'; }
+  });
+
+  const setLanguage = (lang) => {
+    setLanguageState(lang);
+    try { localStorage.setItem('lang', lang); } catch { /* storage blocked — keep in-memory choice */ }
+  };
 
   const toggleLanguage = () => {
-    setLanguage(prev => prev === 'id' ? 'en' : 'id');
+    setLanguage(language === 'id' ? 'en' : 'id');
   };
 
   const value = {

@@ -19,6 +19,11 @@ export const translations = {
     aboutDescription: "Mahasiswa semester 7 Teknik Informatika di Universitas Pamulang, lulus 2027. Sebagian besar waktu saya di web development: React, Laravel, dan sedikit Go. Di luar itu saya belajar machine learning lewat proyek computer vision kecil.",
     whatIDo: "Apa yang Saya Lakukan",
     whatIDoDescription: "Saya biasa memegang satu fitur dari awal sampai akhir: merancang tabel, membuat endpoint API, lalu halaman React yang memakainya. Proyek terbesar saya sejauh ini adalah sistem internal saat magang — 25 controller Laravel, ±30 halaman React, dan dashboard terpisah untuk tiap role.",
+    whatIDoItems: [
+      { title: "Frontend", desc: "Halaman responsif dengan React, React Router, dan Tailwind CSS — termasuk dashboard dan grafik dengan Recharts." },
+      { title: "Backend & API", desc: "REST API dengan Laravel (auth Sanctum, rate limit, reset password via email) dan Go." },
+      { title: "Database", desc: "Merancang skema MySQL dan migration — 32 migration untuk sistem magang di Amsar." },
+    ],
     webDevelopment: "Pengembangan Web",
     uiuxDesign: "Desain UI/UX",
     apiDevelopment: "Pengembangan API",
@@ -34,6 +39,18 @@ export const translations = {
     yearsCoding: "Tahun Coding",
     dedication: "Magang",
     
+    // Experience Section
+    experience: "Pengalaman",
+    experienceTitle: "Pengalaman",
+    amsarRole: "Web Developer Intern",
+    amsarPeriod: "Mar 2026 – Jun 2026",
+    amsarBullets: [
+      "Membangun aplikasi internal yang menyatukan data sales, kunjungan, dan proyek — sebelumnya direkap manual — dengan dashboard terpisah untuk admin, sales, sales manager, site manager, dan engineer.",
+      "Merancang skema MySQL (32 migration) dan REST API (25 controller) untuk sales funnel dari prospek sampai won/lost, rencana kunjungan dengan check-in/check-out, dan laporan progres engineer.",
+      "Menambahkan alur approval kunjungan dadakan, grafik KPI sales dengan Recharts, dan export laporan PDF, sehingga manager tidak perlu menyusun laporan manual.",
+    ],
+    viewCaseStudy: "Lihat detail sistem",
+
     // Projects Section
     projectsTitle: "Proyek Terbaru",
     projectsDescription: "Beberapa proyek yang sudah dikerjakan belakangan ini. Masing-masing punya tantangan berbeda — ini hasilnya.",
@@ -93,6 +110,11 @@ export const translations = {
     aboutDescription: "7th-semester Informatics student at Universitas Pamulang, graduating in 2027. Most of my time goes into web development: React, Laravel, and some Go. On the side I'm learning machine learning through small computer vision projects.",
     whatIDo: "What I Do",
     whatIDoDescription: "I usually own a feature end to end: design the tables, write the API endpoints, then build the React pages that use them. My biggest project so far is the internal system from my internship — 25 Laravel controllers, ~30 React pages, and a separate dashboard for each role.",
+    whatIDoItems: [
+      { title: "Frontend", desc: "Responsive pages with React, React Router and Tailwind CSS — including dashboards and charts with Recharts." },
+      { title: "Backend & API", desc: "REST APIs with Laravel (Sanctum auth, rate limiting, email password reset) and Go." },
+      { title: "Database", desc: "MySQL schema design and migrations — 32 migrations for the internship system at Amsar." },
+    ],
     webDevelopment: "Web Development",
     uiuxDesign: "UI/UX Design",
     apiDevelopment: "API Development",
@@ -107,6 +129,18 @@ export const translations = {
     technologies: "Technologies",
     yearsCoding: "Years Coding",
     dedication: "Internship",
+
+    // Experience Section
+    experience: "Experience",
+    experienceTitle: "Experience",
+    amsarRole: "Web Developer Intern",
+    amsarPeriod: "Mar 2026 – Jun 2026",
+    amsarBullets: [
+      "Built an internal web app that moved sales, site-visit and project records out of manual recaps into one system, with separate dashboards for admin, sales, sales manager, site manager and engineer.",
+      "Designed the MySQL schema (32 migrations) and REST API (25 controllers) for the sales funnel from lead to won/lost, visit planning with check-in/check-out, and engineer progress reports.",
+      "Added a manager approval flow for unplanned visits, sales KPI charts with Recharts, and PDF report export, so managers no longer had to compile reports by hand.",
+    ],
+    viewCaseStudy: "See system details",
 
     // Projects Section
     projectsTitle: "Latest Projects",

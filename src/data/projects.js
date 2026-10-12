@@ -4,11 +4,13 @@ import qrImg from "../assets/qr.jpg";
 import tensiImg from "../assets/tensi.jpg";
 import bisuImg from "../assets/bisu.jpg";
 import amsarDashboardImg from "../assets/asmr.jpg";
+import perpusImg from "../assets/perpustakaan.jpg";
 
 export const projects = [
   {
     id: "amsar-project-monitoring",
-    title: "PT Amsar Prima Mandiri Project Monitoring Dashboard",
+    title: "Dashboard Monitoring Proyek PT Amsar Prima Mandiri",
+    titleEn: "PT Amsar Prima Mandiri Project Monitoring Dashboard",
     shortDesc: "Sistem internal (proyek kerja praktek) untuk sales funnel, kunjungan sales, absensi, dan progres proyek engineer — dengan 5 dashboard berbeda per role",
     shortDescEn: "Internal system built during my internship: sales funnel, sales visits, attendance, and engineer project progress — with 5 role-based dashboards",
     fullDesc: `Dashboard berbasis web untuk membantu PT Amsar Prima Mandiri memantau progres proyek secara lebih terstruktur. Sebelumnya pencatatan masih manual dan tersebar, jadi tujuan utamanya memusatkan semua informasi proyek di satu tempat yang mudah diakses tim.
@@ -83,8 +85,80 @@ What I built:
     ]
   },
   {
+    id: "perpustakaan",
+    title: "Sistem Perpustakaan Kampus",
+    titleEn: "Campus Library System",
+    shortDesc: "Website perpustakaan dengan katalog berklasifikasi DDC, sirkulasi pinjam-kembali, perpanjangan, dan denda otomatis",
+    shortDescEn: "Campus library website with a DDC-classified catalog, borrowing and returns, renewals, and automatic late fines",
+    fullDesc: `Website perpustakaan kampus untuk dua jenis pengguna: anggota dan petugas sirkulasi. Anggota bisa mencari buku, melihat ketersediaan di rak, dan memperpanjang pinjaman sendiri. Petugas mencatat peminjaman dan pengembalian dari satu halaman.
+
+Dibangun dengan PHP 8 native dan MySQL lewat PDO, tanpa framework, supaya bisa langsung jalan di htdocs maupun \`php -S\`.
+
+Aturan layanan yang diterapkan di sistem:
+- Lama pinjam 7 hari, maksimal 3 buku aktif per anggota
+- Perpanjangan mandiri 1 kali, tidak bisa kalau sudah terlambat
+- Anggota yang punya pinjaman terlambat tidak bisa meminjam lagi
+- Denda Rp1.000 per hari, dihitung otomatis saat buku dikembalikan
+- Jam layanan per hari, termasuk status buka/tutup`,
+    fullDescEn: `A campus library website for two kinds of users: members and circulation staff. Members can search books, see shelf availability, and renew their own loans. Staff record loans and returns from a single page.
+
+Built with native PHP 8 and MySQL via PDO, no framework, so it runs straight from htdocs or \`php -S\`.
+
+Library rules enforced by the system:
+- 7-day loan period, up to 3 active books per member
+- One self-service renewal, not allowed once a loan is overdue
+- Members with an overdue loan can't borrow more books
+- Late fine of Rp1,000 per day, calculated automatically on return
+- Daily opening hours, including an open/closed status`,
+    tags: ["PHP 8", "MySQL", "PDO", "JavaScript"],
+    category: "fullstack",
+    image: perpusImg,
+    demoLink: "#",
+    githubLink: "https://github.com/oktarizagunawan63/perpustakaan",
+    features: [
+      "Katalog dengan pencarian judul, penulis, penerbit, ISBN, dan nomor panggil",
+      "Filter per kelas DDC (000–900) dan ketersediaan di rak",
+      "Pendaftaran anggota dan halaman akun pinjaman",
+      "Perpanjangan pinjaman mandiri",
+      "Panel petugas: sirkulasi, koleksi, dan anggota",
+      "Denda keterlambatan otomatis"
+    ],
+    featuresEn: [
+      "Catalog search by title, author, publisher, ISBN, and call number",
+      "Filter by DDC class (000–900) and shelf availability",
+      "Member sign-up and a personal loans page",
+      "Self-service loan renewal",
+      "Staff panel: circulation, collection, and members",
+      "Automatic late fines"
+    ],
+    technologies: {
+      frontend: ["PHP templates", "HTML5", "CSS3", "JavaScript"],
+      backend: ["PHP 8", "PDO", "MySQL"],
+      tools: ["Git", "Remotion (video tutorial)"]
+    },
+    challenges: [
+      "Mencegah dua petugas meminjamkan eksemplar terakhir di waktu yang sama — pakai transaksi database dan SELECT ... FOR UPDATE",
+      "Menerjemahkan aturan perpustakaan (batas pinjam, perpanjangan, keterlambatan) jadi validasi yang jelas pesannya",
+      "Keamanan dasar tanpa framework: prepared statement PDO, token CSRF di setiap form, dan password_hash"
+    ],
+    challengesEn: [
+      "Preventing two staff members from lending the last copy at the same time — using a database transaction and SELECT ... FOR UPDATE",
+      "Turning library rules (loan limits, renewals, overdue loans) into validations with clear messages",
+      "Basic security without a framework: PDO prepared statements, a CSRF token on every form, and password_hash"
+    ],
+    outcomes: [
+      "Seluruh alur perpustakaan — cari, pinjam, perpanjang, kembali, denda — jalan di satu aplikasi",
+      "Ketersediaan buku dihitung langsung dari data pinjaman, jadi stok di katalog selalu sesuai"
+    ],
+    outcomesEn: [
+      "The whole library flow — search, borrow, renew, return, fines — runs in one app",
+      "Availability is computed from live loan data, so catalog stock always matches reality"
+    ]
+  },
+  {
     id: "futsal-booking",
-    title: "Futsal Booking System",
+    title: "Sistem Booking Lapangan Futsal",
+    titleEn: "Futsal Booking System",
     shortDesc: "Website booking lapangan futsal dengan upload bukti transfer dan panel admin",
     shortDescEn: "Futsal court booking website with transfer-receipt upload and an admin panel",
     fullDesc: `Sistem booking online untuk lapangan futsal yang menggantikan proses reservasi manual lewat WhatsApp atau telepon. Pengguna pilih lapangan, isi jadwal dan durasi, lalu upload bukti transfer — admin tinggal cek dari panel.
@@ -150,7 +224,8 @@ Available features:
   },
   {
     id: "birthday-website",
-    title: "Interactive Birthday Website",
+    title: "Website Ulang Tahun Interaktif",
+    titleEn: "Interactive Birthday Website",
     shortDesc: "Website hadiah ulang tahun yang dipersonalisasi dengan foto dan musik",
     shortDescEn: "Personalized birthday gift website with an animated photo gallery and a custom music player",
     fullDesc: `Website hadiah ulang tahun yang dibuat khusus — ada galeri foto dan pemutar musik yang bisa dikustomisasi sesuai orangnya.
@@ -216,7 +291,8 @@ What's inside:
   },
   {
     id: "qr-menu",
-    title: "QR Code Menu Restaurant",
+    title: "Menu Digital Restoran dengan QR Code",
+    titleEn: "QR Code Restaurant Menu",
     shortDesc: "Sistem menu digital dengan pemindaian QR code dan manajemen pesanan",
     shortDescEn: "Digital restaurant menu system with QR code access and real-time menu management for admins",
     fullDesc: `Sistem menu digital untuk restoran yang bisa diakses pengunjung lewat scan QR code di meja masing-masing. Tidak perlu aplikasi tambahan — cukup scan, langsung tampil menunya di browser.
@@ -288,7 +364,8 @@ What's available:
   },
   {
     id: "blood-pressure-tracker",
-    title: "Blood Pressure Monitoring System",
+    title: "Sistem Monitoring Tekanan Darah",
+    titleEn: "Blood Pressure Monitoring System",
     shortDesc: "Aplikasi web untuk melacak dan memantau riwayat tekanan darah",
     shortDescEn: "Web app for logging and tracking blood pressure history over time, with interactive charts and trend analysis",
     fullDesc: `Aplikasi web untuk mencatat dan memantau riwayat tekanan darah. Dibuat karena pencatatan manual di buku susah untuk dilihat trennya — di sini semua data langsung bisa divisualisasikan dalam grafik.
@@ -352,7 +429,8 @@ Available features:
   },
   {
     id: "gesture-sense",
-    title: "GestureSense - Sign Language Recognition",
+    title: "GestureSense - Pengenalan Bahasa Isyarat",
+    titleEn: "GestureSense - Sign Language Recognition",
     shortDesc: "Sistem machine learning untuk mengenali gerakan bahasa isyarat tangan",
     shortDescEn: "Machine learning system for real-time hand sign language gesture recognition using computer vision",
     fullDesc: `Sistem pengenalan bahasa isyarat tangan berbasis machine learning. Model dilatih untuk mendeteksi dan menginterpretasikan gerakan tangan lewat webcam secara real-time.

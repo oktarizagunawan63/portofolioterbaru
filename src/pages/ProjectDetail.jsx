@@ -5,6 +5,11 @@ import { getProjectById } from "../data/projects";
 import { useLanguage } from "../contexts/LanguageContext";
 import { useEffect } from "react";
 
+const TECH_LABELS = {
+  id: { frontend: "Frontend", backend: "Backend", tools: "Tools Pendukung", ml: "Machine Learning", languages: "Bahasa Pemrograman" },
+  en: { frontend: "Frontend", backend: "Backend", tools: "Tools", ml: "Machine Learning", languages: "Languages" },
+};
+
 export default function ProjectDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -19,15 +24,16 @@ export default function ProjectDetail() {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-4xl font-bold mb-4">Project Not Found</h1>
+          <h1 className="text-4xl font-bold mb-4">{isEnglish ? "Project Not Found" : "Proyek Tidak Ditemukan"}</h1>
           <Link to="/" className="text-primary hover:text-secondary">
-            Back to Home
+            {isEnglish ? "Back to Home" : "Kembali ke Beranda"}
           </Link>
         </div>
       </div>
     );
   }
 
+  const title = isEnglish ? (project.titleEn || project.title) : project.title;
   const shortDesc = isEnglish ? (project.shortDescEn || project.shortDesc) : project.shortDesc;
   const fullDesc = isEnglish ? (project.fullDescEn || project.fullDesc) : project.fullDesc;
   const features = isEnglish ? (project.featuresEn || project.features) : project.features;
@@ -41,7 +47,7 @@ export default function ProjectDetail() {
         <div className="absolute inset-0">
           <img
             src={project.image}
-            alt={project.title}
+            alt={title}
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-paper"></div>
@@ -74,7 +80,7 @@ export default function ProjectDetail() {
               ))}
             </div>
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
-              {project.title}
+              {title}
             </h1>
             <p className="text-xl text-white/90 max-w-3xl">
               {shortDesc}
@@ -179,8 +185,8 @@ export default function ProjectDetail() {
             <div className="space-y-4">
               {Object.entries(project.technologies).map(([category, techs]) => (
                 <div key={category} className="p-4 rounded-xl bg-gradient-to-br from-accent/5 to-accent/10 border border-accent/20">
-                  <h3 className="text-lg font-semibold text-primary mb-3 capitalize">
-                    {category}
+                  <h3 className="text-lg font-semibold text-primary mb-3">
+                    {TECH_LABELS[isEnglish ? "en" : "id"][category] || category}
                   </h3>
                   <div className="flex flex-wrap gap-2">
                     {techs.map((tech) => (

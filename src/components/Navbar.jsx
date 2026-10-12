@@ -12,6 +12,7 @@ export default function Navbar() {
   const t = translations[language];
 
   const links = [
+    { href: "#experience", label: t.experience },
     { href: "#about", label: t.about },
     { href: "#projects", label: t.projects },
     { href: "#contact", label: t.contact },
@@ -40,20 +41,20 @@ export default function Navbar() {
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
               <span className="text-white font-bold text-sm">OG</span>
             </div>
-            <span className="text-lg font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+            <span className="whitespace-nowrap text-lg font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               Oktariza Gunawan
             </span>
           </div>
         </a>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-6">
+        <div className="hidden lg:flex items-center gap-6">
           <ul className="flex items-center gap-8">
             {links.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="relative text-ink/70 hover:text-primary font-medium transition-colors group"
+                  className="relative whitespace-nowrap text-ink/70 hover:text-primary font-medium transition-colors group"
                 >
                   {link.label}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary group-hover:w-full transition-all duration-300"></span>
@@ -66,14 +67,14 @@ export default function Navbar() {
           
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-6 py-2.5 text-sm font-medium rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+            className="hidden xl:inline-flex whitespace-nowrap items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-6 py-2.5 text-sm font-medium rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
           >
             {t.contactMe}
           </a>
           <a
             href="/Oktariza_Gunawan_CV.pdf"
             download
-            className="inline-flex items-center gap-2 border-2 border-primary text-primary px-5 py-2.5 text-sm font-medium rounded-full hover:bg-primary hover:text-white transition-all duration-300"
+            className="inline-flex whitespace-nowrap items-center gap-2 border-2 border-primary text-primary px-5 py-2.5 text-sm font-medium rounded-full hover:bg-primary hover:text-white transition-all duration-300"
           >
             <Download size={16} />
             {t.downloadCv}
@@ -81,7 +82,7 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Menu & Language Switcher */}
-        <div className="md:hidden flex items-center gap-3">
+        <div className="lg:hidden flex items-center gap-3">
           <LanguageSwitcher />
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -98,7 +99,7 @@ export default function Navbar() {
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: "auto" }}
           exit={{ opacity: 0, height: 0 }}
-          className="md:hidden bg-white/95 backdrop-blur-lg border-t border-accent/20"
+          className="lg:hidden bg-white/95 backdrop-blur-lg border-t border-accent/20"
         >
           <div className="section py-6 space-y-4">
             {links.map((link) => (

@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Local-only files
+README.md
+.kiro
+.claude
+.vscode

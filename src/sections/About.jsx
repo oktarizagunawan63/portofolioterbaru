@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { BentoGrid, BentoCard } from "../components/BentoGrid";
-import { Code2, Rocket, Brain, Zap } from "lucide-react";
+import { Code2, Rocket, Brain, Zap, Layout, Server, Database } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
 import { translations } from "../data/translations";
 import AnimatedCounter from "../components/AnimatedCounter";
@@ -78,9 +78,22 @@ export default function About() {
                 {t.whatIDo}
               </h3>
             </div>
-            <p className="text-ink/70 leading-relaxed text-sm md:text-base mb-4 md:mb-6 flex-1">
+            <p className="text-ink/70 leading-relaxed text-sm md:text-base mb-4 md:mb-5">
               {t.whatIDoDescription}
             </p>
+            <ul className="space-y-3 mb-5 md:mb-6 flex-1">
+              {t.whatIDoItems.map((item, i) => (
+                <li key={item.title} className="flex items-start gap-3 p-3 rounded-xl bg-white/70 border border-accent/30">
+                  <span className="p-2 rounded-lg bg-primary/10 text-primary flex-shrink-0">
+                    {[<Layout size={18} />, <Server size={18} />, <Database size={18} />][i]}
+                  </span>
+                  <span>
+                    <span className="block font-semibold text-sm md:text-base">{item.title}</span>
+                    <span className="block text-ink/70 text-xs md:text-sm leading-relaxed">{item.desc}</span>
+                  </span>
+                </li>
+              ))}
+            </ul>
             <div className="flex flex-wrap gap-2">
               {badges.map((badge) => (
                 <span
