@@ -43,17 +43,18 @@ export default function ProjectDetail() {
   return (
     <div className="min-h-screen bg-paper">
       {/* Hero Section */}
-      <section className="relative h-[60vh] overflow-hidden">
+      <section className="relative min-h-[60vh] overflow-hidden flex">
         <div className="absolute inset-0">
           <img
             src={project.image}
             alt={title}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover blur-[3px] scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-paper"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/75"></div>
+          <div className="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-b from-transparent to-paper"></div>
         </div>
 
-        <div className="relative section h-full flex flex-col justify-end pb-12">
+        <div className="relative section w-full flex flex-col justify-end pt-24 pb-14">
           <motion.button
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -79,10 +80,10 @@ export default function ProjectDetail() {
                 </span>
               ))}
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
+            <h1 className="text-3xl md:text-5xl font-bold leading-tight text-white mb-4">
               {title}
             </h1>
-            <p className="text-xl text-white/90 max-w-3xl">
+            <p className="text-base md:text-xl text-white/90 max-w-3xl">
               {shortDesc}
             </p>
           </motion.div>
