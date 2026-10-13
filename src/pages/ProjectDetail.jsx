@@ -1,6 +1,6 @@
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowLeft, ExternalLink, Github, CheckCircle, Zap, Target } from "lucide-react";
+import { ArrowLeft, ExternalLink, CheckCircle, Zap, Target } from "lucide-react";
 import { getProjectById } from "../data/projects";
 import { useLanguage } from "../contexts/LanguageContext";
 import { useEffect } from "react";
@@ -93,13 +93,13 @@ export default function ProjectDetail() {
       <section className="section py-12">
         <div className="max-w-4xl mx-auto">
           {/* Action Buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            className="flex flex-wrap gap-4 mb-12"
-          >
-            {project.demoLink && project.demoLink !== "#" && (
+          {project.demoLink && project.demoLink !== "#" && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              className="flex flex-wrap gap-4 mb-12"
+            >
               <a
                 href={project.demoLink}
                 target="_blank"
@@ -109,26 +109,30 @@ export default function ProjectDetail() {
                 <ExternalLink size={18} />
                 {isEnglish ? "View Live Demo" : "Lihat Demo"}
               </a>
-            )}
-            {project.githubLink && project.githubLink !== "#" && (
-              <a
-                href={project.githubLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 border-2 border-primary text-primary px-6 py-3 rounded-full font-medium hover:bg-primary hover:text-white transition-all"
+            </motion.div>
+          )}
+
+          {/* Video Demo */}
+          {project.video && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.35 }}
+              className="mb-12"
+            >
+              <h2 className="text-3xl font-bold mb-4">{isEnglish ? "Video Walkthrough" : "Video Tutorial"}</h2>
+              <video
+                src={project.video}
+                poster={project.image}
+                controls
+                playsInline
+                preload="metadata"
+                className="w-full rounded-2xl border border-accent/30 shadow-lg bg-black"
               >
-                <Github size={18} />
-                {isEnglish ? "View Source Code" : "Lihat Source Code"}
-              </a>
-            )}
-            {(!project.demoLink || project.demoLink === "#") &&
-              (!project.githubLink || project.githubLink === "#") && (
-                <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-accent/20 border border-accent/40 text-ink/60 text-sm font-medium">
-                  <Github size={18} />
-                  {isEnglish ? "Source code available on request" : "Source code tersedia atas permintaan"}
-                </div>
-              )}
-          </motion.div>
+                {isEnglish ? "Your browser can't play this video." : "Browser Anda tidak bisa memutar video ini."}
+              </video>
+            </motion.div>
+          )}
 
           {/* Overview */}
           <motion.div

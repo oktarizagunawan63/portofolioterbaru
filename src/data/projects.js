@@ -39,7 +39,6 @@ What I built:
     category: "fullstack",
     image: amsarDashboardImg,
     demoLink: "#",
-    githubLink: "#",
     features: [
       "Autentikasi pengguna",
       "Monitoring progres proyek",
@@ -113,8 +112,8 @@ Library rules enforced by the system:
     tags: ["PHP 8", "MySQL", "PDO", "JavaScript"],
     category: "fullstack",
     image: perpusImg,
+    video: "/videos/perpustakaan-tutorial.mp4",
     demoLink: "#",
-    githubLink: "https://github.com/oktarizagunawan63/perpustakaan",
     features: [
       "Katalog dengan pencarian judul, penulis, penerbit, ISBN, dan nomor panggil",
       "Filter per kelas DDC (000–900) dan ketersediaan di rak",
@@ -185,7 +184,6 @@ Available features:
     category: "fullstack",
     image: futsalImg,
     demoLink: "#",
-    githubLink: "https://github.com/oktarizagunawan63/futsal_booking",
     features: [
       "Booking dengan durasi fleksibel",
       "Dashboard admin",
@@ -251,7 +249,6 @@ What's inside:
     tags: ["HTML", "CSS", "Animation"],
     category: "frontend",
     image: ultahImg,
-    githubLink: "#",
     features: [
       "Galeri foto animasi",
       "Pemutar musik kustom",
@@ -323,7 +320,6 @@ What's available:
     category: "fullstack",
     image: qrImg,
     demoLink: "#",
-    githubLink: "#",
     features: [
       "Pemindaian QR code",
       "Update menu dinamis",
@@ -390,7 +386,6 @@ Available features:
     category: "fullstack",
     image: tensiImg,
     demoLink: "#",
-    githubLink: "#",
     features: [
       "Pencatatan tekanan darah",
       "Grafik interaktif",
@@ -455,7 +450,6 @@ Work done in this project:
     category: "ml",
     image: bisuImg,
     demoLink: "#",
-    githubLink: "#",
     features: [
       "Pengenalan gerakan real-time",
       "Integrasi webcam",
