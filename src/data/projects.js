@@ -319,6 +319,7 @@ What's available:
     tags: ["React", "Laravel", "MySQL", "QR Code"],
     category: "fullstack",
     image: qrImg,
+    video: "/videos/qr-menu-promo.mp4",
     demoLink: "#",
     features: [
       "Pemindaian QR code",

@@ -120,7 +120,7 @@ export default function ProjectDetail() {
               transition={{ delay: 0.35 }}
               className="mb-12"
             >
-              <h2 className="text-3xl font-bold mb-4">{isEnglish ? "Video Walkthrough" : "Video Tutorial"}</h2>
+              <h2 className="text-3xl font-bold mb-4">Video Demo</h2>
               <video
                 src={project.video}
                 poster={project.image}
