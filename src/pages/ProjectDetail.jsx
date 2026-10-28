@@ -124,11 +124,10 @@ export default function ProjectDetail() {
               <h2 className="text-3xl font-bold mb-4">Video Demo</h2>
               <video
                 src={project.video}
-                poster={project.image}
                 controls
                 playsInline
                 preload="metadata"
-                className="w-full rounded-2xl border border-accent/30 shadow-lg bg-black"
+                className="block mx-auto w-auto max-w-full max-h-[80vh] rounded-2xl border border-accent/30 shadow-lg bg-black"
               >
                 {isEnglish ? "Your browser can't play this video." : "Browser Anda tidak bisa memutar video ini."}
               </video>

@@ -5,6 +5,7 @@ import tensiImg from "../assets/tensi.jpg";
 import bisuImg from "../assets/bisu.jpg";
 import amsarDashboardImg from "../assets/asmr.jpg";
 import perpusImg from "../assets/perpustakaan.jpg";
+import servisMotorImg from "../assets/servis-motor.jpg";
 
 export const projects = [
   {
@@ -81,6 +82,79 @@ What I built:
       "Sales, visit, and project data that used to be scattered now lives in one system",
       "Managers can approve visits and track sales KPIs without manual recaps",
       "32 database migrations, 25 API controllers, ~30 frontend pages"
+    ]
+  },
+  {
+    id: "servis-motor",
+    title: "Pengingat Servis Motor",
+    titleEn: "Motorcycle Service Reminder",
+    shortDesc: "Aplikasi PWA pencatat servis motor: prediksi jadwal servis, baca nota otomatis pakai AI, dan pengingat lewat notifikasi",
+    shortDescEn: "PWA for tracking motorcycle maintenance: service date predictions, AI receipt scanning, and push reminders",
+    fullDesc: `Aplikasi untuk mencatat servis motor matic (Honda dan Yamaha 110–160cc) yang bisa di-install di HP. Pengguna pilih motornya, lalu aplikasi memakai jadwal servis per komponen sesuai buku pedoman — oli mesin, oli gardan, kampas rem, busi, dan lainnya.
+
+Dibangun dengan React dan TypeScript, backend-nya Vercel Serverless Functions, dan AI-nya Gemini.
+
+Fitur yang tersedia:
+- Status tiap komponen: aman, sebentar lagi, atau lewat jadwal
+- Catat odometer, lalu aplikasi memperkirakan tanggal servis berikutnya dari rata-rata km per hari
+- Foto nota bengkel dibaca AI dan langsung jadi daftar part, merek, dan harga
+- Tanya AI soal motor: AI mencari di internet dulu dan menyertakan sumbernya
+- Notifikasi pengingat harian lewat push notification
+- Riwayat servis yang bisa dicari, plus backup dan pulihkan data pakai kode`,
+    fullDescEn: `An installable app for logging maintenance on automatic scooters (Honda and Yamaha 110–160cc). Users pick their bike, and the app applies the per-component service schedule from the owner's manual — engine oil, gear oil, brake pads, spark plug, and more.
+
+Built with React and TypeScript, with Vercel Serverless Functions on the backend and Gemini for the AI features.
+
+Available features:
+- Status per component: OK, due soon, or overdue
+- Log the odometer and the app estimates the next service date from the average km per day
+- Photos of workshop receipts are read by AI and turned into parts, brands, and prices
+- Ask AI about the bike: it searches the web first and cites its sources
+- Daily reminders via push notifications
+- Searchable service history, plus backup and restore with a code`,
+    tags: ["React", "TypeScript", "PWA", "Gemini AI"],
+    category: "fullstack",
+    image: servisMotorImg,
+    video: "/videos/servis-motor.mp4",
+    demoLink: "#",
+    features: [
+      "Jadwal servis per komponen sesuai buku pedoman",
+      "Prediksi tanggal servis dari rata-rata km per hari",
+      "Baca foto nota bengkel dengan AI",
+      "Tanya AI dengan sumber dari internet",
+      "Push notification pengingat harian",
+      "Backup dan pulihkan data pakai kode"
+    ],
+    featuresEn: [
+      "Per-component service schedule from the owner's manual",
+      "Service date prediction from average km per day",
+      "AI reading of workshop receipt photos",
+      "Ask AI with cited web sources",
+      "Daily push notification reminders",
+      "Backup and restore with a code"
+    ],
+    technologies: {
+      frontend: ["React 18", "TypeScript", "Vite", "PWA"],
+      backend: ["Vercel Serverless Functions", "Vercel Blob", "Web Push", "Gemini API"],
+      tools: ["Vitest", "Git", "Remotion (video)"]
+    },
+    challenges: [
+      "Kuota AI gratis cepat habis — dibuat urutan cadangan beberapa model Gemini dengan batas waktu, supaya pengguna tetap dapat jawaban",
+      "Mencegah penyalahgunaan API: batas pemakaian per perangkat dan per IP untuk fitur AI",
+      "Menjaga privasi: jadwal pengingat dihitung di HP, server hanya menerima teks pengingat yang perlu dikirim"
+    ],
+    challengesEn: [
+      "Free AI quota runs out fast — built a fallback chain across several Gemini models with timeouts so users still get an answer",
+      "Preventing API abuse: per-device and per-IP usage limits on the AI features",
+      "Privacy: reminder schedules are computed on the phone; the server only receives the reminder text it needs to send"
+    ],
+    outcomes: [
+      "Pengguna tidak perlu ingat sendiri kapan ganti oli dan part lain",
+      "Logika inti dicakup 180 unit test dengan Vitest"
+    ],
+    outcomesEn: [
+      "Riders no longer have to remember when oil and parts are due",
+      "Core logic covered by 180 unit tests with Vitest"
     ]
   },
   {

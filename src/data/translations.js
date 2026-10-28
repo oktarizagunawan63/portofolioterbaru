@@ -43,7 +43,7 @@ export const translations = {
     experience: "Pengalaman",
     experienceTitle: "Pengalaman",
     amsarRole: "Web Developer Intern",
-    amsarPeriod: "Mar 2026 – Jun 2026",
+    amsarPeriod: "Mar 2026 – Jul 2026",
     amsarBullets: [
       "Membangun aplikasi internal yang menyatukan data sales, kunjungan, dan proyek — sebelumnya direkap manual — dengan dashboard terpisah untuk admin, sales, sales manager, site manager, dan engineer.",
       "Merancang skema MySQL (32 migration) dan REST API (25 controller) untuk sales funnel dari prospek sampai won/lost, rencana kunjungan dengan check-in/check-out, dan laporan progres engineer.",
@@ -134,7 +134,7 @@ export const translations = {
     experience: "Experience",
     experienceTitle: "Experience",
     amsarRole: "Web Developer Intern",
-    amsarPeriod: "Mar 2026 – Jun 2026",
+    amsarPeriod: "Mar 2026 – Jul 2026",
     amsarBullets: [
       "Built an internal web app that moved sales, site-visit and project records out of manual recaps into one system, with separate dashboards for admin, sales, sales manager, site manager and engineer.",
       "Designed the MySQL schema (32 migrations) and REST API (25 controllers) for the sales funnel from lead to won/lost, visit planning with check-in/check-out, and engineer progress reports.",
