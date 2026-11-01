@@ -151,10 +151,6 @@ export default function Contact() {
                   <span className="w-1.5 h-1.5 rounded-full bg-secondary flex-shrink-0"></span>
                   {t.techDiscussions}
                 </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-secondary flex-shrink-0"></span>
-                  {t.casualChat}
-                </li>
               </ul>
             </div>
           </motion.div>

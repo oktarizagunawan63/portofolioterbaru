@@ -1,12 +1,15 @@
+import { useState } from "react";
 import { motion as Motion } from "framer-motion";
 import { Download, Github, Linkedin, Mail } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
 import { translations } from "../data/translations";
 import profilePic from "../assets/zhaabeer.jpg";
+import touringPic from "../assets/touring.jpeg";
 
 export default function Hero() {
   const { language } = useLanguage();
   const t = translations[language];
+  const [flipped, setFlipped] = useState(false);
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -122,15 +125,25 @@ export default function Hero() {
             {/* Gradient Background */}
             <div className="absolute -inset-4 bg-gradient-to-r from-primary to-secondary rounded-3xl blur-2xl opacity-30 animate-pulse"></div>
             
-            {/* Image Container */}
-            <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-3xl overflow-hidden shadow-2xl border-4 border-white/10">
-              <img
-                src={profilePic}
-                alt="Oktariza Gunawan Profile"
-                className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent"></div>
-            </div>
+            {/* Flip card: hover (mouse) or tap (touch) shows the touring photo */}
+            <button
+              type="button"
+              onClick={() => setFlipped(!flipped)}
+              onMouseLeave={() => setFlipped(false)} // a click on desktop must not leave it stuck on the back
+              aria-pressed={flipped}
+              aria-label={flipped ? t.hobbyBack : t.hobbyFlip}
+              className="flip relative block w-72 h-72 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 cursor-pointer rounded-3xl"
+            >
+              <span className={`flip-inner block ${flipped ? "is-flipped" : ""}`}>
+                <span className="flip-face flip-front block rounded-3xl overflow-hidden shadow-2xl border-4 border-white/10">
+                  <img src={profilePic} alt="Oktariza Gunawan" className="w-full h-full object-cover" />
+                  <span className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent"></span>
+                </span>
+                <span className="flip-face flip-back block rounded-3xl overflow-hidden shadow-2xl border-4 border-white/10 bg-ink">
+                  <img src={touringPic} alt={t.hobbyAlt} className="w-full h-full object-cover object-[50%_40%]" />
+                </span>
+              </span>
+            </button>
           </div>
         </Motion.div>
       </Motion.div>

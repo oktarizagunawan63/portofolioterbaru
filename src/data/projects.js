@@ -12,11 +12,11 @@ export const projects = [
     id: "amsar-project-monitoring",
     title: "Dashboard Monitoring Proyek PT Amsar Prima Mandiri",
     titleEn: "PT Amsar Prima Mandiri Project Monitoring Dashboard",
-    shortDesc: "Sistem internal (proyek kerja praktek) untuk sales funnel, kunjungan sales, absensi, dan progres proyek engineer — dengan 5 dashboard berbeda per role",
-    shortDescEn: "Internal system built during my internship: sales funnel, sales visits, attendance, and engineer project progress — with 5 role-based dashboards",
-    fullDesc: `Dashboard berbasis web untuk membantu PT Amsar Prima Mandiri memantau progres proyek secara lebih terstruktur. Sebelumnya pencatatan masih manual dan tersebar, jadi tujuan utamanya memusatkan semua informasi proyek di satu tempat yang mudah diakses tim.
+    shortDesc: "Sistem internal dari magang saya untuk sales funnel, kunjungan sales, absensi, dan progres proyek engineer, dengan 5 dashboard berbeda per role",
+    shortDescEn: "Internal system from my internship covering the sales funnel, sales visits, attendance, and engineer project progress, with 5 role-based dashboards",
+    fullDesc: `Sistem web internal untuk PT Amsar Prima Mandiri. Sebelumnya, data sales, kunjungan, dan progres proyek dicatat secara manual dan tersebar di banyak tempat. Saya menyatukannya dalam satu aplikasi yang digunakan oleh tim sales, manager, dan engineer.
 
-Frontend dibangun dengan React supaya tampilan responsif dan nyaman dipakai, backend-nya Laravel dengan MySQL untuk manajemen data dan autentikasinya.
+Frontend dibangun dengan React (Zustand untuk state dan Recharts untuk grafik), sedangkan backend menggunakan Laravel 11, MySQL, dan Laravel Sanctum untuk autentikasi.
 
 Yang saya kerjakan:
 - 5 role dengan dashboard masing-masing: Admin, Sales, Sales Manager, Site Manager, Engineer
@@ -24,10 +24,10 @@ Yang saya kerjakan:
 - Rencana kunjungan sales, check-in/check-out, dan approval kunjungan dadakan oleh manager
 - Laporan progres proyek dari engineer dan penugasan engineer ke proyek
 - Export laporan ke PDF, notifikasi, activity log, dan reset password via email
-- Auth pakai Laravel Sanctum dengan rate limit di endpoint login dan reset password`,
-    fullDescEn: `A web-based dashboard built to help PT Amsar Prima Mandiri monitor project progress in a more structured way. Previously, all records were manual and scattered — the main goal was to centralize all project information in one place the team can easily access.
+- Autentikasi dengan Laravel Sanctum serta rate limit pada endpoint login dan reset password`,
+    fullDescEn: `An internal web system for PT Amsar Prima Mandiri. Sales, site-visit, and project progress records used to be kept by hand in different places, so I brought them into one app used by the sales team, managers, and engineers.
 
-The frontend is built with React for a responsive and comfortable interface, while the backend uses Laravel with MySQL for data management and authentication.
+The frontend is React (Zustand for state, Recharts for charts), and the backend is Laravel 11 with MySQL and Laravel Sanctum for login.
 
 What I built:
 - 5 roles, each with its own dashboard: Admin, Sales, Sales Manager, Site Manager, Engineer
@@ -41,20 +41,20 @@ What I built:
     image: amsarDashboardImg,
     demoLink: "#",
     features: [
-      "Autentikasi pengguna",
-      "Monitoring progres proyek",
-      "Manajemen data proyek",
-      "Dashboard admin",
-      "Integrasi React dan Laravel",
-      "Tampilan responsif"
+      "Dashboard terpisah untuk 5 role",
+      "Sales funnel dari prospek sampai won/lost",
+      "Check-in dan check-out kunjungan sales",
+      "Approval kunjungan dadakan oleh manager",
+      "Laporan progres proyek dari engineer",
+      "Export laporan ke PDF"
     ],
     featuresEn: [
-      "User authentication",
-      "Project progress monitoring",
-      "Centralized project data management",
-      "Admin dashboard",
-      "React and Laravel integration",
-      "Responsive design"
+      "Separate dashboards for 5 roles",
+      "Sales funnel from lead to won/lost",
+      "Sales visit check-in and check-out",
+      "Manager approval for unplanned visits",
+      "Engineer project progress reports",
+      "PDF report export"
     ],
     technologies: {
       frontend: ["React", "Zustand", "Recharts", "jsPDF", "Tailwind CSS"],
@@ -62,20 +62,18 @@ What I built:
       tools: ["Laragon", "Git"]
     },
     challenges: [
-      "Menyusun alur monitoring proyek agar mudah dipahami pengguna internal",
-      "Menghubungkan frontend React dengan backend Laravel secara rapi",
-      "Mendesain tampilan login dan dashboard yang profesional sesuai identitas perusahaan",
-      "Menyiapkan struktur database proyek yang rapi dan mudah dikembangkan"
+      "Membangun 5 dashboard berbeda dari satu API, masing-masing menampilkan data sesuai kebutuhan role-nya",
+      "Alur approval kunjungan dadakan: sales mengajukan, lalu manager menyetujui atau menolak",
+      "Membatasi percobaan login dan reset password agar akun tidak mudah dibobol"
     ],
     challengesEn: [
-      "Designing a project monitoring flow that internal users can easily understand",
-      "Cleanly connecting the React frontend with the Laravel backend",
-      "Designing a professional login and dashboard UI that matches the company's identity",
-      "Setting up a clean and extensible database structure for project data"
+      "Building 5 different dashboards from one API, each showing the data its role needs",
+      "The approval flow for unplanned visits: sales submit a request, then a manager approves or rejects it",
+      "Rate limiting login and password-reset attempts so accounts are harder to break into"
     ],
     outcomes: [
       "Data sales, kunjungan, dan proyek yang sebelumnya tersebar sekarang ada di satu sistem",
-      "Manager bisa approve kunjungan dan memantau KPI sales tanpa rekap manual",
+      "Manager dapat menyetujui kunjungan dan memantau KPI sales tanpa rekap manual",
       "32 migration database, 25 controller API, ±30 halaman frontend"
     ],
     outcomesEn: [
@@ -88,20 +86,20 @@ What I built:
     id: "servis-motor",
     title: "Pengingat Servis Motor",
     titleEn: "Motorcycle Service Reminder",
-    shortDesc: "Aplikasi PWA pencatat servis motor: prediksi jadwal servis, baca nota otomatis pakai AI, dan pengingat lewat notifikasi",
+    shortDesc: "Aplikasi PWA untuk mencatat servis motor, dilengkapi prediksi jadwal servis, pembacaan nota otomatis dengan AI, dan pengingat melalui notifikasi",
     shortDescEn: "PWA for tracking motorcycle maintenance: service date predictions, AI receipt scanning, and push reminders",
-    fullDesc: `Aplikasi untuk mencatat servis motor matic (Honda dan Yamaha 110–160cc) yang bisa di-install di HP. Pengguna pilih motornya, lalu aplikasi memakai jadwal servis per komponen sesuai buku pedoman — oli mesin, oli gardan, kampas rem, busi, dan lainnya.
+    fullDesc: `Aplikasi untuk mencatat servis motor matic (Honda dan Yamaha 110–160cc) yang dapat dipasang di ponsel. Pengguna cukup memilih motornya, lalu aplikasi menerapkan jadwal servis per komponen sesuai buku pedoman, seperti oli mesin, oli gardan, kampas rem, dan busi.
 
-Dibangun dengan React dan TypeScript, backend-nya Vercel Serverless Functions, dan AI-nya Gemini.
+Aplikasi ini dibangun dengan React dan TypeScript, menggunakan Vercel Serverless Functions sebagai backend dan Gemini untuk fitur AI.
 
 Fitur yang tersedia:
-- Status tiap komponen: aman, sebentar lagi, atau lewat jadwal
+- Status setiap komponen: aman, mendekati jadwal, atau sudah lewat jadwal
 - Catat odometer, lalu aplikasi memperkirakan tanggal servis berikutnya dari rata-rata km per hari
-- Foto nota bengkel dibaca AI dan langsung jadi daftar part, merek, dan harga
-- Tanya AI soal motor: AI mencari di internet dulu dan menyertakan sumbernya
-- Notifikasi pengingat harian lewat push notification
-- Riwayat servis yang bisa dicari, plus backup dan pulihkan data pakai kode`,
-    fullDescEn: `An installable app for logging maintenance on automatic scooters (Honda and Yamaha 110–160cc). Users pick their bike, and the app applies the per-component service schedule from the owner's manual — engine oil, gear oil, brake pads, spark plug, and more.
+- Foto nota bengkel dibaca oleh AI dan diubah menjadi daftar part, merek, dan harga
+- Fitur Tanya AI seputar motor: AI mencari informasi di internet terlebih dahulu dan menyertakan sumbernya
+- Pengingat harian melalui push notification
+- Riwayat servis yang dapat dicari, serta backup dan pemulihan data menggunakan kode`,
+    fullDescEn: `An installable app for logging maintenance on automatic scooters (Honda and Yamaha 110–160cc). Users pick their bike, and the app applies the per-component service schedule from the owner's manual, such as engine oil, gear oil, brake pads, and spark plug.
 
 Built with React and TypeScript, with Vercel Serverless Functions on the backend and Gemini for the AI features.
 
@@ -123,7 +121,7 @@ Available features:
       "Baca foto nota bengkel dengan AI",
       "Tanya AI dengan sumber dari internet",
       "Push notification pengingat harian",
-      "Backup dan pulihkan data pakai kode"
+      "Backup dan pemulihan data dengan kode"
     ],
     featuresEn: [
       "Per-component service schedule from the owner's manual",
@@ -139,17 +137,17 @@ Available features:
       tools: ["Vitest", "Git", "Remotion (video)"]
     },
     challenges: [
-      "Kuota AI gratis cepat habis — dibuat urutan cadangan beberapa model Gemini dengan batas waktu, supaya pengguna tetap dapat jawaban",
+      "Kuota AI gratis cepat habis, sehingga saya membuat urutan cadangan beberapa model Gemini dengan batas waktu agar pengguna tetap mendapatkan jawaban",
       "Mencegah penyalahgunaan API: batas pemakaian per perangkat dan per IP untuk fitur AI",
-      "Menjaga privasi: jadwal pengingat dihitung di HP, server hanya menerima teks pengingat yang perlu dikirim"
+      "Menjaga privasi: jadwal pengingat dihitung di ponsel pengguna, sedangkan server hanya menerima teks pengingat yang perlu dikirim"
     ],
     challengesEn: [
-      "Free AI quota runs out fast — built a fallback chain across several Gemini models with timeouts so users still get an answer",
+      "Free AI quota runs out quickly, so I built a fallback chain across several Gemini models with timeouts to make sure users still get an answer",
       "Preventing API abuse: per-device and per-IP usage limits on the AI features",
       "Privacy: reminder schedules are computed on the phone; the server only receives the reminder text it needs to send"
     ],
     outcomes: [
-      "Pengguna tidak perlu ingat sendiri kapan ganti oli dan part lain",
+      "Pengguna tidak perlu lagi mengingat sendiri jadwal ganti oli dan part lainnya",
       "Logika inti dicakup 180 unit test dengan Vitest"
     ],
     outcomesEn: [
@@ -163,14 +161,14 @@ Available features:
     titleEn: "Campus Library System",
     shortDesc: "Website perpustakaan dengan katalog berklasifikasi DDC, sirkulasi pinjam-kembali, perpanjangan, dan denda otomatis",
     shortDescEn: "Campus library website with a DDC-classified catalog, borrowing and returns, renewals, and automatic late fines",
-    fullDesc: `Website perpustakaan kampus untuk dua jenis pengguna: anggota dan petugas sirkulasi. Anggota bisa mencari buku, melihat ketersediaan di rak, dan memperpanjang pinjaman sendiri. Petugas mencatat peminjaman dan pengembalian dari satu halaman.
+    fullDesc: `Website perpustakaan kampus untuk dua jenis pengguna: anggota dan petugas sirkulasi. Anggota dapat mencari buku, melihat ketersediaan di rak, dan memperpanjang pinjaman sendiri. Petugas mencatat peminjaman dan pengembalian dari satu halaman.
 
-Dibangun dengan PHP 8 native dan MySQL lewat PDO, tanpa framework, supaya bisa langsung jalan di htdocs maupun \`php -S\`.
+Dibangun dengan PHP 8 native dan MySQL melalui PDO tanpa framework, sehingga dapat langsung dijalankan di htdocs maupun \`php -S\`.
 
 Aturan layanan yang diterapkan di sistem:
 - Lama pinjam 7 hari, maksimal 3 buku aktif per anggota
-- Perpanjangan mandiri 1 kali, tidak bisa kalau sudah terlambat
-- Anggota yang punya pinjaman terlambat tidak bisa meminjam lagi
+- Perpanjangan mandiri 1 kali, tidak berlaku jika sudah terlambat
+- Anggota yang memiliki pinjaman terlambat tidak dapat meminjam buku lagi
 - Denda Rp1.000 per hari, dihitung otomatis saat buku dikembalikan
 - Jam layanan per hari, termasuk status buka/tutup`,
     fullDescEn: `A campus library website for two kinds of users: members and circulation staff. Members can search books, see shelf availability, and renew their own loans. Staff record loans and returns from a single page.
@@ -210,21 +208,21 @@ Library rules enforced by the system:
       tools: ["Git", "Remotion (video tutorial)"]
     },
     challenges: [
-      "Mencegah dua petugas meminjamkan eksemplar terakhir di waktu yang sama — pakai transaksi database dan SELECT ... FOR UPDATE",
-      "Menerjemahkan aturan perpustakaan (batas pinjam, perpanjangan, keterlambatan) jadi validasi yang jelas pesannya",
+      "Mencegah dua petugas meminjamkan eksemplar terakhir di waktu yang sama dengan transaksi database dan SELECT ... FOR UPDATE",
+      "Menerjemahkan aturan perpustakaan (batas pinjam, perpanjangan, keterlambatan) menjadi validasi dengan pesan yang jelas",
       "Keamanan dasar tanpa framework: prepared statement PDO, token CSRF di setiap form, dan password_hash"
     ],
     challengesEn: [
-      "Preventing two staff members from lending the last copy at the same time — using a database transaction and SELECT ... FOR UPDATE",
+      "Stopping two staff members from lending the last copy at the same time, using a database transaction with SELECT ... FOR UPDATE",
       "Turning library rules (loan limits, renewals, overdue loans) into validations with clear messages",
       "Basic security without a framework: PDO prepared statements, a CSRF token on every form, and password_hash"
     ],
     outcomes: [
-      "Seluruh alur perpustakaan — cari, pinjam, perpanjang, kembali, denda — jalan di satu aplikasi",
-      "Ketersediaan buku dihitung langsung dari data pinjaman, jadi stok di katalog selalu sesuai"
+      "Seluruh alur perpustakaan (pencarian, peminjaman, perpanjangan, pengembalian, dan denda) berjalan dalam satu aplikasi",
+      "Ketersediaan buku dihitung langsung dari data pinjaman, sehingga stok di katalog selalu sesuai"
     ],
     outcomesEn: [
-      "The whole library flow — search, borrow, renew, return, fines — runs in one app",
+      "The whole library flow (search, borrow, renew, return, and fines) runs in one app",
       "Availability is computed from live loan data, so catalog stock always matches reality"
     ]
   },
@@ -232,21 +230,21 @@ Library rules enforced by the system:
     id: "futsal-booking",
     title: "Sistem Booking Lapangan Futsal",
     titleEn: "Futsal Booking System",
-    shortDesc: "Website booking lapangan futsal dengan upload bukti transfer dan panel admin",
+    shortDesc: "Website pemesanan lapangan futsal dengan fitur unggah bukti transfer dan panel admin",
     shortDescEn: "Futsal court booking website with transfer-receipt upload and an admin panel",
-    fullDesc: `Sistem booking online untuk lapangan futsal yang menggantikan proses reservasi manual lewat WhatsApp atau telepon. Pengguna pilih lapangan, isi jadwal dan durasi, lalu upload bukti transfer — admin tinggal cek dari panel.
+    fullDesc: `Sistem pemesanan online untuk lapangan futsal yang menggantikan proses reservasi manual melalui WhatsApp atau telepon. Pengguna memilih lapangan, mengisi jadwal dan durasi, lalu mengunggah bukti transfer. Admin kemudian memeriksanya melalui panel.
 
-Dibangun pakai PHP native dan MySQL karena lebih ringan dan lebih mudah di-maintain untuk skala proyek ini.
+Dibangun dengan PHP native dan MySQL tanpa framework.
 
 Fitur yang tersedia:
 - Daftar lapangan (interlock, vinyl, rumput sintetis) dan statusnya
-- Form booking dengan jam mulai + durasi (jam selesai dihitung otomatis)
-- Upload bukti transfer (JPG/PNG/PDF)
+- Formulir pemesanan dengan jam mulai dan durasi (jam selesai dihitung otomatis)
+- Unggah bukti transfer (JPG/PNG/PDF)
 - Panel admin untuk melihat dan menghapus booking
-- Tampilan nyaman di HP maupun desktop`,
-    fullDescEn: `An online booking system for futsal courts, replacing the manual reservation process done via WhatsApp or phone calls. Users pick a court, set the time and duration, and upload a transfer receipt — the admin reviews it from the panel.
+- Tampilan responsif di ponsel maupun desktop`,
+    fullDescEn: `An online booking system for futsal courts, replacing the manual reservation process done via WhatsApp or phone calls. Users pick a court, set the time and duration, and upload a transfer receipt, which the admin then checks from the panel.
 
-Built with native PHP and MySQL for a lightweight, easy-to-maintain solution at this project's scale.
+Built with plain PHP and MySQL, without a framework.
 
 Available features:
 - Court list (interlock, vinyl, synthetic grass) with status
@@ -259,9 +257,9 @@ Available features:
     image: futsalImg,
     demoLink: "#",
     features: [
-      "Booking dengan durasi fleksibel",
+      "Pemesanan dengan durasi fleksibel",
       "Dashboard admin",
-      "Upload bukti transfer",
+      "Unggah bukti transfer",
       "Desain responsif"
     ],
     featuresEn: [
@@ -286,8 +284,8 @@ Available features:
       "Separating public pages from the admin panel with session-based login"
     ],
     outcomes: [
-      "Reservasi tidak perlu lagi lewat chat WhatsApp bolak-balik",
-      "Admin punya satu daftar booking beserta bukti transfernya"
+      "Reservasi tidak lagi memerlukan percakapan WhatsApp yang berulang-ulang",
+      "Admin memiliki satu daftar pemesanan lengkap dengan bukti transfernya"
     ],
     outcomesEn: [
       "Reservations no longer need back-and-forth WhatsApp chats",
@@ -300,25 +298,25 @@ Available features:
     titleEn: "Interactive Birthday Website",
     shortDesc: "Website hadiah ulang tahun yang dipersonalisasi dengan foto dan musik",
     shortDescEn: "Personalized birthday gift website with an animated photo gallery and a custom music player",
-    fullDesc: `Website hadiah ulang tahun yang dibuat khusus — ada galeri foto dan pemutar musik yang bisa dikustomisasi sesuai orangnya.
+    fullDesc: `Website hadiah ulang tahun yang saya buat secara personal, berisi galeri foto dan pemutar musik yang disesuaikan dengan penerimanya.
 
-Sengaja dibangun murni pakai HTML dan CSS tanpa library JavaScript tambahan, supaya loadingnya ringan dan animasinya tetap smooth. Semua transisi dan efeknya dikerjakan manual lewat CSS animations.
+Dibangun dengan HTML dan CSS tanpa library JavaScript tambahan agar tetap ringan saat dibuka di ponsel. Seluruh animasinya ditulis sendiri dengan CSS.
 
 Yang ada di dalamnya:
 - Galeri foto dengan animasi
 - Pemutar musik kustom
 - Timeline kenangan
-- Animasi transisi yang halus
-- Sudah dioptimalkan untuk HP`,
-    fullDescEn: `A personalized birthday gift website — complete with a photo gallery and music player that can be customized for the recipient.
+- Animasi perpindahan halaman
+- Sudah dioptimalkan untuk ponsel`,
+    fullDescEn: `A birthday gift website I made, with a photo gallery and a music player tailored to the person celebrating.
 
-Built purely with HTML and CSS without any additional JavaScript libraries, to keep loading fast and animations smooth. All transitions and effects were crafted manually using CSS animations.
+Made with HTML and CSS and no extra JavaScript libraries, so it opens quickly on a phone. All the animations are written by hand in CSS.
 
 What's inside:
 - Animated photo gallery
 - Custom music player
 - Memory timeline
-- Smooth transition animations
+- Page transition animations
 - Optimized for mobile`,
     tags: ["HTML", "CSS", "Animation"],
     category: "frontend",
@@ -327,14 +325,14 @@ What's inside:
       "Galeri foto animasi",
       "Pemutar musik kustom",
       "Timeline interaktif",
-      "Transisi halus",
+      "Animasi CSS",
       "Dioptimalkan untuk mobile"
     ],
     featuresEn: [
       "Animated photo gallery",
       "Custom music player",
       "Interactive timeline",
-      "Smooth transitions",
+      "CSS animations",
       "Mobile optimized"
     ],
     technologies: {
@@ -342,159 +340,157 @@ What's inside:
       tools: ["Netlify", "Git"]
     },
     challenges: [
-      "Membuat animasi halus tanpa library JavaScript",
-      "Optimasi gambar untuk loading cepat",
-      "Memastikan kompatibilitas lintas browser"
+      "Membuat seluruh animasi hanya dengan CSS, tanpa library JavaScript",
+      "Menata galeri foto agar tetap rapi di layar ponsel"
     ],
     challengesEn: [
-      "Creating smooth animations without a JavaScript library",
-      "Optimizing images for fast loading",
-      "Ensuring cross-browser compatibility"
+      "Writing every animation in CSS alone, without a JavaScript library",
+      "Laying out the photo gallery so it still looks right on a phone screen"
     ],
     outcomes: [
-      "Dipakai sebagai hadiah ulang tahun sungguhan",
-      "Animasi tetap lancar di HP"
+      "Digunakan sebagai hadiah ulang tahun yang sebenarnya",
+      "Animasi tetap lancar di ponsel"
     ],
     outcomesEn: [
       "Used as a real birthday gift",
-      "Animations stay smooth on mobile"
+      "Animations run well on phones"
     ]
   },
   {
     id: "qr-menu",
     title: "Menu Digital Restoran dengan QR Code",
     titleEn: "QR Code Restaurant Menu",
-    shortDesc: "Sistem menu digital dengan pemindaian QR code dan manajemen pesanan",
-    shortDescEn: "Digital restaurant menu system with QR code access and real-time menu management for admins",
-    fullDesc: `Sistem menu digital untuk restoran yang bisa diakses pengunjung lewat scan QR code di meja masing-masing. Tidak perlu aplikasi tambahan — cukup scan, langsung tampil menunya di browser.
+    shortDesc: "Menu digital restoran yang diakses dengan memindai QR code di meja. Pelanggan dapat memesan dan membayar melalui QRIS, lalu pesanan langsung masuk ke dashboard admin",
+    shortDescEn: "Restaurant menu opened from a table QR code: customers order and pay via QRIS on their phone, and orders go straight to the admin dashboard",
+    fullDesc: `Menu digital untuk restoran Ayam Kremes Maheswara. Pelanggan cukup memindai QR code di meja, memilih menu, memasukkannya ke keranjang, lalu membayar melalui QRIS tanpa perlu memasang aplikasi. Nomor meja otomatis tercatat pada setiap pesanan.
 
-Admin bisa update menu kapan saja lewat dashboard, perubahannya langsung tampil ke semua QR code tanpa perlu cetak ulang.
+Frontend dibangun dengan React, sedangkan backend menggunakan Node.js, Express, dan MySQL.
 
-Dibangun dengan React untuk sisi pengunjung, Laravel dan MySQL untuk backend dan manajemen menunya.
+Fitur yang tersedia:
+- Menu per kategori dengan pencarian
+- Keranjang dan pesanan yang tercatat per nomor meja
+- Halaman pembayaran QRIS dengan batas waktu 15 menit
+- Dashboard admin: pesanan baru muncul otomatis disertai suara notifikasi
+- Pengelolaan menu dan foto produk, serta pembuatan QR code untuk setiap meja
+- Laporan penjualan harian dan bulanan dalam bentuk grafik`,
+    fullDescEn: `A digital menu for the Ayam Kremes Maheswara restaurant. Customers scan the QR code on their table, pick dishes, add them to a cart, and pay via QRIS without installing an app. The table number is saved with each order.
 
-Yang tersedia:
-- Scan QR code langsung tampil menu
-- Update menu real-time dari dashboard admin
-- Organisasi menu per kategori
-- Pencarian dan filter menu
-- QR code otomatis per meja`,
-    fullDescEn: `A digital menu system for restaurants, accessible to visitors by scanning a QR code at their table. No extra app needed — just scan and the menu loads directly in the browser.
+The frontend is React, and the backend is Node.js with Express and MySQL.
 
-Admins can update the menu anytime via the dashboard, and changes reflect on all QR codes instantly — no reprinting needed.
-
-Built with React for the customer-facing side, and Laravel + MySQL for the backend and menu management.
-
-What's available:
-- Scan QR code to view menu instantly
-- Real-time menu updates from admin dashboard
-- Menu organized by category
-- Menu search and filter
-- Auto-generated QR code per table`,
-    tags: ["React", "Laravel", "MySQL", "QR Code"],
+Available features:
+- Menu by category with search
+- Cart and orders tied to a table number
+- QRIS payment page with a 15-minute time limit
+- Admin dashboard where new orders appear on their own with a sound alert
+- Menu and product photo management, plus a QR code generator for each table
+- Daily and monthly sales reports as charts`,
+    tags: ["React", "Node.js", "Express", "MySQL"],
     category: "fullstack",
     image: qrImg,
     video: "/videos/qr-menu-promo.mp4",
     demoLink: "#",
     features: [
-      "Pemindaian QR code",
-      "Update menu dinamis",
-      "Kategori menu",
-      "Fungsi pencarian",
-      "Dashboard admin"
+      "Menu per kategori dan pencarian",
+      "Pemesanan dari meja melalui QR code",
+      "Halaman pembayaran QRIS",
+      "Notifikasi pesanan baru di dashboard admin",
+      "Pengelolaan menu dan foto produk",
+      "Laporan penjualan harian dan bulanan"
     ],
     featuresEn: [
-      "QR code scanning",
-      "Dynamic menu updates",
-      "Menu categories",
-      "Search functionality",
-      "Admin dashboard"
+      "Menu by category with search",
+      "Ordering from the table via QR code",
+      "QRIS payment page",
+      "New-order alerts on the admin dashboard",
+      "Menu and product photo management",
+      "Daily and monthly sales reports"
     ],
     technologies: {
-      frontend: ["React", "React Router", "Tailwind CSS"],
-      backend: ["Laravel", "MySQL", "REST API"],
-      tools: ["Laragon", "Git"]
+      frontend: ["React", "React Router", "Chart.js", "react-qr-code"],
+      backend: ["Node.js", "Express", "MySQL", "JWT", "Multer"],
+      tools: ["Git"]
     },
     challenges: [
-      "Implementasi generasi QR code yang efisien",
-      "Sinkronisasi menu secara real-time",
-      "Optimasi untuk koneksi bandwidth rendah"
+      "Menghubungkan setiap pesanan dengan nomor meja dari QR code yang dipindai pelanggan",
+      "Menampilkan pesanan baru di dashboard admin secara langsung, dengan pengecekan data berkala dan suara notifikasi",
+      "Mengamankan halaman admin dengan login JWT dan password yang di-hash dengan bcrypt"
     ],
     challengesEn: [
-      "Implementing efficient QR code generation",
-      "Real-time menu synchronization",
-      "Optimization for low-bandwidth connections"
+      "Linking each order to the table number from the QR code the customer scanned",
+      "Making new orders show up on the admin dashboard right away, by checking for new data regularly and playing a sound alert",
+      "Securing the admin pages with JWT login and passwords hashed with bcrypt"
     ],
     outcomes: [
-      "Dipakai restoran sungguhan — menu cetak tidak dipakai lagi",
-      "Perubahan harga/menu langsung tampil tanpa cetak ulang"
+      "Digunakan oleh restoran yang sebenarnya, sehingga menu cetak tidak lagi diperlukan",
+      "Pesanan dari meja langsung diterima admin tanpa pencatatan manual"
     ],
     outcomesEn: [
-      "Used by a real restaurant — printed menus fully replaced",
-      "Price/menu changes go live instantly with no reprinting"
+      "Used by a real restaurant, which no longer uses printed menus",
+      "Table orders reach the admin directly instead of being written down by hand"
     ]
   },
   {
     id: "blood-pressure-tracker",
     title: "Sistem Monitoring Tekanan Darah",
     titleEn: "Blood Pressure Monitoring System",
-    shortDesc: "Aplikasi web untuk melacak dan memantau riwayat tekanan darah",
-    shortDescEn: "Web app for logging and tracking blood pressure history over time, with interactive charts and trend analysis",
-    fullDesc: `Aplikasi web untuk mencatat dan memantau riwayat tekanan darah. Dibuat karena pencatatan manual di buku susah untuk dilihat trennya — di sini semua data langsung bisa divisualisasikan dalam grafik.
+    shortDesc: "Aplikasi web untuk mencatat tekanan darah pasien dan memantau trennya melalui grafik",
+    shortDescEn: "Web app for recording patients' blood pressure and viewing the trend in charts",
+    fullDesc: `Aplikasi web untuk mencatat tekanan darah (sistolik dan diastolik) per pasien beserta statusnya. Datanya ditampilkan di dashboard dan grafik, sehingga perubahannya lebih mudah dipantau dibandingkan catatan di buku.
 
-Stack-nya React di frontend, Go di backend untuk prosesnya yang cepat, MySQL untuk simpan data, dan Chart.js untuk grafiknya.
+Frontend dibangun dengan React dan Recharts untuk grafik, sedangkan backend berupa REST API dengan Go (framework Gin) dan MySQL.
 
 Fitur yang tersedia:
-- Catat tekanan darah harian
-- Grafik tren yang interaktif
-- Histori lengkap pembacaan sebelumnya
-- Bisa dipakai lebih dari satu pengguna dalam satu keluarga`,
-    fullDescEn: `A web app for logging and tracking blood pressure history. Built because manual recording in a notebook makes it hard to see trends — here, all data can be visualized in charts directly.
+- Input tekanan darah sistolik dan diastolik per pasien
+- Status tekanan darah di setiap catatan
+- Dashboard dan grafik tren
+- Riwayat yang dapat dilihat dan diubah`,
+    fullDescEn: `A web app for recording blood pressure (systolic and diastolic) per patient, along with a status. The data is shown on a dashboard and in charts, so changes are easier to spot than in a paper log.
 
-Stack: React on the frontend, Go on the backend for fast processing, MySQL for data storage, and Chart.js for the charts.
+The frontend is React with Recharts for the charts, and the backend is a REST API in Go (Gin framework) with MySQL.
 
 Available features:
-- Daily blood pressure logging
-- Interactive trend charts
-- Full history of previous readings
-- Multi-user support within one household`,
-    tags: ["React", "Go", "MySQL", "Chart.js"],
+- Systolic and diastolic input per patient
+- A blood pressure status on every record
+- Dashboard and trend charts
+- History that can be viewed and edited`,
+    tags: ["React", "Go", "Gin", "MySQL"],
     category: "fullstack",
     image: tensiImg,
     demoLink: "#",
     features: [
-      "Pencatatan tekanan darah",
-      "Grafik interaktif",
-      "Analisis tren",
-      "Dukungan multi-pengguna"
+      "Input sistolik dan diastolik per pasien",
+      "Status di setiap catatan",
+      "Grafik tren tekanan darah",
+      "Riwayat dan edit data"
     ],
     featuresEn: [
-      "Blood pressure logging",
-      "Interactive charts",
-      "Trend analysis",
-      "Multi-user support"
+      "Systolic and diastolic input per patient",
+      "Status on every record",
+      "Blood pressure trend chart",
+      "History and data editing"
     ],
     technologies: {
-      frontend: ["React", "Chart.js", "Tailwind CSS"],
-      backend: ["Go", "MySQL", "REST API"],
+      frontend: ["React", "Recharts", "Tailwind CSS"],
+      backend: ["Go", "Gin", "MySQL", "REST API"],
       tools: ["Git"]
     },
     challenges: [
-      "Membuat visualisasi data yang intuitif",
-      "Implementasi penyimpanan data kesehatan yang aman",
-      "Mendesain form input yang user-friendly"
+      "Membuat REST API CRUD dengan Go dan framework Gin",
+      "Menampilkan sistolik dan diastolik dalam satu grafik yang mudah dibaca",
+      "Menghubungkan frontend React dengan backend Go yang berjalan di port berbeda (CORS)"
     ],
     challengesEn: [
-      "Creating intuitive data visualizations",
-      "Implementing secure health data storage",
-      "Designing user-friendly input forms"
+      "Building a CRUD REST API with Go and the Gin framework",
+      "Showing systolic and diastolic values in one easy-to-read chart",
+      "Connecting the React frontend to a Go backend running on a different port (CORS)"
     ],
     outcomes: [
-      "Tren tekanan darah bisa dibaca dari grafik, bukan dari catatan di buku",
-      "Satu akun bisa menyimpan data beberapa anggota keluarga"
+      "Tren tekanan darah dapat dipantau melalui grafik, bukan lagi dari catatan di buku",
+      "Data setiap pasien tersimpan rapi dan dapat diubah kapan saja"
     ],
     outcomesEn: [
-      "Blood pressure trends readable from a chart instead of a notebook",
-      "One account can hold readings for several family members"
+      "Blood pressure trends can be read from a chart instead of a notebook",
+      "Each patient's records are stored in one place and can be edited anytime"
     ]
   },
   {
@@ -503,7 +499,7 @@ Available features:
     titleEn: "GestureSense - Sign Language Recognition",
     shortDesc: "Sistem machine learning untuk mengenali gerakan bahasa isyarat tangan",
     shortDescEn: "Machine learning system for real-time hand sign language gesture recognition using computer vision",
-    fullDesc: `Sistem pengenalan bahasa isyarat tangan berbasis machine learning. Model dilatih untuk mendeteksi dan menginterpretasikan gerakan tangan lewat webcam secara real-time.
+    fullDesc: `Sistem pengenalan bahasa isyarat tangan berbasis machine learning. Model dilatih untuk mendeteksi dan menginterpretasikan gerakan tangan melalui webcam secara real-time.
 
 Teknologi yang dipakai: TensorFlow dan Keras untuk pelatihan model, OpenCV untuk pemrosesan gambar dari kamera, Python sebagai bahasa utama, dan Jupyter Notebook untuk eksperimen dan analisis data.
 
@@ -553,7 +549,7 @@ Work done in this project:
       "Handling varying lighting conditions"
     ],
     outcomes: [
-      "Prototipe yang bisa mengenali gestur langsung dari webcam",
+      "Prototipe yang dapat mengenali gestur langsung dari webcam",
       "Fondasi untuk alat bantu komunikasi teman tuli"
     ],
     outcomesEn: [

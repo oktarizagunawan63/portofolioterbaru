@@ -243,3 +243,36 @@ html {
 a, button, input, textarea {
   transition: all 0.3s ease;
 }
+
+/* "The Stack" marquee: two rows running in opposite directions */
+@keyframes marquee-left { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes marquee-right { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+.marquee { -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent); }
+.marquee-left { animation: marquee-left 32s linear infinite; }
+.marquee-right { animation: marquee-right 32s linear infinite; }
+.marquee:hover .marquee-track { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+}
+
+/* Hero flip card. Rounded corners/overflow live on each face: overflow on a
+   preserve-3d element would flatten the 3D flip. */
+.flip { perspective: 1200px; }
+.flip-inner { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; transition: transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.flip-inner.is-flipped { transform: rotateY(180deg); }
+@media (hover: hover) {
+  .flip:hover .flip-inner { transform: rotateY(180deg); }
+}
+.flip-face { position: absolute; inset: 0; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+.flip-back { transform: rotateY(180deg); }
+@media (prefers-reduced-motion: reduce) {
+  .flip-inner, .flip-inner.is-flipped, .flip:hover .flip-inner { transform: none; transition: none; }
+  .flip-face { transition: opacity 0.3s; }
+  .flip-back { transform: none; opacity: 0; }
+  .is-flipped .flip-back { opacity: 1; }
+  .is-flipped .flip-front { opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) and (hover: hover) {
+  .flip:hover .flip-back { opacity: 1; }
+  .flip:hover .flip-front { opacity: 0; }
+}
