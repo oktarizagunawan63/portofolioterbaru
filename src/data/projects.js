@@ -16,7 +16,7 @@ export const projects = [
     shortDescEn: "Internal system from my internship covering the sales funnel, sales visits, attendance, and engineer project progress, with 5 role-based dashboards",
     fullDesc: `Sistem web internal untuk PT Amsar Prima Mandiri. Sebelumnya, data sales, kunjungan, dan progres proyek dicatat secara manual dan tersebar di banyak tempat. Saya menyatukannya dalam satu aplikasi yang digunakan oleh tim sales, manager, dan engineer.
 
-Frontend dibangun dengan React (Zustand untuk state dan Recharts untuk grafik), sedangkan backend menggunakan Laravel 11, MySQL, dan Laravel Sanctum untuk autentikasi.
+Frontend dibangun dengan React, sedangkan backend menggunakan Laravel dan MySQL dengan autentikasi berbasis token.
 
 Yang saya kerjakan:
 - 5 role dengan dashboard masing-masing: Admin, Sales, Sales Manager, Site Manager, Engineer
@@ -24,10 +24,10 @@ Yang saya kerjakan:
 - Rencana kunjungan sales, check-in/check-out, dan approval kunjungan dadakan oleh manager
 - Laporan progres proyek dari engineer dan penugasan engineer ke proyek
 - Export laporan ke PDF, notifikasi, activity log, dan reset password via email
-- Autentikasi dengan Laravel Sanctum serta rate limit pada endpoint login dan reset password`,
+- Autentikasi berbasis token serta rate limit pada endpoint login dan reset password`,
     fullDescEn: `An internal web system for PT Amsar Prima Mandiri. Sales, site-visit, and project progress records used to be kept by hand in different places, so I brought them into one app used by the sales team, managers, and engineers.
 
-The frontend is React (Zustand for state, Recharts for charts), and the backend is Laravel 11 with MySQL and Laravel Sanctum for login.
+The frontend is React, and the backend is Laravel with MySQL and token-based login.
 
 What I built:
 - 5 roles, each with its own dashboard: Admin, Sales, Sales Manager, Site Manager, Engineer
@@ -35,8 +35,8 @@ What I built:
 - Sales visit planning, check-in/check-out, and manager approval for unplanned visits
 - Engineer progress reports and engineer-to-project assignment
 - PDF report export, notifications, activity log, and email password reset
-- Laravel Sanctum auth with rate limiting on login and password-reset endpoints`,
-    tags: ["React", "Laravel 11", "MySQL", "Sanctum"],
+- Token-based auth with rate limiting on login and password-reset endpoints`,
+    tags: ["React", "Laravel", "MySQL", "REST API"],
     category: "fullstack",
     image: amsarDashboardImg,
     demoLink: "#",
@@ -57,8 +57,8 @@ What I built:
       "PDF report export"
     ],
     technologies: {
-      frontend: ["React", "Zustand", "Recharts", "jsPDF", "Tailwind CSS"],
-      backend: ["Laravel 11", "Laravel Sanctum", "MySQL", "REST API"],
+      frontend: ["React", "jsPDF", "Tailwind CSS"],
+      backend: ["Laravel", "MySQL", "REST API"],
       tools: ["Laragon", "Git"]
     },
     challenges: [
@@ -437,7 +437,7 @@ Available features:
     shortDescEn: "Web app for recording patients' blood pressure and viewing the trend in charts",
     fullDesc: `Aplikasi web untuk mencatat tekanan darah (sistolik dan diastolik) per pasien beserta statusnya. Datanya ditampilkan di dashboard dan grafik, sehingga perubahannya lebih mudah dipantau dibandingkan catatan di buku.
 
-Frontend dibangun dengan React dan Recharts untuk grafik, sedangkan backend berupa REST API dengan Go (framework Gin) dan MySQL.
+Frontend dibangun dengan React, sedangkan backend berupa REST API dengan Go (framework Gin) dan MySQL.
 
 Fitur yang tersedia:
 - Input tekanan darah sistolik dan diastolik per pasien
@@ -446,7 +446,7 @@ Fitur yang tersedia:
 - Riwayat yang dapat dilihat dan diubah`,
     fullDescEn: `A web app for recording blood pressure (systolic and diastolic) per patient, along with a status. The data is shown on a dashboard and in charts, so changes are easier to spot than in a paper log.
 
-The frontend is React with Recharts for the charts, and the backend is a REST API in Go (Gin framework) with MySQL.
+The frontend is React, and the backend is a REST API in Go (Gin framework) with MySQL.
 
 Available features:
 - Systolic and diastolic input per patient
@@ -470,7 +470,7 @@ Available features:
       "History and data editing"
     ],
     technologies: {
-      frontend: ["React", "Recharts", "Tailwind CSS"],
+      frontend: ["React", "Tailwind CSS"],
       backend: ["Go", "Gin", "MySQL", "REST API"],
       tools: ["Git"]
     },

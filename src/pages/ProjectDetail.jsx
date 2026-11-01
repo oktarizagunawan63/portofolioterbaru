@@ -1,6 +1,6 @@
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowLeft, ExternalLink, CheckCircle, Zap, Target } from "lucide-react";
+import { ArrowLeft, ExternalLink, CheckCircle } from "lucide-react";
 import { getProjectById } from "../data/projects";
 import { useLanguage } from "../contexts/LanguageContext";
 import { useEffect } from "react";
@@ -155,9 +155,6 @@ export default function ProjectDetail() {
             className="mb-12"
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className="p-3 rounded-xl bg-primary/10">
-                <CheckCircle className="text-primary" size={24} />
-              </div>
               <h2 className="text-3xl font-bold">{isEnglish ? "Key Features" : "Fitur Utama"}</h2>
             </div>
             <div className="grid md:grid-cols-2 gap-4">
@@ -181,9 +178,6 @@ export default function ProjectDetail() {
             className="mb-12"
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className="p-3 rounded-xl bg-secondary/10">
-                <Zap className="text-secondary" size={24} />
-              </div>
               <h2 className="text-3xl font-bold">{isEnglish ? "Technologies Used" : "Teknologi yang Digunakan"}</h2>
             </div>
             <div className="space-y-4">
@@ -216,9 +210,6 @@ export default function ProjectDetail() {
               transition={{ delay: 0.7 }}
             >
               <div className="flex items-center gap-3 mb-4">
-                <div className="p-3 rounded-xl bg-primary/10">
-                  <Target className="text-primary" size={24} />
-                </div>
                 <h2 className="text-2xl font-bold">{isEnglish ? "Challenges" : "Tantangan"}</h2>
               </div>
               <ul className="space-y-3">
@@ -241,9 +232,6 @@ export default function ProjectDetail() {
               transition={{ delay: 0.7 }}
             >
               <div className="flex items-center gap-3 mb-4">
-                <div className="p-3 rounded-xl bg-secondary/10">
-                  <CheckCircle className="text-secondary" size={24} />
-                </div>
                 <h2 className="text-2xl font-bold">{isEnglish ? "Outcomes" : "Hasil"}</h2>
               </div>
               <ul className="space-y-3">

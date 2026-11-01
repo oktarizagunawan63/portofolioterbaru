@@ -1,10 +1,11 @@
 import { motion as Motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Briefcase, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
 import { translations } from "../data/translations";
+import amsarLogo from "../assets/logo-amsar.png";
 
-const amsarStack = ["React", "Laravel 11", "Laravel Sanctum", "MySQL", "Zustand", "Recharts"];
+const amsarStack = ["React", "Laravel", "MySQL", "REST API"];
 
 export default function Experience() {
   const { language } = useLanguage();
@@ -29,9 +30,7 @@ export default function Experience() {
       >
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-5">
           <div className="flex items-center gap-3 md:gap-4">
-            <div className="p-2 md:p-3 rounded-xl bg-primary/20 flex-shrink-0">
-              <Briefcase className="text-primary" size={22} />
-            </div>
+            <img src={amsarLogo} alt="Logo PT Amsar Prima Mandiri" className="w-10 h-10 md:w-12 md:h-12 object-contain flex-shrink-0" />
             <div>
               <h3 className="text-lg md:text-2xl font-semibold leading-tight">{t.amsarRole}</h3>
               <p className="text-primary font-medium text-sm md:text-base">PT Amsar Prima Mandiri</p>

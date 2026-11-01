@@ -1,9 +1,17 @@
 import { motion } from "framer-motion";
 import { BentoGrid, BentoCard } from "../components/BentoGrid";
-import { Code2, Briefcase, GraduationCap, Layout, Server, Database } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
 import { translations } from "../data/translations";
 import AnimatedCounter from "../components/AnimatedCounter";
+import amsarLogo from "../assets/logo-amsar.png";
+import unpamLogo from "../assets/logo-unpam.png";
+
+// Real logos of what each skill area is built with, instead of generic icons
+const areaLogos = [
+  { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg", name: "React" },
+  { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg", name: "Laravel" },
+  { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg", name: "MySQL" },
+];
 
 export default function About() {
   const { language } = useLanguage();
@@ -27,12 +35,6 @@ export default function About() {
     { name: "MySQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
     { name: "Git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
     { name: "Bootstrap", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" },
-  ];
-
-  const badges = [
-    { label: t.webDevelopment, color: "primary" },
-    { label: t.uiuxDesign, color: "secondary" },
-    { label: t.apiDevelopment, color: "primary" },
   ];
 
   return (
@@ -71,23 +73,16 @@ export default function About() {
         {/* What I Do Card */}
         <BentoCard className="md:col-span-2 md:row-span-2">
           <div className="flex flex-col h-full">
-            <div className="flex items-center gap-2 md:gap-3 mb-3 md:mb-4">
-              <div className="p-2 md:p-3 rounded-xl bg-primary/10 flex-shrink-0">
-                <Code2 className="text-primary" size={20} />
-              </div>
-              <h3 className="text-lg md:text-2xl font-semibold leading-tight">
-                {t.whatIDo}
-              </h3>
-            </div>
+            <h3 className="text-lg md:text-2xl font-semibold leading-tight mb-3 md:mb-4">
+              {t.whatIDo}
+            </h3>
             <p className="text-ink/70 leading-relaxed text-sm md:text-base mb-4 md:mb-5">
               {t.whatIDoDescription}
             </p>
-            <ul className="space-y-3 mb-5 md:mb-6 flex-1">
+            <ul className="space-y-3 flex-1">
               {t.whatIDoItems.map((item, i) => (
-                <li key={item.title} className="flex items-start gap-3 p-3 rounded-xl bg-white/70 border border-accent/30">
-                  <span className="p-2 rounded-lg bg-primary/10 text-primary flex-shrink-0">
-                    {[<Layout size={18} />, <Server size={18} />, <Database size={18} />][i]}
-                  </span>
+                <li key={item.title} className="flex items-start gap-3 md:gap-4 p-3 md:p-4 rounded-xl bg-white/70">
+                  <img src={areaLogos[i].src} alt={areaLogos[i].name} className="w-8 h-8 md:w-10 md:h-10 object-contain flex-shrink-0 mt-0.5" />
                   <span>
                     <span className="block font-semibold text-sm md:text-base">{item.title}</span>
                     <span className="block text-ink/70 text-xs md:text-sm leading-relaxed">{item.desc}</span>
@@ -95,28 +90,14 @@ export default function About() {
                 </li>
               ))}
             </ul>
-            <div className="flex flex-wrap gap-2">
-              {badges.map((badge) => (
-                <span
-                  key={badge.label}
-                  className={`px-2 md:px-3 py-1 rounded-full bg-${badge.color}/10 text-${badge.color} text-xs md:text-sm font-medium whitespace-nowrap`}
-                >
-                  {badge.label}
-                </span>
-              ))}
-            </div>
           </div>
         </BentoCard>
 
         {/* Fast Performance Card */}
         <BentoCard className="min-h-[180px] md:min-h-[220px]">
           <div className="flex flex-col items-center justify-center h-full text-center">
-            <div className="p-3 md:p-4 rounded-2xl bg-gradient-to-br from-secondary/20 to-secondary/10 mb-2 md:mb-3">
-              <Briefcase className="text-secondary" size={24} />
-            </div>
-            <h3 className="text-base md:text-lg font-semibold mb-1 md:mb-2">
-              {t.fastOptimal}
-            </h3>
+            <img src={amsarLogo} alt="Logo PT Amsar Prima Mandiri" className="w-14 h-14 md:w-16 md:h-16 object-contain mb-3" />
+            <h3 className="text-base md:text-lg font-semibold mb-1">{t.internLabel}</h3>
             <p className="text-xs md:text-sm text-ink/70">{t.performanceKey}</p>
           </div>
         </BentoCard>
@@ -124,12 +105,8 @@ export default function About() {
         {/* Modern Stack Card */}
         <BentoCard className="min-h-[180px] md:min-h-[220px]">
           <div className="flex flex-col items-center justify-center h-full text-center">
-            <div className="p-3 md:p-4 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/10 mb-2 md:mb-3">
-              <GraduationCap className="text-primary" size={24} />
-            </div>
-            <h3 className="text-base md:text-lg font-semibold mb-1 md:mb-2">
-              {t.modernStack}
-            </h3>
+            <img src={unpamLogo} alt="Logo Universitas Pamulang" className="w-14 h-14 md:w-16 md:h-16 object-contain mb-3" />
+            <h3 className="text-base md:text-lg font-semibold mb-1">{t.gradLabel}</h3>
             <p className="text-xs md:text-sm text-ink/70">{t.latestTech}</p>
           </div>
         </BentoCard>

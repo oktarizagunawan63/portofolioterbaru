@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Mail, Send, CheckCircle, AlertCircle } from "lucide-react";
+import { Send, CheckCircle, AlertCircle } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
 import { translations } from "../data/translations";
+import gmailLogo from "../assets/logo-gmail.svg";
 
 // --- Rate Limit Config ---
 const MAX_SUBMISSIONS = 3;
@@ -120,9 +121,7 @@ export default function Contact() {
           >
             <div className="p-4 md:p-6 rounded-2xl bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20">
               <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
-                <div className="p-2 md:p-3 rounded-xl bg-primary/20 flex-shrink-0">
-                  <Mail className="text-primary" size={20} />
-                </div>
+                <img src={gmailLogo} alt="Gmail" className="w-8 h-8 md:w-9 md:h-9 flex-shrink-0" />
                 <div className="min-w-0">
                   <h3 className="font-semibold text-base md:text-lg">{t.email}</h3>
                   <p className="text-ink/70 text-xs md:text-sm truncate">oktarizagunawan63@gmail.com</p>
