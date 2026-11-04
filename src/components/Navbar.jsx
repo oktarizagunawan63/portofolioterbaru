@@ -4,6 +4,7 @@ import { Download, Menu, X } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
 import { translations } from "../data/translations";
 import LanguageSwitcher from "./LanguageSwitcher";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -28,9 +29,9 @@ export default function Navbar() {
     <Motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`font-nav fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/80 backdrop-blur-lg shadow-lg border-b border-accent/20"
+          ? "bg-surface/80 backdrop-blur-lg shadow-lg border-b border-accent/20"
           : "bg-transparent"
       }`}
     >
@@ -63,6 +64,7 @@ export default function Navbar() {
             ))}
           </ul>
           
+          <ThemeToggle />
           <LanguageSwitcher />
           
           <a
@@ -83,6 +85,7 @@ export default function Navbar() {
 
         {/* Mobile Menu & Language Switcher */}
         <div className="lg:hidden flex items-center gap-3">
+          <ThemeToggle />
           <LanguageSwitcher />
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -99,7 +102,7 @@ export default function Navbar() {
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: "auto" }}
           exit={{ opacity: 0, height: 0 }}
-          className="lg:hidden bg-white/95 backdrop-blur-lg border-t border-accent/20"
+          className="lg:hidden bg-surface/95 backdrop-blur-lg border-t border-accent/20"
         >
           <div className="section py-6 space-y-4">
             {links.map((link) => (

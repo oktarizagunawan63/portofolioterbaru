@@ -2,12 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Theme colours as RGB channels so Tailwind opacity modifiers (bg-primary/10) keep working */
 :root{
-  --c-primary:#662222;
-  --c-secondary:#842A3B;
-  --c-accent:#F5DAA7;
-  --c-ink:#0f0f0f;
-  --c-paper:#faf7f2;
+  --c-primary:102 34 34;     /* #662222 */
+  --c-secondary:132 42 59;   /* #842A3B */
+  --c-accent:245 218 167;    /* #F5DAA7 */
+  --c-ink:15 15 15;
+  --c-paper:250 247 242;
+  --c-surface:255 255 255;
+}
+/* Dark: maroon lifted so it reads on a dark ground and still carries white button text */
+html.dark{
+  --c-primary:194 86 92;     /* #C2565C */
+  --c-secondary:168 69 90;   /* #A8455A */
+  --c-accent:245 218 167;
+  --c-ink:240 233 228;
+  --c-paper:20 14 16;
+  --c-surface:33 25 28;
+  color-scheme: dark;
 }
 
 /* base style */
@@ -17,7 +29,7 @@
   }
   
   body {
-    @apply text-base leading-relaxed;
+    @apply text-base leading-relaxed bg-paper text-ink transition-colors duration-300;
   }
   
   h1, h2, h3 {
@@ -61,7 +73,7 @@ body {
   }
   
   .card {
-    @apply rounded-2xl bg-white shadow-soft border border-accent/40
+    @apply rounded-2xl bg-surface shadow-soft border border-accent/40
            w-full; /* Pastikan card selalu full width container */
   }
   
@@ -210,32 +222,32 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--c-paper);
+  background: rgb(var(--c-paper));
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, var(--c-primary), var(--c-secondary));
+  background: linear-gradient(to bottom, rgb(var(--c-primary)), rgb(var(--c-secondary)));
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--c-secondary);
+  background: rgb(var(--c-secondary));
 }
 
 /* Selection color */
 ::selection {
-  background: var(--c-primary);
+  background: rgb(var(--c-primary));
   color: white;
 }
 
 ::-moz-selection {
-  background: var(--c-primary);
+  background: rgb(var(--c-primary));
   color: white;
 }
 
 /* Focus styles for accessibility */
 *:focus-visible {
-  outline: 2px solid var(--c-primary);
+  outline: 2px solid rgb(var(--c-primary));
   outline-offset: 2px;
 }
 
@@ -276,3 +288,6 @@ a, button, input, textarea {
   .flip:hover .flip-back { opacity: 1; }
   .flip:hover .flip-front { opacity: 0; }
 }
+
+/* MySQL's dark-blue mark disappears on the dark ground */
+html.dark img[src*="mysql-original"] { filter: brightness(2.2) saturate(1.2); }

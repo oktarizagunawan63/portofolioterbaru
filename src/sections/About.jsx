@@ -81,7 +81,7 @@ export default function About() {
             </p>
             <ul className="space-y-3 flex-1">
               {t.whatIDoItems.map((item, i) => (
-                <li key={item.title} className="flex items-start gap-3 md:gap-4 p-3 md:p-4 rounded-xl bg-white/70">
+                <li key={item.title} className="flex items-start gap-3 md:gap-4 p-3 md:p-4 rounded-xl bg-surface/70">
                   <img src={areaLogos[i].src} alt={areaLogos[i].name} className="w-8 h-8 md:w-10 md:h-10 object-contain flex-shrink-0 mt-0.5" />
                   <span>
                     <span className="block font-semibold text-sm md:text-base">{item.title}</span>
@@ -96,7 +96,7 @@ export default function About() {
         {/* Fast Performance Card */}
         <BentoCard className="min-h-[180px] md:min-h-[220px]">
           <div className="flex flex-col items-center justify-center h-full text-center">
-            <img src={amsarLogo} alt="Logo PT Amsar Prima Mandiri" className="w-14 h-14 md:w-16 md:h-16 object-contain mb-3" />
+            <img src={amsarLogo} alt="Logo PT Amsar Prima Mandiri" className="w-14 h-14 md:w-16 md:h-16 object-contain mb-3 dark:brightness-[2.4]" />
             <h3 className="text-base md:text-lg font-semibold mb-1">{t.internLabel}</h3>
             <p className="text-xs md:text-sm text-ink/70">{t.performanceKey}</p>
           </div>

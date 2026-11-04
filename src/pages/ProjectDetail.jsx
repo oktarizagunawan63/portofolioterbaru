@@ -2,6 +2,8 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowLeft, ExternalLink, CheckCircle } from "lucide-react";
 import { getProjectById } from "../data/projects";
+import ThemeToggle from "../components/ThemeToggle";
+import { scrollToTop } from "../smoothScroll";
 import { useLanguage } from "../contexts/LanguageContext";
 import { useEffect } from "react";
 
@@ -17,7 +19,7 @@ export default function ProjectDetail() {
   const project = getProjectById(id);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    scrollToTop({ immediate: true });
   }, []);
 
   if (!project) {
@@ -64,6 +66,9 @@ export default function ProjectDetail() {
             <ArrowLeft size={20} />
             <span>{isEnglish ? "Back to Home" : "Kembali"}</span>
           </motion.button>
+          <div className="absolute top-6 right-4 md:right-12">
+            <ThemeToggle />
+          </div>
 
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -190,7 +195,7 @@ export default function ProjectDetail() {
                     {techs.map((tech) => (
                       <span
                         key={tech}
-                        className="px-3 py-1 rounded-full bg-white border border-accent/30 text-sm font-medium text-ink/80"
+                        className="px-3 py-1 rounded-full bg-surface border border-accent/30 text-sm font-medium text-ink/80"
                       >
                         {tech}
                       </span>

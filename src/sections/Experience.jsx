@@ -30,7 +30,7 @@ export default function Experience() {
       >
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-5">
           <div className="flex items-center gap-3 md:gap-4">
-            <img src={amsarLogo} alt="Logo PT Amsar Prima Mandiri" className="w-10 h-10 md:w-12 md:h-12 object-contain flex-shrink-0" />
+            <img src={amsarLogo} alt="Logo PT Amsar Prima Mandiri" className="w-10 h-10 md:w-12 md:h-12 object-contain flex-shrink-0 dark:brightness-[2.4]" />
             <div>
               <h3 className="text-lg md:text-2xl font-semibold leading-tight">{t.amsarRole}</h3>
               <p className="text-primary font-medium text-sm md:text-base">PT Amsar Prima Mandiri</p>
@@ -53,7 +53,7 @@ export default function Experience() {
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <div className="flex flex-wrap gap-2">
             {amsarStack.map((tech) => (
-              <span key={tech} className="px-3 py-1 rounded-full bg-white border border-primary/20 text-xs md:text-sm font-medium text-ink/80">
+              <span key={tech} className="px-3 py-1 rounded-full bg-surface border border-primary/20 text-xs md:text-sm font-medium text-ink/80">
                 {tech}
               </span>
             ))}

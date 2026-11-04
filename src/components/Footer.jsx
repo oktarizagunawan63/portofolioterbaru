@@ -2,13 +2,12 @@ import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, Heart, ArrowUp } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
 import { translations } from "../data/translations";
+import { scrollToTop as smoothScrollToTop } from "../smoothScroll";
 
 export default function Footer() {
   const { language } = useLanguage();
   const t = translations[language];
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+  const scrollToTop = () => smoothScrollToTop();
 
   return (
     <footer className="mt-16 border-t border-accent/20 bg-gradient-to-b from-transparent to-accent/5">

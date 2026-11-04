@@ -4,11 +4,6 @@ import Home from "./pages/Home";
 import ProjectDetail from "./pages/ProjectDetail";
 
 export default function App() {
-  // smooth scroll
-  if (typeof window !== "undefined") {
-    document.documentElement.style.scrollBehavior = "smooth";
-  }
-
   return (
     <LanguageProvider>
       <Router>
