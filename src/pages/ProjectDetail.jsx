@@ -118,6 +118,21 @@ export default function ProjectDetail() {
             </motion.div>
           )}
 
+          {/* Clear screenshot (the hero only shows it blurred, as a backdrop for the title) */}
+          <motion.figure
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="mb-12 rounded-2xl overflow-hidden border border-accent/30 bg-surface shadow-lg"
+          >
+            <div className="flex items-center gap-1.5 px-4 py-2.5 bg-accent/10 border-b border-accent/20" aria-hidden="true">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f57]" />
+              <span className="w-2.5 h-2.5 rounded-full bg-[#febc2e]" />
+              <span className="w-2.5 h-2.5 rounded-full bg-[#28c840]" />
+            </div>
+            <img src={project.image} alt={isEnglish ? `Screenshot of ${title}` : `Tampilan ${title}`} className="block mx-auto w-auto max-w-full h-auto max-h-[75vh]" />
+          </motion.figure>
+
           {/* Video Demo */}
           {project.video && (
             <motion.div
